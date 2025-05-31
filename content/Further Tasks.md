@@ -1,0 +1,5 @@
+- for some reason twitter didnt embed prolly iframe would work aand iframe is cool 
+- would try pdf later
+- would try to create learning codin content and more later with quartz and ingeneral
+- does it support non markdown files and code and more thingies to know later! 
+- debugging bugs/glitches and edge cases later! 

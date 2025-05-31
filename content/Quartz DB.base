@@ -1,0 +1,15 @@
+views:
+  - type: table
+    name: Table
+    order:
+      - file.name
+      - file.folder
+      - file.ctime
+      - file.mtime
+      - file.ext
+      - file.path
+    sort:
+      - column: file.name
+        direction: ASC
+      - column: file.folder
+        direction: ASC

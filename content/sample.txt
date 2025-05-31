@@ -1,0 +1,13 @@
+This is a plain text file (.txt) to test file support in Quartz.
+
+It contains regular text without any special formatting.
+You can link to this file from markdown like: [View text file](sample.txt)
+
+Features:
+- Plain text content
+- No markdown processing
+- Direct file serving
+- Can be downloaded or viewed
+
+Created: 2024-05-31
+Purpose: Testing non-markdown file support 

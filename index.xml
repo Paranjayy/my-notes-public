@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>My Notes Public</title>
+      <link>https://paranjay.github.io/my-notes-public</link>
+      <description>Last 10 notes on My Notes Public</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>Quartz DB</title>
+    <link>https://paranjay.github.io/my-notes-public/Quartz-DB</link>
+    <guid>https://paranjay.github.io/my-notes-public/Quartz-DB</guid>
+    <description> test obsi embed &amp; obsidian bases/db Transclude of Quartz-DB.base.</description>
+    <pubDate>Thu, 05 Jun 2025 16:59:13 GMT</pubDate>
+  </item><item>
+    <title>Code-Examples-Test</title>
+    <link>https://paranjay.github.io/my-notes-public/Code-Examples-Test</link>
+    <guid>https://paranjay.github.io/my-notes-public/Code-Examples-Test</guid>
+    <description>Code Examples Test Python Example def hello_world(): print(&#039;Hello from Quartz!&#039;) return 42 # This is a comment class DigitalGarden: def __init__(self): self.notes = [] def add_note(self, content): self.notes.append(content) JavaScript Example // Modern JavaScript with syntax highlighting c...</description>
+    <pubDate>Sat, 31 May 2025 07:25:44 GMT</pubDate>
+  </item><item>
+    <title>File-Types-Test</title>
+    <link>https://paranjay.github.io/my-notes-public/File-Types-Test</link>
+    <guid>https://paranjay.github.io/my-notes-public/File-Types-Test</guid>
+    <description>File Types Test Page This page tests how Quartz handles different file types beyond markdown.</description>
+    <pubDate>Sat, 31 May 2025 07:25:44 GMT</pubDate>
+  </item><item>
+    <title>Further Tasks</title>
+    <link>https://paranjay.github.io/my-notes-public/Further-Tasks</link>
+    <guid>https://paranjay.github.io/my-notes-public/Further-Tasks</guid>
+    <description> for some reason twitter didnt embed prolly iframe would work aand iframe is cool would try pdf later would try to create learning codin content and more later with quartz and ingeneral does it support non markdown files and code and more thingies to know later! debugging bugs/glitches and edge case...</description>
+    <pubDate>Sat, 31 May 2025 07:20:56 GMT</pubDate>
+  </item><item>
+    <title>Media Embedding Test</title>
+    <link>https://paranjay.github.io/my-notes-public/Media-Embedding-Test</link>
+    <guid>https://paranjay.github.io/my-notes-public/Media-Embedding-Test</guid>
+    <description>🎬 Media Embedding Test This page tests various media embedding capabilities in Quartz! 📸 Local Image Test Here’s the image you added to attachments: 🌐 External Image Test Here’s the image from the URL you provided: 🎥 YouTube Video Embedding Yes! Quartz can embed YouTube videos.</description>
+    <pubDate>Sat, 31 May 2025 07:20:56 GMT</pubDate>
+  </item><item>
+    <title>cursor_using_quartz_to_publish_notes_on</title>
+    <link>https://paranjay.github.io/my-notes-public/cursor-chat/cursor_using_quartz_to_publish_notes_on</link>
+    <guid>https://paranjay.github.io/my-notes-public/cursor-chat/cursor_using_quartz_to_publish_notes_on</guid>
+    <description>Using Quartz to publish notes online Exported on 5/30/2025 at 09:25:56 GMT+5:30 from Cursor (0.50.5) User can you create and do everything for it : ) How to publish your notes for free with Quartz Quartz v4: a free Obsidian Publish alternative : r/ObsidianMD jackyzha0/quartz: 🌱 a fast, batteries-in...</description>
+    <pubDate>Fri, 30 May 2025 04:05:31 GMT</pubDate>
+  </item><item>
+    <title>Digital Gardening Philosophy</title>
+    <link>https://paranjay.github.io/my-notes-public/Digital-Gardening-Philosophy</link>
+    <guid>https://paranjay.github.io/my-notes-public/Digital-Gardening-Philosophy</guid>
+    <description>Digital Gardening Philosophy Digital gardening is a different way of thinking about creating and sharing knowledge online.</description>
+    <pubDate>Fri, 30 May 2025 03:54:13 GMT</pubDate>
+  </item><item>
+    <title>Getting Started with Quartz</title>
+    <link>https://paranjay.github.io/my-notes-public/Getting-Started-with-Quartz</link>
+    <guid>https://paranjay.github.io/my-notes-public/Getting-Started-with-Quartz</guid>
+    <description>Getting Started with Quartz Quartz is a powerful static site generator designed specifically for creating digital gardens from your markdown notes.</description>
+    <pubDate>Fri, 30 May 2025 03:54:13 GMT</pubDate>
+  </item><item>
+    <title>Markdown Tips and Tricks</title>
+    <link>https://paranjay.github.io/my-notes-public/Markdown-Tips-and-Tricks</link>
+    <guid>https://paranjay.github.io/my-notes-public/Markdown-Tips-and-Tricks</guid>
+    <description>Markdown Tips and Tricks This page covers advanced markdown techniques that work particularly well with Quartz.</description>
+    <pubDate>Fri, 30 May 2025 03:54:13 GMT</pubDate>
+  </item><item>
+    <title>Publishing Your Garden</title>
+    <link>https://paranjay.github.io/my-notes-public/Publishing-Your-Garden</link>
+    <guid>https://paranjay.github.io/my-notes-public/Publishing-Your-Garden</guid>
+    <description>Publishing Your Garden 🌐 Once you’ve created your digital garden with Quartz, you’ll want to share it with the world! Here are the best ways to publish your garden online.</description>
+    <pubDate>Fri, 30 May 2025 03:54:13 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

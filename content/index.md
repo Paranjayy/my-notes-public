@@ -14,6 +14,11 @@ Welcome to my personal knowledge base built with [Quartz](https://quartz.jzhao.x
 - [[Digital Gardening Philosophy]]
 - [[Markdown Tips and Tricks]]
 - [[Publishing Your Garden]]
+- [[BSMA1001 Mathematics for Data Science I]]
+- [[BSMA1002 Statistics for Data Science I]]
+- [[BSCS1001 Computational Thinking]]
+- [[BSHS1001 English I]]
+- [[Rhizomatic Learning]]
 
 ## About This Site
 

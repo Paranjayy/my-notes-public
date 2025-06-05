@@ -1,0 +1,44 @@
+{
+  "digitalGarden": {
+    "name": "My Knowledge Base",
+    "version": "1.0.0",
+    "features": [
+      "Wiki-style linking",
+      "Graph visualization",
+      "Full-text search",
+      "Mobile responsive",
+      "Syntax highlighting"
+    ],
+    "supportedFiles": {
+      "markdown": [".md", ".markdown"],
+      "images": [".png", ".jpg", ".jpeg", ".gif", ".svg", ".webp"],
+      "videos": [".mp4", ".webm", ".ogv", ".mov", ".mkv"],
+      "audio": [".mp3", ".wav", ".m4a", ".ogg", ".flac"],
+      "documents": [".pdf"],
+      "code": [".py", ".js", ".ts", ".rs", ".go", ".java", ".cpp"],
+      "data": [".json", ".yaml", ".toml", ".csv"],
+      "text": [".txt", ".log", ".md"]
+    },
+    "configuration": {
+      "syntaxHighlighting": true,
+      "mermaidDiagrams": true,
+      "mathSupport": true,
+      "backlinks": true,
+      "graphView": true
+    },
+    "notes": [
+      {
+        "title": "Getting Started with Quartz",
+        "tags": ["tutorial", "setup"],
+        "created": "2024-05-31",
+        "type": "guide"
+      },
+      {
+        "title": "Digital Gardening Philosophy", 
+        "tags": ["philosophy", "note-taking"],
+        "created": "2024-05-31",
+        "type": "concept"
+      }
+    ]
+  }
+} 

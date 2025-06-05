@@ -1,0 +1,1817 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>BSCS1001 Computational Thinking - Growing Knowledge</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="My Notes Public"/><meta property="og:title" content="BSCS1001 Computational Thinking - Growing Knowledge"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="BSCS1001 Computational Thinking - Growing Knowledge"/><meta name="twitter:description" content="BSCS1001 Computational Thinking Course Credits: 4 Course Type: Foundational Instructors: Madhavan Mukund, Dr."/><meta property="og:description" content="BSCS1001 Computational Thinking Course Credits: 4 Course Type: Foundational Instructors: Madhavan Mukund, Dr."/><meta property="og:image:alt" content="BSCS1001 Computational Thinking Course Credits: 4 Course Type: Foundational Instructors: Madhavan Mukund, Dr."/><meta property="twitter:domain" content="paranjay.github.io/my-notes-public"/><meta property="og:url" content="https://paranjay.github.io/my-notes-public/BSCS1001-Computational-Thinking"/><meta property="twitter:url" content="https://paranjay.github.io/my-notes-public/BSCS1001-Computational-Thinking"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="BSCS1001 Computational Thinking Course Credits: 4 Course Type: Foundational Instructors: Madhavan Mukund, Dr."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL3BhcmFuamF5L0RldmVsb3Blci9teS1kaWdpdGFsLWdhcmRlbi9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://paranjay.github.io/my-notes-public/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://paranjay.github.io/my-notes-public/BSCS1001-Computational-Thinking-og-image.webp"/><meta property="og:image:url" content="https://paranjay.github.io/my-notes-public/BSCS1001-Computational-Thinking-og-image.webp"/><meta name="twitter:image" content="https://paranjay.github.io/my-notes-public/BSCS1001-Computational-Thinking-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="BSCS1001-Computational-Thinking"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">My Notes Public</a></h2><div class="spacer mobile-only"></div><div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-content"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" aria-expanded="false"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>BSCS1001 Computational Thinking</a></div></nav><h1 class="article-title">BSCS1001 Computational Thinking</h1><p show-comma="true" class="content-meta"><time datetime="2025-06-05T17:29:01.985Z">Jun 05, 2025</time><span>54 min read</span></p><ul class="tags"><li><a href="./tags/course" class="internal tag-link">course</a></li><li><a href="./tags/computing" class="internal tag-link">computing</a></li></ul></div></div><article class="popover-hint"><h1 id="bscs1001-computational-thinking">BSCS1001 Computational Thinking<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bscs1001-computational-thinking" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>Course Credits</strong>: 4</p>
+<p><strong>Course Type</strong>: Foundational</p>
+<p><strong>Instructors</strong>: Madhavan Mukund, Dr. G Venkatesh</p>
+<p><strong>Pre-requisites</strong>: None</p>
+<h2 id="overview">Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#overview" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>The course introduces fundamental programming concepts through manual problem solving. It focuses on communicating procedural solutions, understanding abstractions and selecting data structures.</p>
+<h2 id="learning-objectives">Learning Objectives<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#learning-objectives" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Apply a procedural approach to real-life problems</li>
+<li>Communicate solutions using flowcharts and pseudocode</li>
+<li>Understand variables, iteration, filtering and parameterised procedures</li>
+<li>Choose data structures like lists, trees, matrices and graphs</li>
+<li>Identify algorithmic techniques such as searching, sorting and matching</li>
+<li>Decompose problems using recursion and divide-and-conquer</li>
+<li>Predict and test algorithm behaviour</li>
+</ul>
+<h2 id="course-structure">Course Structure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#course-structure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>12 weeks of coursework with weekly online assignments, two invigilated quizzes and one invigilated end term exam.</p>
+<h2 id="weekly-topics">Weekly Topics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#weekly-topics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>Variables &amp; Flowcharts</strong>
+<ul>
+<li><strong>What is Computational Thinking?</strong>:
+<ul>
+<li>A problem-solving approach that involves:
+<ul>
+<li>Decomposition: Breaking down a complex problem into smaller, more manageable parts.</li>
+<li>Pattern Recognition: Identifying similarities or trends within problems or data.</li>
+<li>Abstraction: Focusing on the essential information and ignoring irrelevant details.</li>
+<li>Algorithms: Developing a step-by-step solution to the problem or parts of it.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Algorithms</strong>:
+<ul>
+<li>Definition: A sequence of well-defined, unambiguous instructions or steps designed to solve a specific problem or achieve a particular outcome.</li>
+<li>Analogy: A recipe for baking a cake is an algorithm – it lists ingredients (inputs) and step-by-step instructions to produce the cake (output).</li>
+</ul>
+</li>
+<li><strong>Variables</strong>:
+<ul>
+<li>Concept: A named placeholder or container used to store a piece of information (a value) that can change or vary during the execution of an algorithm.</li>
+<li>Analogy: Think of a labeled box (the variable name) where you can store an item (the value). You can change the item in the box.</li>
+<li>Declaring Variables: Conceptually, this means giving a name to your “box” and perhaps putting an initial item (value) into it. Example: <code>age = 25</code>, <code>userName = &quot;Guest&quot;</code>.</li>
+<li>Data Types (Conceptual): Understanding that variables hold different kinds of information:
+<ul>
+<li>Numbers: For quantities (e.g., <code>count = 10</code>, <code>price = 19.99</code>).</li>
+<li>Text (Strings): For textual information (e.g., <code>message = &quot;Hello&quot;</code>, <code>city = &quot;London&quot;</code>).</li>
+<li>Boolean: For true/false values (e.g., <code>isLoggedIn = true</code>, <code>isValid = false</code>).</li>
+</ul>
+</li>
+<li>Assignment: The process of giving a value to a variable. Typically written as <code>variable_name = value</code> or <code>SET variable_name TO value</code>. The value on the right is stored in the variable on the left. Example: <code>score = 100</code>. Later, <code>score = score + 10</code>.</li>
+</ul>
+</li>
+<li><strong>Tracing Simple Algorithms by Hand (Desk Checking)</strong>:
+<ul>
+<li>Importance: A crucial skill to understand how an algorithm executes, to verify its correctness for given inputs, and to find errors in logic.</li>
+<li>Method: Create a table where columns represent each variable in the algorithm and one column for the current step or instruction being executed. Sometimes, an additional column for “output” or “conditions” is useful. You manually go through the algorithm step-by-step, updating the variable values in your table as they change.</li>
+<li><em>Example: Algorithm to Calculate Area of a Rectangle</em>
+<ul>
+<li>Variables: <code>length</code>, <code>width</code>, <code>area</code></li>
+<li>Steps (Pseudocode):
+<ol>
+<li>START</li>
+<li>GET <code>length</code></li>
+<li>GET <code>width</code></li>
+<li><code>area = length * width</code></li>
+<li>DISPLAY <code>area</code></li>
+<li>END</li>
+</ol>
+</li>
+<li>Trace Table Example (Input: length=5, width=3):
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Step</th><th>Instruction</th><th>length</th><th>width</th><th>area</th><th>Output</th></tr></thead><tbody><tr><td>1</td><td>START</td><td>-</td><td>-</td><td>-</td><td></td></tr><tr><td>2</td><td>GET <code>length</code></td><td>5</td><td>-</td><td>-</td><td></td></tr><tr><td>3</td><td>GET <code>width</code></td><td>5</td><td>3</td><td>-</td><td></td></tr><tr><td>4</td><td><code>area = length*width</code></td><td>5</td><td>3</td><td>15</td><td></td></tr><tr><td>5</td><td>DISPLAY <code>area</code></td><td>5</td><td>3</td><td>15</td><td>Display: 15</td></tr><tr><td>6</td><td>END</td><td></td><td></td><td></td><td></td></tr></tbody></table></div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Flowcharts</strong>:
+<ul>
+<li>Purpose: A graphical representation of an algorithm, showing the sequence of operations, decisions, and flow of control from start to finish.</li>
+<li>Common Flowchart Symbols:
+<ul>
+<li><strong>Oval (Terminator)</strong>: Represents the Start or End point of the algorithm.</li>
+<li><strong>Rectangle (Process)</strong>: Represents a calculation or an instruction (e.g., <code>area = length * width</code>, <code>increment counter</code>).</li>
+<li><strong>Parallelogram (Input/Output)</strong>: Represents getting input from a user or displaying output (e.g., <code>GET age</code>, <code>DISPLAY result</code>).</li>
+<li><strong>Diamond (Decision)</strong>: Represents a point where a decision is made, usually a yes/no or true/false question (e.g., <code>Is age > 18?</code>). Has one entry point and two exit points (one for true, one for false).</li>
+<li><strong>Circle (Connector)</strong>: Used to connect different parts of a flowchart, especially if it spans multiple pages or is complex, to avoid crossing flow lines.</li>
+<li><strong>Arrows (Flow Lines)</strong>: Indicate the direction of flow and the sequence of steps.</li>
+</ul>
+</li>
+<li>Example: Flowchart for “Is a number even or odd?”
+<ol>
+<li>Oval: START</li>
+<li>Arrow to Parallelogram: GET <code>number</code></li>
+<li>Arrow to Diamond: <code>Is number % 2 == 0?</code> (where % is modulo/remainder)</li>
+<li>Arrow (labeled “Yes”) from Diamond to Parallelogram: DISPLAY “<code>number</code> is Even”</li>
+<li>Arrow (labeled “No”) from Diamond to Parallelogram: DISPLAY “<code>number</code> is Odd”</li>
+<li>Arrows from both DISPLAY Parallelograms to Oval: END</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Sanity Checks for Input Data</strong>:
+<ul>
+<li>Concept: Initial checks performed on input data to ensure it is reasonable, valid, and in the expected format before the main algorithm processes it.</li>
+<li>Importance: Helps prevent program crashes, incorrect results, or security vulnerabilities. Embodies the “Garbage In, Garbage Out” (GIGO) principle – if input is bad, output will likely be bad.</li>
+<li>Examples of Manual Sanity Checks:
+<ul>
+<li>Age Problem: If an algorithm calculates something based on age, a sanity check would be: “Is the entered age a positive number?” “Is the age less than a reasonable maximum (e.g., 120)?”</li>
+<li>Score Input: If inputting a test score expected to be between 0 and 100: “Is the score ≥ 0 AND score ≤ 100?”</li>
+<li>Text Input: If asking for a name: “Is the input text, not a number?” “Is the length of the name reasonable (not empty, not excessively long)?”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Iteration &amp; Selection</strong>
+<ul>
+<li><strong>Selection (Conditional Execution)</strong>:
+<ul>
+<li>Concept: The ability of an algorithm to make decisions and execute different sets of instructions based on whether a certain condition is true or false.</li>
+<li><strong><code>IF-THEN-ELSE</code> Structure</strong>:
+<ul>
+<li>Pseudocode:
+<pre><code>IF (condition) THEN
+    (steps to perform if condition is true)
+ELSE
+    (steps to perform if condition is false)
+ENDIF
+</code></pre>
+</li>
+<li>Example: Determine if a number is positive or non-positive.
+<pre><code>GET number
+IF (number > 0) THEN
+    DISPLAY &quot;Number is positive&quot;
+ELSE
+    DISPLAY &quot;Number is zero or negative&quot;
+ENDIF
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong><code>IF-THEN</code> Structure</strong>: Used when actions are only taken if a condition is true, with no alternative actions if false.
+<ul>
+<li>Pseudocode:
+<pre><code>IF (condition) THEN
+    (steps to perform if condition is true)
+ENDIF
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Nested IF Statements</strong>: An IF statement inside another IF statement, allowing for more complex decision-making.
+Example:
+<pre><code>IF (temperature > 30) THEN
+    DISPLAY &quot;It's hot.&quot;
+    IF (humidity > 80) THEN
+        DISPLAY &quot;It's also humid!&quot;
+    ENDIF
+ELSE
+    DISPLAY &quot;It's not hot.&quot;
+ENDIF
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Logical Conditions and Operators</strong>:
+<ul>
+<li>Boolean Values: Represent truth values - <code>TRUE</code> or <code>FALSE</code>. Conditions in IF statements evaluate to a Boolean value.</li>
+<li>Comparison Operators: Used to compare values.
+<ul>
+<li><code>></code> (greater than), <code>&lt;</code> (less than)</li>
+<li><code>>=</code> (greater than or equal to), <code>&lt;=</code> (less than or equal to)</li>
+<li><code>==</code> (equal to), <code>!=</code> (not equal to)</li>
+</ul>
+</li>
+<li>Logical Operators: Combine or modify Boolean conditions.
+<ul>
+<li><code>AND</code>: <code>(condition1 AND condition2)</code> is <code>TRUE</code> only if <em>both</em> condition1 and condition2 are <code>TRUE</code>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>cond1</th><th>cond2</th><th>cond1 AND cond2</th></tr></thead><tbody><tr><td>TRUE</td><td>TRUE</td><td>TRUE</td></tr><tr><td>TRUE</td><td>FALSE</td><td>FALSE</td></tr><tr><td>FALSE</td><td>TRUE</td><td>FALSE</td></tr><tr><td>FALSE</td><td>FALSE</td><td>FALSE</td></tr></tbody></table></div>
+</li>
+<li><code>OR</code>: <code>(condition1 OR condition2)</code> is <code>TRUE</code> if <em>at least one</em> of condition1 or condition2 is <code>TRUE</code>.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>cond1</th><th>cond2</th><th>cond1 OR cond2</th></tr></thead><tbody><tr><td>TRUE</td><td>TRUE</td><td>TRUE</td></tr><tr><td>TRUE</td><td>FALSE</td><td>TRUE</td></tr><tr><td>FALSE</td><td>TRUE</td><td>TRUE</td></tr><tr><td>FALSE</td><td>FALSE</td><td>FALSE</td></tr></tbody></table></div>
+</li>
+<li><code>NOT</code>: <code>(NOT condition1)</code> reverses the truth value of condition1. If condition1 is <code>TRUE</code>, <code>NOT condition1</code> is <code>FALSE</code>, and vice-versa.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Iteration (Repetition/Looping)</strong>:
+<ul>
+<li>Concept: Repeating a block of instructions multiple times until a certain condition is met or for a predetermined number of repetitions.</li>
+<li>Types of Loops (Conceptual):
+<ul>
+<li><strong>Count-Controlled Loops (<code>FOR</code> style)</strong>: Used when you know in advance how many times you want to repeat the loop.
+<ul>
+<li>Structure (Conceptual Pseudocode):
+<pre><code>FOR counter FROM start_value TO end_value [STEP step_increment] DO
+    (steps to perform in each iteration)
+ENDFOR
+</code></pre>
+</li>
+<li><code>counter</code> is a variable that changes with each iteration.</li>
+<li><code>step_increment</code> is often 1 by default.</li>
+<li>Example: Print “Hello” 5 times.
+<pre><code>FOR count FROM 1 TO 5 DO
+    DISPLAY &quot;Hello&quot;
+ENDFOR
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Condition-Controlled Loops (<code>WHILE</code> style)</strong>: Used when the repetition continues as long as a specified condition remains true. The number of iterations might not be known beforehand.
+<ul>
+<li>Structure (Conceptual Pseudocode):
+<pre><code>WHILE (condition is TRUE) DO
+    (steps to perform in each iteration)
+    (ensure something inside the loop can change the condition to FALSE eventually)
+ENDWHILE
+</code></pre>
+</li>
+<li>Caution: If the condition never becomes false, an <em>infinite loop</em> occurs.</li>
+<li>Example: Sum numbers entered by a user until they enter 0.
+<pre><code>SET total_sum TO 0
+GET number
+WHILE (number != 0) DO
+    total_sum = total_sum + number
+    GET number
+ENDWHILE
+DISPLAY total_sum
+</code></pre>
+</li>
+</ul>
+</li>
+<li><code>DO-WHILE</code> style (execute once, then check condition):
+<pre><code>DO
+    (steps to perform)
+WHILE (condition is TRUE)
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Filtering Items with Conditions</strong>:
+<ul>
+<li>Combining iteration and selection to process a collection of items (e.g., a list of numbers, a set of student records) and perform an action only on those items that satisfy a specific condition.</li>
+<li>Example: Given a list of numbers: [10, 7, 4, 15, 3, 8]. Print only numbers greater than 5.
+<ul>
+<li>Algorithm idea:
+<ol>
+<li>For each <code>num</code> in the list:</li>
+<li><code>IF (num > 5) THEN</code></li>
+<li><code>  DISPLAY num</code></li>
+<li><code>ENDIF</code></li>
+</ol>
+</li>
+<li>This involves iterating through the list and applying a selection (IF condition) to each item.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Basic Pseudocode Conventions</strong>:
+<ul>
+<li>Purpose: An intermediate step between an idea/flowchart and actual programming code. It uses plain language mixed with common programming structures to describe an algorithm’s logic clearly and unambiguously, without worrying about the strict syntax of a specific programming language.</li>
+<li>Common Keywords/Structures:
+<ul>
+<li>Input: <code>READ age</code>, <code>GET name</code>, <code>INPUT score</code></li>
+<li>Output: <code>PRINT result</code>, <code>DISPLAY message</code>, <code>WRITE total</code></li>
+<li>Processing/Assignment: <code>SET count TO 0</code>, <code>CALCULATE average = sum / count</code>, <code>variable = expression</code></li>
+<li>Selection: <code>IF (condition) THEN ... ELSE ... ENDIF</code></li>
+<li>Iteration: <code>FOR counter FROM start TO end DO ... ENDFOR</code>, <code>WHILE (condition) DO ... ENDWHILE</code>, <code>DO ... WHILE (condition)</code></li>
+<li>Procedure/Function calls: <code>CALL MyProcedure(argument)</code></li>
+<li>Keywords should be clear (often capitalized for distinction).</li>
+<li>Indentation is crucial to show blocks of code within loops, selections, etc., enhancing readability.</li>
+<li>Comments: Use <code>//</code> or <code>/* ... */</code> or <code>REM</code> (remark) to add explanations that are not part of the algorithm itself.</li>
+</ul>
+</li>
+<li>Example: Pseudocode for finding the largest of two numbers.
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="pseudocode" data-theme="github-light github-dark"><code data-language="pseudocode" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>// Algorithm to find the largest of two numbers</span></span>
+<span data-line><span>START</span></span>
+<span data-line><span>    READ num1</span></span>
+<span data-line><span>    READ num2</span></span>
+<span data-line> </span>
+<span data-line><span>    IF (num1 > num2) THEN</span></span>
+<span data-line><span>        DISPLAY num1 + &quot; is larger.&quot;</span></span>
+<span data-line><span>    ELSE IF (num2 > num1) THEN</span></span>
+<span data-line><span>        DISPLAY num2 + &quot; is larger.&quot;</span></span>
+<span data-line><span>    ELSE</span></span>
+<span data-line><span>        DISPLAY &quot;Both numbers are equal.&quot;</span></span>
+<span data-line><span>    ENDIF</span></span>
+<span data-line><span>END</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Multiple Iterations</strong>
+<ul>
+<li><strong>Recap of Boolean Logic (AND/OR/NOT)</strong>:
+<ul>
+<li><code>AND</code>: True if all conditions are true. (e.g., <code>age >= 18 AND has_license == TRUE</code>)</li>
+<li><code>OR</code>: True if at least one condition is true. (e.g., <code>is_weekend == TRUE OR is_holiday == TRUE</code>)</li>
+<li><code>NOT</code>: Reverses the truth value. (e.g., <code>NOT is_member == TRUE</code> is same as <code>is_member == FALSE</code>)</li>
+<li>Truth Tables are useful for understanding combinations.</li>
+<li>De Morgan’s Laws (Optional but powerful for simplifying complex conditions):
+<ul>
+<li><code>NOT (A AND B)</code> is equivalent to <code>(NOT A) OR (NOT B)</code></li>
+<li><code>NOT (A OR B)</code> is equivalent to <code>(NOT A) AND (NOT B)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Procedures (Functions/Subroutines - Conceptual)</strong>:
+<ul>
+<li>Concept: A self-contained, named block of instructions designed to perform a specific, well-defined task. Procedures can be “called” (or “invoked”) from other parts of an algorithm to execute their task.</li>
+<li>Benefits:
+<ul>
+<li>Modularity: Helps break down large, complex problems into smaller, simpler, more manageable sub-problems. Each procedure handles one sub-problem.</li>
+<li>Reusability: A procedure can be written once and called multiple times with different inputs, avoiding code duplication.</li>
+<li>Readability &amp; Maintainability: Makes algorithms easier to understand by abstracting away details. Changes to a specific task only need to be made within its procedure.</li>
+</ul>
+</li>
+<li>Defining a Procedure (Conceptual Pseudocode):
+<pre><code>PROCEDURE ProcedureName (parameter1, parameter2, ...)
+    (Instructions to perform the task)
+    [RETURN value] // Optional: some procedures return a value
+ENDPROCEDURE
+</code></pre>
+</li>
+<li>Calling a Procedure (Conceptual Pseudocode):
+<pre><code>CALL ProcedureName (argument1, argument2, ...)
+// or if it returns a value:
+// SET result_variable TO ProcedureName (argument1, argument2, ...)
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Parameters and Arguments</strong>:
+<ul>
+<li>Parameters: Variables declared in the procedure definition. They act as placeholders for the values that will be passed into the procedure when it is called. Example: In <code>PROCEDURE Add (num1, num2)</code>, <code>num1</code> and <code>num2</code> are parameters.</li>
+<li>Arguments: The actual values or variables that are passed to a procedure when it is called. Example: In <code>CALL Add (5, 7)</code>, <code>5</code> and <code>7</code> are arguments.</li>
+<li>Analogy: A recipe (procedure) might say “add <code>amount_of_sugar</code> (parameter)“. When you bake (call), you use “1 cup of sugar” (argument).</li>
+<li>Pass-by-value (Conceptual): A copy of the argument’s value is passed to the parameter. Changes to the parameter inside the procedure do not affect the original argument outside the procedure. (Common default).</li>
+<li>Pass-by-reference (Conceptual): The procedure gets direct access to the original argument (e.g., its memory location). Changes to the parameter inside the procedure <em>do</em> affect the original argument.</li>
+</ul>
+</li>
+<li><strong>Side Effects of Mutation</strong>:
+<ul>
+<li>Mutation: The act of changing the state or value of a variable after it has been created.</li>
+<li>Side Effect: A procedure has a side effect if it modifies some state outside its local environment, other than by returning a value. This includes modifying global variables or variables passed by reference.</li>
+<li>Importance: While sometimes necessary, unintended side effects can make algorithms difficult to understand, trace, and debug because a procedure might change things in unexpected places.</li>
+<li>Example:
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="pseudocode" data-theme="github-light github-dark"><code data-language="pseudocode" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>// Global variable</span></span>
+<span data-line><span>SET total_items TO 0</span></span>
+<span data-line> </span>
+<span data-line><span>PROCEDURE AddItem (item_value)</span></span>
+<span data-line><span>    // This procedure has a side effect: it modifies global_total</span></span>
+<span data-line><span>    SET total_items TO total_items + item_value</span></span>
+<span data-line><span>ENDPROCEDURE</span></span>
+<span data-line> </span>
+<span data-line><span>CALL AddItem(10) // total_items becomes 10</span></span>
+<span data-line><span>CALL AddItem(5)  // total_items becomes 15</span></span></code></pre></figure>
+It’s often preferred for procedures to operate on inputs (parameters) and produce outputs (return values) without other side effects, promoting “functional purity” in some contexts.</li>
+</ul>
+</li>
+<li><strong>The “Three Prizes Problem” (Illustrative Example for Logic/Iteration)</strong>:
+<ul>
+<li>Problem: “You have three distinct prizes (Prize1, Prize2, Prize3) to award to three distinct people (Alice, Bob, Carol). Each person can only receive one prize. List all possible ways to award the prizes.”</li>
+<li>Manual Thought Process / Algorithmic Steps:
+<ol>
+<li>Consider Prize1: It can be given to Alice, Bob, or Carol (3 choices).</li>
+<li>IF Prize1 goes to Alice:
+THEN Prize2 can go to Bob or Carol (2 choices).
+IF Prize2 goes to Bob, THEN Prize3 must go to Carol (1 choice). (Alice-Prize1, Bob-Prize2, Carol-Prize3)
+IF Prize2 goes to Carol, THEN Prize3 must go to Bob (1 choice). (Alice-Prize1, Carol-Prize2, Bob-Prize3)</li>
+<li>IF Prize1 goes to Bob:
+THEN Prize2 can go to Alice or Carol (2 choices).
+… and so on.</li>
+</ol>
+<ul>
+<li>This involves careful iteration through possibilities and ensuring constraints (one prize per person) are met. This is a permutation problem P(3,3) = 3! = 6 ways.</li>
+<li>This problem helps illustrate how one might systematically list possibilities, perhaps using iteration or a decision tree structure in one’s mind.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Distinction between Multiple Separate Iterations vs. Nested Iterations</strong>:
+<ul>
+<li>Multiple Separate Iterations: Involve two or more loops that execute one after another. The first loop completes all its iterations before the second loop begins.
+<ul>
+<li>Example:
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="pseudocode" data-theme="github-light github-dark"><code data-language="pseudocode" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>// First loop: Process items in ListA</span></span>
+<span data-line><span>FOR each_itemA IN ListA DO</span></span>
+<span data-line><span>    DISPLAY itemA</span></span>
+<span data-line><span>ENDFOR</span></span>
+<span data-line> </span>
+<span data-line><span>// Second loop: Process items in ListB (starts after first loop finishes)</span></span>
+<span data-line><span>FOR each_itemB IN ListB DO</span></span>
+<span data-line><span>    DISPLAY itemB</span></span>
+<span data-line><span>ENDFOR</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+<li>Nested Iterations (covered in Week 4): Involve one loop entirely contained within another loop. The inner loop completes all its iterations for <em>each single</em> iteration of the outer loop.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Nested Iterations</strong>
+<ul>
+<li><strong>Nested Iterations (Loops inside Loops)</strong>:
+<ul>
+<li>Concept: A control structure where one loop (the “inner loop”) is placed inside the body of another loop (the “outer loop”). The inner loop executes completely for each single iteration of the outer loop.</li>
+<li>Structure Example (Pseudocode):
+<pre><code>FOR i FROM 1 TO OuterLimit DO       // Outer loop
+    (Outer loop statements - execute OuterLimit times)
+    FOR j FROM 1 TO InnerLimit DO   // Inner loop
+        (Inner loop statements - execute InnerLimit times for EACH outer iteration)
+        // Total executions of this block: OuterLimit * InnerLimit
+    ENDFOR
+    (More outer loop statements)
+ENDFOR
+</code></pre>
+</li>
+<li>Analogy:
+<ul>
+<li>Clock: The hour hand (outer loop) moves from 1 to 12. For each hour, the minute hand (inner loop) moves from 0 to 59 minutes.</li>
+<li>Calendar: Iterating through months of a year (outer loop), and for each month, iterating through its days (inner loop).</li>
+<li>Grid/Table: To process each cell in a grid, you might iterate through each row (outer loop), and for each row, iterate through each column (inner loop).</li>
+</ul>
+</li>
+<li>Examples:
+<ul>
+<li>Printing a 3x3 grid of asterisks:
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="pseudocode" data-theme="github-light github-dark"><code data-language="pseudocode" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>FOR row FROM 1 TO 3 DO</span></span>
+<span data-line><span>    FOR col FROM 1 TO 3 DO</span></span>
+<span data-line><span>        PRINT &quot;*&quot; (on the same line)</span></span>
+<span data-line><span>    ENDFOR</span></span>
+<span data-line><span>    PRINT newline // Move to the next line after each row</span></span>
+<span data-line><span>ENDFOR</span></span></code></pre></figure>
+Output:
+<hr/>
+<hr/>
+<hr/>
+</li>
+<li>Finding all pairs of students from a class list to form a team of two (order doesn’t matter for the pair itself, but the loops help generate unique pairs).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Birthday Paradox (Conceptual Simulation/Logic)</strong>:
+<ul>
+<li>Problem Statement: In a group of N people, what’s the likelihood that at least two people share the same birthday (day and month)? (It’s surprisingly high for relatively small N).</li>
+<li>Computational Thinking Approach (Manual Simulation Logic):
+<ol>
+<li>Imagine you have a list of N people’s birthdays.</li>
+<li>To find a match:
+<ul>
+<li>Take the first person’s birthday.</li>
+<li>Compare it with the second person’s birthday. If it matches, you found a pair.</li>
+<li>If not, compare it with the third person’s birthday, and so on, up to the Nth person.</li>
+<li>(This is the outer loop selecting person <code>i</code>)</li>
+</ul>
+</li>
+<li>If no match was found for the first person, take the second person’s birthday.</li>
+<li>Compare it with the third person’s birthday (no need to compare with the first again, as that was already done).</li>
+<li>Continue comparing with the fourth, …, Nth person.</li>
+<li>(This is the inner loop selecting person <code>j</code>, where <code>j</code> starts from <code>i+1</code>)</li>
+</ol>
+<ul>
+<li>This thought process involves a nested comparison:
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="pseudocode" data-theme="github-light github-dark"><code data-language="pseudocode" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>FOR i FROM 1 TO N-1 DO  // Select the first person</span></span>
+<span data-line><span>    FOR j FROM i+1 TO N DO // Select the second person (must be different from the first)</span></span>
+<span data-line><span>        IF (birthday[i] == birthday[j]) THEN</span></span>
+<span data-line><span>            DISPLAY &quot;Match found between person &quot; + i + &quot; and person &quot; + j</span></span>
+<span data-line><span>            // Could stop or count matches</span></span>
+<span data-line><span>        ENDIF</span></span>
+<span data-line><span>    ENDFOR</span></span>
+<span data-line><span>ENDFOR</span></span></code></pre></figure>
+</li>
+<li>The focus here is on the nested iteration logic required to compare all unique pairs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Binning Data into Ranges</strong>:
+<ul>
+<li>Concept: Categorizing numerical data into predefined intervals or “bins”.</li>
+<li>Example: Given exam scores [85, 92, 75, 68, 90, 78, 72, 88, 61, 55], bin them into:
+<ul>
+<li>A: 80-100</li>
+<li>B: 70-79</li>
+<li>C: 60-69</li>
+<li>D: 50-59</li>
+<li>F: 0-49</li>
+</ul>
+</li>
+<li>Algorithmic Approach (using a single loop over data and IF-ELSEIF for bins):
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="pseudocode" data-theme="github-light github-dark"><code data-language="pseudocode" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>DECLARE scores = [85, 92, 75, 68, 90, 78, 72, 88, 61, 55]</span></span>
+<span data-line><span>DECLARE countA = 0, countB = 0, countC = 0, countD = 0, countF = 0</span></span>
+<span data-line> </span>
+<span data-line><span>FOR each score IN scores DO</span></span>
+<span data-line><span>    IF (score >= 80 AND score &lt;= 100) THEN</span></span>
+<span data-line><span>        INCREMENT countA</span></span>
+<span data-line><span>    ELSE IF (score >= 70 AND score &lt;= 79) THEN</span></span>
+<span data-line><span>        INCREMENT countB</span></span>
+<span data-line><span>    ELSE IF (score >= 60 AND score &lt;= 69) THEN</span></span>
+<span data-line><span>        INCREMENT countC</span></span>
+<span data-line><span>    ELSE IF (score >= 50 AND score &lt;= 59) THEN</span></span>
+<span data-line><span>        INCREMENT countD</span></span>
+<span data-line><span>    ELSE IF (score >= 0 AND score &lt;= 49) THEN</span></span>
+<span data-line><span>        INCREMENT countF</span></span>
+<span data-line><span>    ENDIF</span></span>
+<span data-line><span>ENDFOR</span></span>
+<span data-line> </span>
+<span data-line><span>DISPLAY &quot;Grade A: &quot; + countA</span></span>
+<span data-line><span>DISPLAY &quot;Grade B: &quot; + countB</span></span>
+<span data-line><span>// ... and so on</span></span></code></pre></figure>
+<ul>
+<li>While this example uses a single loop over the data items, the process of checking against multiple bin conditions is a form of case analysis. Nested loops <em>could</em> be used if, for instance, you had a list of bin definitions and iterated through bins for each score, but the IF-ELSEIF is more direct here.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Complexity Considerations (Introduction - Algorithmic Efficiency)</strong>:
+<ul>
+<li>Concept: An informal understanding of how the number of steps an algorithm takes (its “running time”) or the amount of memory it uses grows as the size of its input grows.</li>
+<li>Why it matters: An algorithm that is efficient will run faster and use less memory, especially for large inputs. An inefficient algorithm might become too slow to be useful.</li>
+<li>Nested Loops Impact: Nested loops are a common way algorithms become less efficient.
+<ul>
+<li>If an outer loop runs N times, and for each of those N times, an inner loop also runs N times, then the statements inside the inner loop will execute N * N = N² times.</li>
+<li>Example: The Birthday Paradox simulation logic above has an outer loop that runs roughly N times and an inner loop that also runs roughly N times. This leads to approximately N² comparisons. If N=100 people, that’s about 100*100 = 10,000 comparisons. If N=1000, it’s 1,000,000 comparisons. The work grows much faster than N.</li>
+</ul>
+</li>
+<li>Simple Examples of “Order”:
+<ul>
+<li>Algorithm with one loop iterating N times: Roughly N steps. We might say it’s “Order N”.</li>
+<li>Algorithm with two nested loops, each iterating N times: Roughly N² steps. “Order N-squared”.</li>
+</ul>
+</li>
+<li>Goal: Generally, we prefer algorithms with a lower order of growth (e.g., Order N is better than Order N-squared for large N). This is a very early, intuitive introduction to a concept formally known as “Big O notation.”</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Lists</strong>
+<ul>
+<li><strong>Introduction to Collections/Data Structures</strong>:
+<ul>
+<li>Why we need them: Algorithms often need to work with groups of related data items. Data structures provide ways to organize, store, and manage these collections efficiently.</li>
+<li>Analogy: A shopping list helps organize items you need to buy. A phone book organizes contacts. A library’s card catalog organizes books.</li>
+</ul>
+</li>
+<li><strong>Lists (Arrays/Sequences - Conceptual)</strong>:
+<ul>
+<li>Definition: A list is an ordered collection of items, called elements. The order of elements is preserved.</li>
+<li>Properties:
+<ul>
+<li>Ordered: Elements are stored in a specific sequence. The position of each element matters.</li>
+<li>Indexed: Each element in a list can be accessed by its position, called an index. Indices usually start from 0 (for the first element) or 1. Example: If <code>my_list = [&quot;apple&quot;, &quot;banana&quot;, &quot;cherry&quot;]</code>, then <code>my_list[0]</code> could be “apple” and <code>my_list[1]</code> could be “banana”.</li>
+<li>Dynamic Size (Conceptual): For computational thinking, we often imagine lists as being flexible; they can grow when new items are added or shrink when items are removed. (Some programming languages have fixed-size arrays, while others have dynamic lists/arrays).</li>
+<li>Element Types: A list can contain items of the same type (e.g., a list of numbers) or sometimes mixed types (e.g., a list containing a number, some text, and a true/false value), though often lists of the same type are easier to reason about.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Common List Operations (Conceptual - how one would manually think about them)</strong>:
+<ul>
+<li>Creating a list: Defining a new list with some initial items. E.g., <code>SET shopping_list TO [&quot;milk&quot;, &quot;eggs&quot;, &quot;bread&quot;]</code>.</li>
+<li>Accessing elements: Getting the value of an item at a specific index. E.g., “What is the second item on my shopping list?” <span>→</span> Access <code>shopping_list[1]</code> (if 0-indexed).</li>
+<li>Updating elements: Changing the value of an item at a specific index. E.g., “Change the second item on my shopping list from ‘eggs’ to ‘butter’.” <span>→</span> <code>SET shopping_list[1] TO &quot;butter&quot;</code>.</li>
+<li>Adding elements:
+<ul>
+<li>Append: Adding a new item to the end of the list. E.g., “Add ‘cheese’ to my shopping list.”</li>
+<li>Insert: Adding a new item at a specific position/index in the list, shifting subsequent items. E.g., “Insert ‘juice’ as the new second item.”</li>
+</ul>
+</li>
+<li>Removing elements:
+<ul>
+<li>Remove from end: Deleting the last item.</li>
+<li>Remove at index: Deleting the item at a specific position, shifting subsequent items.</li>
+</ul>
+</li>
+<li>Finding the length: Determining how many items are currently in the list. E.g., “How many items are on my shopping list?”</li>
+<li>Iterating through a list: Processing each element in the list one by one, from the first to the last. This is typically done using a loop.
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="pseudocode" data-theme="github-light github-dark"><code data-language="pseudocode" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>FOR EACH item IN my_list DO</span></span>
+<span data-line><span>    // Do something with 'item'</span></span>
+<span data-line><span>    DISPLAY item</span></span>
+<span data-line><span>ENDFOR</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+<li><strong>Using Lists to Store Dynamic Data</strong>:
+<ul>
+<li>Examples:
+<ul>
+<li>Storing a list of scores entered by a user, where you don’t know beforehand how many scores will be entered.</li>
+<li>Keeping track of tasks in a to-do list; tasks can be added or removed.</li>
+<li>Managing a queue of customers waiting for service.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Searching in a List (Linear Search - Manual Walkthrough)</strong>:
+<ul>
+<li>Problem: Given a list and a target value, determine if the target value exists in the list. If it does, optionally return its position (index).</li>
+<li>Algorithm (Linear Search):
+<ol>
+<li>START with the first item in the list (e.g., at index 0).</li>
+<li>COMPARE the current item with the target value.</li>
+<li>IF they are the same, THEN the target is found. STOP and report “Found” (and its index).</li>
+<li>IF they are not the same, MOVE to the next item in the list.</li>
+<li>IF there are no more items to check (i.e., you’ve reached the end of the list), THEN the target is not in the list. STOP and report “Not found”.</li>
+</ol>
+</li>
+<li>Trace Example: <code>my_list = [10, 30, 5, 15, 20]</code>, <code>target = 15</code>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="table-container"><table><thead><tr><th>Current Item</th><th>Index</th><th>Compare with 15?</th><th>Result</th></tr></thead><tbody><tr><td>10</td><td>0</td><td>No</td><td>Continue</td></tr><tr><td>30</td><td>1</td><td>No</td><td>Continue</td></tr><tr><td>5</td><td>2</td><td>No</td><td>Continue</td></tr><tr><td>15</td><td>3</td><td>Yes</td><td>Found at index 3</td></tr></tbody></table></div>
+</li>
+</ul>
+</li>
+<li><strong>Sorting a List (Introduction)</strong>:
+<ul>
+<li>Why sort?: Arranging items in a list into a specific order (e.g., ascending or descending for numbers, alphabetical for text).</li>
+<li>Benefits: Makes searching for items much faster (e.g., enabling binary search), helps in identifying duplicates, makes data easier to read and analyze, useful for finding min/max values.</li>
+</ul>
+</li>
+<li><strong>Insertion Sort (Manual Walkthrough)</strong>:
+<ul>
+<li>Concept: A simple sorting algorithm that builds the final sorted list one item at a time. It iterates through the input elements and, for each element, it inserts it into its correct position within the already sorted portion of the list.</li>
+<li>Analogy: How many people sort a hand of playing cards. You pick up cards one by one. For each new card, you insert it into the correct position relative to the cards you are already holding (which are already sorted).</li>
+<li>Algorithm Steps (High-level for manual trace):
+<ol>
+<li>Start with the second element of the list (assume the first element by itself is a “sorted sublist” of one).</li>
+<li>Pick the current element (let’s call it <code>key</code>).</li>
+<li>Compare <code>key</code> with the elements in the sorted sublist to its left, moving from right to left.</li>
+<li>While an element in the sorted sublist is greater than <code>key</code>, shift that element one position to the right to make space.</li>
+<li>Insert <code>key</code> into the now-empty slot where it belongs.</li>
+<li>Repeat steps 2-5 for all remaining unsorted elements.</li>
+</ol>
+</li>
+<li>Detailed Trace: Example list <code>[5, 1, 4, 2, 8]</code>
+<ul>
+<li><strong>Initial:</strong> <code>[5, 1, 4, 2, 8]</code> (Sorted part considered <code>[5]</code>)</li>
+<li><strong>Pass 1 (consider element <code>1</code>):</strong>
+<ul>
+<li><code>key = 1</code>. Compare <code>1</code> with <code>5</code>. <code>5 > 1</code>, so shift <code>5</code> right: <code>[_, 5, 4, 2, 8]</code></li>
+<li>Insert <code>1</code>: <code>[1, 5, 4, 2, 8]</code> (Sorted part: <code>[1, 5]</code>)</li>
+</ul>
+</li>
+<li><strong>Pass 2 (consider element <code>4</code>):</strong>
+<ul>
+<li><code>key = 4</code>. Compare <code>4</code> with <code>5</code>. <code>5 > 4</code>, so shift <code>5</code> right: <code>[1, _, 5, 2, 8]</code></li>
+<li>Compare <code>4</code> with <code>1</code>. <code>1 &lt; 4</code>, so insert <code>4</code> in the empty slot: <code>[1, 4, 5, 2, 8]</code> (Sorted part: <code>[1, 4, 5]</code>)</li>
+</ul>
+</li>
+<li><strong>Pass 3 (consider element <code>2</code>):</strong>
+<ul>
+<li><code>key = 2</code>. Compare <code>2</code> with <code>5</code>. <code>5 > 2</code>, shift <code>5</code>: <code>[1, 4, _, 5, 8]</code></li>
+<li>Compare <code>2</code> with <code>4</code>. <code>4 > 2</code>, shift <code>4</code>: <code>[1, _, 4, 5, 8]</code></li>
+<li>Compare <code>2</code> with <code>1</code>. <code>1 &lt; 2</code>, so insert <code>2</code>: <code>[1, 2, 4, 5, 8]</code> (Sorted part: <code>[1, 2, 4, 5]</code>)</li>
+</ul>
+</li>
+<li><strong>Pass 4 (consider element <code>8</code>):</strong>
+<ul>
+<li><code>key = 8</code>. Compare <code>8</code> with <code>5</code>. <code>5 &lt; 8</code>. No shifts needed, <code>8</code> is in place relative to sorted part.</li>
+<li>List remains: <code>[1, 2, 4, 5, 8]</code> (Sorted part: <code>[1, 2, 4, 5, 8]</code>)</li>
+</ul>
+</li>
+<li>List is now sorted.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Tables &amp; Dictionaries</strong>
+<ul>
+<li><strong>Limitations of Lists for Certain Tasks</strong>:
+<ul>
+<li>Searching for a specific item in an unsorted list requires checking each item one by one (linear search), which can be slow for long lists.</li>
+<li>Accessing items is based on numerical position (index). If you want to access an item based on a non-numerical identifier (e.g., finding a person’s phone number by their name), lists are not ideal.</li>
+</ul>
+</li>
+<li><strong>Tables (Conceptual - Key-Value Pairs)</strong>:
+<ul>
+<li>Concept: A data structure that stores a collection of items, where each item consists of a unique <em>key</em> and an associated <em>value</em>. The key is used to look up the value.</li>
+<li>Analogy:
+<ul>
+<li>A physical dictionary: The word (key) is used to look up its definition (value).</li>
+<li>A phone book: A person’s name (key) is used to find their phone number (value).</li>
+<li>Student records: Student ID (key) maps to a record containing all student details (value).</li>
+</ul>
+</li>
+<li>Key Properties:
+<ul>
+<li>Keys must be unique within the table. Each key maps to exactly one value.</li>
+<li>Keys are used for efficient retrieval of their associated values.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Dictionaries (Associative Arrays, Hash Maps, Maps - Conceptual)</strong>:
+<ul>
+<li>These are common terms for the data structure that implements the key-value table concept in computational systems.</li>
+<li>Operations (Conceptual - how one would manually think about them):
+<ul>
+<li>Adding a new key-value pair: <code>STORE key_A WITH value_1 IN my_dictionary</code>. Example: <code>my_dictionary[&quot;apple&quot;] = &quot;a red fruit&quot;</code>.</li>
+<li>Accessing a value: <code>GET value FOR key_A FROM my_dictionary</code>. Example: <code>definition = my_dictionary[&quot;apple&quot;]</code>.</li>
+<li>Updating a value: If the key already exists, assign a new value to it. <code>UPDATE key_A WITH new_value_1 IN my_dictionary</code>. Example: <code>my_dictionary[&quot;apple&quot;] = &quot;a delicious red fruit&quot;</code>.</li>
+<li>Removing a key-value pair: <code>REMOVE entry FOR key_A FROM my_dictionary</code>.</li>
+<li>Checking if a key exists: “Does <code>my_dictionary</code> contain <code>key_A</code>?”</li>
+<li>Iterating: You can iterate through all keys, all values, or all key-value pairs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Hashing Concepts (Simplified Intuition)</strong>:
+<ul>
+<li>Problem: If you have many key-value pairs, how do you quickly find the value for a given key without checking every single key (like in a list)?</li>
+<li>Hash Function: A special function that takes a key as input and computes a numerical value called a “hash code” or simply “hash”. This hash code is then often used to determine an index or position where the key-value pair should be stored in memory (e.g., in an array).</li>
+<li>Analogy: Imagine a large filing cabinet with many drawers. A hash function is like a rule that tells you which drawer to look in based on the key (e.g., for a name, the first letter might tell you the drawer). This is much faster than opening every drawer.</li>
+<li>Ideal Hash Function:
+<ul>
+<li>Deterministic: The same key always produces the same hash code.</li>
+<li>Uniform Distribution: Spreads keys out evenly across possible hash codes/indices to minimize collisions.</li>
+</ul>
+</li>
+<li>Collisions: Occur when two different keys produce the same hash code (i.e., they are mapped to the same storage location/index).
+<ul>
+<li>Brief mention: This is a common issue. Systems have strategies to handle collisions (e.g., storing multiple items at that location in a list, or finding another nearby empty spot). A deep dive into collision resolution is not needed here, just the awareness.</li>
+</ul>
+</li>
+<li>How it helps dictionaries: By using a hash function, dictionaries can typically store and retrieve values very quickly, often in nearly constant time on average, regardless of the number of items.</li>
+</ul>
+</li>
+<li><strong>Dictionary-Based Counting</strong>:
+<ul>
+<li>Problem: Efficiently count the frequency of occurrence of each unique item in a collection (e.g., words in a text, numbers in a list).</li>
+<li>Example: Count occurrences of each fruit in the list <code>[&quot;apple&quot;, &quot;orange&quot;, &quot;apple&quot;, &quot;banana&quot;, &quot;orange&quot;, &quot;apple&quot;]</code>.</li>
+<li>Algorithm using a dictionary (e.g., <code>fruit_counts</code>):
+<ol>
+<li>Initialize an empty dictionary: <code>fruit_counts = {}</code>.</li>
+<li>Iterate through the list of fruits. For each <code>fruit</code>:
+a.  <code>IF fruit IS A KEY IN fruit_counts THEN</code> (check if we’ve seen this fruit before)
+b.    <code>INCREMENT the value (count) associated with fruit_counts[fruit]</code>.
+c.  <code>ELSE</code> (it’s the first time we’ve seen this fruit)
+d.    <code>ADD fruit AS A NEW KEY TO fruit_counts WITH VALUE 1</code>.</li>
+</ol>
+</li>
+<li>Trace:
+<ul>
+<li><code>apple</code>: <code>fruit_counts = {&quot;apple&quot;: 1}</code></li>
+<li><code>orange</code>: <code>fruit_counts = {&quot;apple&quot;: 1, &quot;orange&quot;: 1}</code></li>
+<li><code>apple</code>: <code>fruit_counts[&quot;apple&quot;]</code> becomes 2. <code>fruit_counts = {&quot;apple&quot;: 2, &quot;orange&quot;: 1}</code></li>
+<li><code>banana</code>: <code>fruit_counts = {&quot;apple&quot;: 2, &quot;orange&quot;: 1, &quot;banana&quot;: 1}</code></li>
+<li><code>orange</code>: <code>fruit_counts[&quot;orange&quot;]</code> becomes 2. <code>fruit_counts = {&quot;apple&quot;: 2, &quot;orange&quot;: 2, &quot;banana&quot;: 1}</code></li>
+<li><code>apple</code>: <code>fruit_counts[&quot;apple&quot;]</code> becomes 3. <code>fruit_counts = {&quot;apple&quot;: 3, &quot;orange&quot;: 2, &quot;banana&quot;: 1}</code></li>
+</ul>
+</li>
+<li>Result: <code>{&quot;apple&quot;: 3, &quot;orange&quot;: 2, &quot;banana&quot;: 1}</code>.</li>
+</ul>
+</li>
+<li><strong>When to use Dictionaries vs. Lists</strong>:
+<ul>
+<li>Lists: Use when the order of items is important, and you primarily access items by their numerical position (index). Good for sequences of things.</li>
+<li>Dictionaries: Use when you need to store and retrieve items based on a unique identifier (key) and the order of items is not the primary concern. Excellent for fast lookups, associations, and counting.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Graphs &amp; Matrices</strong>
+<ul>
+<li><strong>Introduction to Graphs (Recap/Introduction)</strong>:
+<ul>
+<li>Definition: A graph G=(V,E) is a structure made of a set of <em>vertices</em> (V) (also called nodes or points) and a set of <em>edges</em> (E) (also called links or arcs) that connect pairs of vertices.</li>
+<li>Purpose: Graphs are used to model relationships and connections between objects or entities.</li>
+<li>Real-world Examples:
+<ul>
+<li>Social networks: People are vertices, friendships/connections are edges.</li>
+<li>Road maps: Cities are vertices, roads between them are edges.</li>
+<li>The internet: Web pages are vertices, hyperlinks are directed edges.</li>
+<li>Task dependencies in a project: Tasks are vertices, an edge from task A to task B means A must be completed before B.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Types of Graphs (Brief Review/Introduction)</strong>:
+<ul>
+<li>Undirected Graph: Edges have no direction (e.g., a friendship between A and B is the same as B and A).</li>
+<li>Directed Graph (Digraph): Edges have a direction (e.g., a one-way street, a hyperlink from page A to page B).</li>
+<li>Weighted Graph: Each edge has an associated numerical value called a weight (e.g., distance between cities, cost of a flight).</li>
+<li>Unweighted Graph: Edges do not have weights (or all weights are implicitly 1).</li>
+</ul>
+</li>
+<li><strong>Representing Relationships with Graphs</strong>:
+<ul>
+<li>Think about a scenario: “Friendship network”. Vertices = people. Edge exists if two people are friends.</li>
+<li>Scenario: “Course prerequisites”. Vertices = courses. Directed edge from Course A to Course B if A is a prerequisite for B.</li>
+</ul>
+</li>
+<li><strong>Matrix Representations of Graphs</strong>:
+<ul>
+<li><strong>Adjacency Matrix</strong>:
+<ul>
+<li>Definition: A square matrix A of size V x V (where V is the number of vertices). The rows and columns are typically labeled by the vertices.</li>
+<li>For an unweighted graph: <code>A[i][j] = 1</code> if there is an edge connecting vertex <code>i</code> to vertex <code>j</code>. <code>A[i][j] = 0</code> if there is no direct edge.</li>
+<li>For a directed graph, <code>A[i][j] = 1</code> means an edge from <code>i</code> to <code>j</code>.</li>
+<li>For an undirected graph, the matrix is symmetric (i.e., <code>A[i][j] = A[j][i]</code>).</li>
+<li>If loops (edges from a vertex to itself) are allowed, <code>A[i][i]</code> can be 1.</li>
+<li>Example: Graph: Vertices {1,2,3}. Edges: (1,2), (2,3), (1,3) (undirected)
+Adjacency Matrix:
+<pre><code>  1 2 3
+1[0 1 1]
+2[1 0 1]
+3[1 1 0]
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Adjacency List Representation of Graphs</strong>:
+<ul>
+<li>Definition: An array (or list) of lists. For each vertex <code>v</code>, <code>AdjacencyList[v]</code> stores a list of all vertices that are adjacent to <code>v</code> (i.e., directly connected by an edge).</li>
+<li>For weighted graphs, the list can store pairs: (adjacent_vertex, weight_of_edge).</li>
+<li>Example (same graph as above): Vertices {1,2,3}. Edges: (1,2), (2,3), (1,3)
+Adjacency List:
+<code>1: [2, 3]</code>
+<code>2: [1, 3]</code>
+<code>3: [1, 2]</code></li>
+</ul>
+</li>
+<li><strong>Adjacency Matrix vs. Adjacency List</strong>:
+<ul>
+<li><strong>Space Usage</strong>:
+<ul>
+<li>Matrix: Requires V<sup>2</sup> space. If the graph has many vertices but few edges (sparse graph), most of the matrix will be zeros, wasting space.</li>
+<li>List: Requires space proportional to V + E (number of vertices + number of edges). More space-efficient for sparse graphs.</li>
+</ul>
+</li>
+<li><strong>Time for Common Operations</strong>:
+<ul>
+<li>Check if an edge exists between vertex <code>u</code> and <code>v</code>:
+<ul>
+<li>Matrix: O(1) - just look up <code>Matrix[u][v]</code>.</li>
+<li>List: O(degree(u)) in the worst case - need to scan the list for <code>u</code>.</li>
+</ul>
+</li>
+<li>Find all neighbors of a vertex <code>u</code>:
+<ul>
+<li>Matrix: O(V) - need to scan the entire row for <code>u</code>.</li>
+<li>List: O(degree(u)) - just iterate through the list for <code>u</code>.</li>
+</ul>
+</li>
+<li>Adding an edge: Matrix O(1). List O(1) (add to end of list).</li>
+<li>Removing an edge: Matrix O(1). List O(degree(u)) or O(degree(v)).</li>
+</ul>
+</li>
+<li><strong>Preference</strong>:
+<ul>
+<li>Adjacency Matrix: Better for dense graphs (many edges, E approaching V<sup>2</sup>) or when you need to frequently and quickly check for specific edges.</li>
+<li>Adjacency List: Better for sparse graphs (few edges, E closer to V), which are common in many real-world scenarios. Most graph algorithms run more efficiently with adjacency lists on sparse graphs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Simple Graph Algorithms (Conceptual Walkthroughs)</strong>:
+<ul>
+<li><strong>Finding the Degree of a Vertex (Undirected Graph)</strong>:
+<ul>
+<li>Using Adjacency Matrix: Sum all the 1s in the row (or column) corresponding to that vertex.</li>
+<li>Using Adjacency List: Count the number of elements in the list for that vertex.</li>
+</ul>
+</li>
+<li><strong>Checking if a Graph is Connected (Undirected Graph - Intuitive Idea)</strong>:
+<ul>
+<li>Concept: A graph is connected if there is a path between every pair of distinct vertices.</li>
+<li>Manual Check (Small Graphs): Start at any vertex. Can you “walk” along edges to reach every other vertex? If yes for all starting vertices, it’s connected.</li>
+<li>This introduces the idea of graph traversal (like BFS or DFS, which are formal algorithms for this, possibly covered later or in BSMA1001). The core idea is systematically exploring the graph.</li>
+</ul>
+</li>
+<li><strong>Counting Number of Edges</strong>:
+<ul>
+<li>Using Adjacency Matrix (Undirected): Sum all the 1s in the matrix and divide by 2 (since each edge is counted twice, e.g., A[i][j] and A[j][i]). For directed, just sum all 1s.</li>
+<li>Using Adjacency List (Undirected): Sum the lengths of all the adjacency lists and divide by 2. For directed, sum the lengths of all lists.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Adjacency Matrices (Deeper Dive / Applications)</strong>
+<ul>
+<li><strong>Review Adjacency Matrix</strong>:
+<ul>
+<li>Structure: V x V matrix, A[i][j] indicates connection from i to j.</li>
+<li>Symmetry for undirected graphs.</li>
+</ul>
+</li>
+<li><strong>Storing Weighted Edges in Adjacency Matrix</strong>:
+<ul>
+<li>Modification: Instead of just 0 (no edge) or 1 (edge exists), the cell <code>A[i][j]</code> stores the actual weight <code>w_ij</code> of the edge from vertex <code>i</code> to vertex <code>j</code>.</li>
+<li>If no edge exists between <code>i</code> and <code>j</code>:
+<ul>
+<li>Store 0: If edge weights are strictly positive. However, this can be ambiguous if an edge could legitimately have a weight of 0.</li>
+<li>Store a special value like ∞ (infinity) or a very large number: Often used in shortest path algorithms where you want to represent non-existent paths as having infinite cost initially.</li>
+<li>Store a sentinel value like -1 (if weights are non-negative).</li>
+</ul>
+</li>
+<li>Example: A road network graph where vertices are cities and edge weights are distances.
+Graph: A —(10km)<span>⇒</span> B, B —(5km)<span>⇒</span> C, A —(20km)<span>⇒</span> C
+Weighted Adjacency Matrix (using 0 for no direct path, assuming positive weights):
+<pre><code>  A  B  C
+A[0 10 20]
+B[0  0  5]  // Assuming directed or A-B already listed
+C[0  0  0]
+</code></pre>
+If undirected and A-B means B-A:
+<pre><code>  A  B  C
+A[0 10 20]
+B[10 0  5]
+C[20 5  0]
+</code></pre>
+</li>
+</ul>
+</li>
+<li><strong>Exploring Edge-Labelled Graphs (Conceptually)</strong>:
+<ul>
+<li>Concept: Sometimes, edges have qualitative attributes (labels or types) in addition to or instead of numerical weights.</li>
+<li>Example: A transportation network where an edge between cities could be labeled “Train,” “Bus,” or “Flight,” and each might have a different associated cost or time (weight).</li>
+<li>Representing with Adjacency Matrix (Challenges/Approaches):
+<ul>
+<li>Standard adjacency matrix is designed for a single numerical value (0/1 or weight).</li>
+<li>Multiple Matrices: If there’s a small, fixed set of labels, you could have a separate adjacency matrix for each label type (e.g., <code>Matrix_Train</code>, <code>Matrix_Bus</code>). <code>Matrix_Train[i][j] = 1</code> if a train link exists.</li>
+<li>Complex Cell Values: The cell <code>A[i][j]</code> could store a pointer or reference to a list or structure containing multiple pieces of information about the edge(s) between <code>i</code> and <code>j</code> (e.g., <code>[(label:&quot;Train&quot;, weight:50), (label:&quot;Bus&quot;, weight:30)]</code>). This makes the matrix cells more complex than simple numbers.</li>
+<li>Adjacency lists are often more naturally suited for storing rich information about edges, as the list elements can easily be complex objects or structures.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Memory Usage Trade-offs (Revisited with Examples)</strong>:
+<ul>
+<li>Adjacency Matrix: Always V<sup>2</sup> entries.
+<ul>
+<li>Example 1 (Sparse): 5 vertices, 4 edges. Matrix uses 5*5 = 25 cells.</li>
+<li>Example 2 (Dense/Complete K<sub>5</sub>): 5 vertices, 10 edges. Matrix uses 5*5 = 25 cells.</li>
+<li>Example 3 (Larger Sparse): 100 vertices, 200 edges. Matrix uses 100*100 = 10,000 cells.</li>
+</ul>
+</li>
+<li>Adjacency List: V lists, total number of elements in all lists is 2E for undirected, E for directed.
+<ul>
+<li>Example 1 (Sparse): 5 lists. Total elements ~2*4 = 8. (Plus list overhead).</li>
+<li>Example 2 (Dense/Complete K<sub>5</sub>): 5 lists. Total elements ~2*10 = 20.</li>
+<li>Example 3 (Larger Sparse): 100 lists. Total elements ~2*200 = 400.</li>
+</ul>
+</li>
+<li>Conclusion: For graphs with many vertices but relatively few edges (sparse), adjacency lists save significant memory compared to adjacency matrices.</li>
+</ul>
+</li>
+<li><strong>Powers of Adjacency Matrix (A<sup>k</sup>) (for unweighted graphs)</strong>:
+<ul>
+<li>Let A be the adjacency matrix of an unweighted graph (0s and 1s).</li>
+<li>A<sup>2</sup> = A * A (matrix multiplication). The entry <code>(A^2)[i][j]</code> represents the number of distinct paths of length exactly 2 from vertex <code>i</code> to vertex <code>j</code>.
+<ul>
+<li>Intuition: <code>(A^2)[i][j] = Σ (A[i][k] * A[k][j])</code> for all k. A term <code>A[i][k] * A[k][j]</code> is 1 if there’s an edge from <code>i</code> to <code>k</code> AND an edge from <code>k</code> to <code>j</code> (i.e., a path i-k-j). Summing these counts paths through all possible intermediaries <code>k</code>.</li>
+</ul>
+</li>
+<li>A<sup>k</sup>[i][j]: The entry <code>(A^k)[i][j]</code> represents the number of distinct paths of length exactly <code>k</code> from vertex <code>i</code> to vertex <code>j</code>.</li>
+<li>Example: For a simple graph, calculate A and A<sup>2</sup>.
+Graph: 1-2, 2-3
+A =
+<pre><code>  1 2 3
+1[0 1 0]
+2[1 0 1]
+3[0 1 0]
+</code></pre>
+A<sup>2</sup> =
+<pre><code>  1 2 3
+1[1 0 1]  // 1->2->1 (len 2), 1->2->3 (len 2)
+2[0 2 0]  // 2->1->2 (len 2), 2->3->2 (len 2)
+3[1 0 1]  // 3->2->1 (len 2), 3->2->3 (len 2)
+</code></pre>
+Interpretation: (A<sup>2</sup>)[1][3] = 1 means there is 1 path of length 2 from vertex 1 to 3 (which is 1-2-3). (A<sup>2</sup>)[1][1] = 1 means 1 path of length 2 from 1 to 1 (1-2-1).</li>
+</ul>
+</li>
+<li><strong>Reachability/Transitive Closure (Conceptual Introduction)</strong>:
+<ul>
+<li>Question: Can vertex <code>i</code> reach vertex <code>j</code> through any path of any length?</li>
+<li>Transitive Closure Matrix (R): <code>R[i][j] = 1</code> if <code>j</code> is reachable from <code>i</code>, and <code>0</code> otherwise.</li>
+<li>One way to think about it: If there’s a path from <code>i</code> to <code>j</code>, it must have length 1, or 2, or …, or V-1 (for simple paths without cycles in a graph with V vertices).</li>
+<li>So, reachability can be related to checking <code>A[i][j] > 0</code> OR <code>(A^2)[i][j] > 0</code> … OR <code>(A^(V-1))[i][j] > 0</code>.</li>
+<li>More formally, let B = I + A + A<sup>2</sup> + … + A<sup>V-1</sup> (where I is the identity matrix). Then <code>R[i][j] = 1</code> if <code>B[i][j] > 0</code>.</li>
+<li>Other algorithms like Floyd-Warshall or running BFS/DFS from each vertex can also determine reachability and compute the transitive closure. This is just an introduction to the concept via matrix powers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Backtracking &amp; Trees</strong>
+<ul>
+<li><strong>Introduction to Trees (Data Structure)</strong>:
+<ul>
+<li>Definition: A tree is a hierarchical data structure consisting of <em>nodes</em> connected by <em>edges</em>. Unlike general graphs, trees are characterized by:
+<ul>
+<li>A designated <em>root</em> node (unless the tree is empty).</li>
+<li>Every node (except the root) has exactly one <em>parent</em> node.</li>
+<li>There are no cycles in a tree.</li>
+<li>There is a unique path from the root to any other node.</li>
+</ul>
+</li>
+<li>Terminology:
+<ul>
+<li>Root: The topmost node of the tree, which has no parent.</li>
+<li>Parent: A node that is connected to other nodes below it (its children).</li>
+<li>Child: A node that is connected to a node above it (its parent).</li>
+<li>Siblings: Nodes that share the same parent.</li>
+<li>Leaf Node (External Node): A node that has no children.</li>
+<li>Internal Node (Non-Leaf Node): A node that has at least one child.</li>
+<li>Subtree: A tree formed by a node and all its descendants.</li>
+<li>Depth of a node: The number of edges on the path from the root to that node. The depth of the root is 0.</li>
+<li>Height of a tree: The number of edges on the longest path from the root to a leaf node. The height of an empty tree is often defined as -1, and a tree with a single node has height 0.</li>
+</ul>
+</li>
+<li>Binary Trees: A specific type of tree where each node has at most two children, referred to as the <em>left child</em> and the <em>right child</em>.</li>
+<li>Examples:
+<ul>
+<li>Family trees (ancestors and descendants).</li>
+<li>Organizational charts (hierarchy of employees).</li>
+<li>File system directory structures (folders containing files and subfolders).</li>
+<li>Decision trees (used in Week 12).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Recursion (Conceptual Introduction/Revisit)</strong>:
+<ul>
+<li>Definition: A problem-solving technique where a procedure or function calls itself, directly or indirectly, to solve smaller, self-similar subproblems.</li>
+<li>Key Components:
+<ul>
+<li>Base Case(s): One or more simple cases of the problem that can be solved directly without further recursion. This is crucial to prevent infinite recursion.</li>
+<li>Recursive Step: The part of the procedure where it calls itself with modified input, moving closer to a base case. The problem is broken down into smaller versions of itself.</li>
+</ul>
+</li>
+<li>Analogy: Russian nesting dolls (each doll contains a smaller version of itself). A function to calculate factorial: <code>factorial(n) = n * factorial(n-1)</code>, with base case <code>factorial(0) = 1</code>.</li>
+<li>How it relates to trees: Many tree operations are naturally defined and implemented recursively because of the tree’s hierarchical structure. For example, to process a tree, you might process the root, then recursively process its left subtree and its right subtree.</li>
+</ul>
+</li>
+<li><strong>Tree Traversal (Conceptual, relating to DFS)</strong>:
+<ul>
+<li>Definition: The process of systematically visiting (e.g., reading or processing the data in) each node in a tree exactly once.</li>
+<li>Depth-First Search (DFS) Idea on Trees: Explores as far down as possible along each branch before backtracking. For trees, this is implemented by various traversal orders:
+<ul>
+<li><strong>Pre-order Traversal (Root-Left-Right)</strong>:
+<ol>
+<li>Visit/Process the current node (Root).</li>
+<li>Recursively traverse the left subtree.</li>
+<li>Recursively traverse the right subtree.</li>
+</ol>
+<ul>
+<li>Use: Copying a tree, creating a prefix expression from an expression tree.</li>
+</ul>
+</li>
+<li><strong>In-order Traversal (Left-Root-Right - primarily for Binary Trees)</strong>:
+<ol>
+<li>Recursively traverse the left subtree.</li>
+<li>Visit/Process the current node (Root).</li>
+<li>Recursively traverse the right subtree.</li>
+</ol>
+<ul>
+<li>Use: For binary search trees, this traversal visits nodes in ascending order.</li>
+</ul>
+</li>
+<li><strong>Post-order Traversal (Left-Right-Root)</strong>:
+<ol>
+<li>Recursively traverse the left subtree.</li>
+<li>Recursively traverse the right subtree.</li>
+<li>Visit/Process the current node (Root).</li>
+</ol>
+<ul>
+<li>Use: Deleting nodes in a tree (process children before parent), calculating the size of subtrees.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Manual Trace Example: Consider a binary tree:
+<pre><code>      A
+     / \
+    B   C
+   / \
+  D   E
+</code></pre>
+<ul>
+<li>Pre-order: A, B, D, E, C</li>
+<li>In-order: D, B, E, A, C</li>
+<li>Post-order: D, E, B, C, A</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Backtracking</strong>:
+<ul>
+<li>Concept: A systematic algorithmic technique, often implemented using recursion, for solving problems by trying to build a solution incrementally, one piece at a time. If an incremental choice leads to a dead end or violates problem constraints, the algorithm “backtracks” by undoing the previous choice and trying an alternative.</li>
+<li>Analogy: Finding your way through a maze. You explore one path. If you hit a dead end, you retrace your steps (backtrack) to the last junction where you had a choice of paths, and then try a different path.</li>
+<li>Core Idea:
+<ol>
+<li>Choose: Make a choice at the current decision point.</li>
+<li>Explore: Recursively try to solve the problem with the choice made.</li>
+<li>If solution found, return success.</li>
+<li>If no solution found from current choice (dead end), Undo the choice (backtrack) and try another alternative.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Solving Puzzles via Backtracking (Manual Walkthroughs)</strong>:
+<ul>
+<li><strong>N-Queens Problem (Conceptual for 4-Queens)</strong>:
+<ul>
+<li>Problem: Place N chess queens on an N×N chessboard such that no two queens can attack each other (i.e., no two queens on the same row, column, or diagonal).</li>
+<li>Backtracking Application:
+<ol>
+<li>Start by trying to place a queen in the first column of the first row.</li>
+<li>Move to the next row, try to place a queen in the first “safe” column (not attacked by previously placed queens).</li>
+<li>If a safe column is found, place the queen and move to the next row.</li>
+<li>If no safe column is found in the current row, backtrack to the previous row, remove the queen placed there, and try placing it in the next safe column in that previous row.</li>
+<li>Repeat until all N queens are placed or all possibilities are exhausted.</li>
+</ol>
+</li>
+<li>Illustrative Steps for 4-Queens:
+<ul>
+<li>Row 1: Place Queen at (1,1).</li>
+<li>Row 2: Try (2,1) - conflict. Try (2,2) - conflict. Try (2,3) - OK. Place Queen at (2,3).</li>
+<li>Row 3: Try (3,1) - conflict. Try (3,2) - OK. Place Queen at (3,2).</li>
+<li>Row 4: Try (4,1)-conflict, (4,2)-conflict, (4,3)-conflict, (4,4)-conflict. No place. Backtrack!</li>
+<li>Row 3: Remove Queen from (3,2). Try next safe: (3,4) - conflict. No more options. Backtrack!</li>
+<li>Row 2: Remove Queen from (2,3). Try next safe: (2,4) - OK. Place Queen at (2,4).</li>
+<li>Row 3: Try (3,1) - OK. Place Queen at (3,1).</li>
+<li>Row 4: Try (4,2) - conflict. Try (4,3) - OK. Place Queen at (4,3). Solution found: [(1,1), (2,4), (3,1), (4,3)] (one possible solution).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sudoku Solving (Conceptual)</strong>:
+<ul>
+<li>Problem: Fill a 9x9 grid so that each column, each row, and each of the nine 3x3 subgrids contain all digits from 1 to 9.</li>
+<li>Backtracking Application:
+<ol>
+<li>Find an empty cell.</li>
+<li>Try filling it with a digit from 1 to 9.</li>
+<li>Check if this digit is valid (doesn’t violate Sudoku rules for that row, column, and 3x3 subgrid).</li>
+<li>If valid, move to the next empty cell and repeat recursively.</li>
+<li>If the digit is not valid, or if a later recursive call returns “no solution”, then backtrack: erase the digit and try the next possible digit for the current cell.</li>
+<li>If all digits 1-9 have been tried for a cell and none lead to a solution, return “no solution” to the previous call.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Pathfinding in a Maze</strong>:
+<ul>
+<li>Problem: Find a path from a start point to an end point in a maze.</li>
+<li>Backtracking Application:
+<ol>
+<li>Start at the entry point. Mark current cell as visited.</li>
+<li>IF current cell is the exit, THEN solution found.</li>
+<li>ELSE, for each unvisited neighboring cell:
+a.  Move to that neighbor.
+b.  Recursively try to find a path from this new cell.
+c.  IF a path is found from the neighbor, THEN solution found.
+d.  ELSE (path not found from neighbor), “unmark” the neighbor (backtrack - this path was a dead end) and try another neighbor from the original cell.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>General Pseudocode Structure for Backtracking:
+<figure data-rehype-pretty-code-figure><pre tabindex="0" data-language="pseudocode" data-theme="github-light github-dark"><code data-language="pseudocode" data-theme="github-light github-dark" style="display:grid;"><span data-line><span>FUNCTION CanSolve(problem_state)</span></span>
+<span data-line><span>    IF problem_state is a final success_state THEN</span></span>
+<span data-line><span>        RETURN TRUE</span></span>
+<span data-line><span>    ENDIF</span></span>
+<span data-line> </span>
+<span data-line><span>    FOR EACH possible_next_step FROM problem_state</span></span>
+<span data-line><span>        IF is_valid_step(possible_next_step) THEN</span></span>
+<span data-line><span>            apply_step_to_reach(new_state)</span></span>
+<span data-line><span>            IF CanSolve(new_state) THEN  // Recursive call</span></span>
+<span data-line><span>                RETURN TRUE</span></span>
+<span data-line><span>            ENDIF</span></span>
+<span data-line><span>            undo_step_to_revert_to(problem_state) // Backtrack</span></span>
+<span data-line><span>        ENDIF</span></span>
+<span data-line><span>    ENDFOR</span></span>
+<span data-line><span>    RETURN FALSE // No move from this state leads to a solution</span></span>
+<span data-line><span>ENDFUNCTION</span></span></code></pre></figure>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Object-Oriented Concepts (Conceptual Introduction)</strong>
+<ul>
+<li><strong>Limitations of Procedural Approach for Complex Systems</strong>:
+<ul>
+<li>In purely procedural programming (sequences of instructions, procedures/functions), as programs grow larger and more complex, managing shared data across many functions can become difficult.</li>
+<li>It can be harder to model real-world entities that have both properties (data) and actions (behavior) in a cohesive way. Data and the functions that operate on that data might be loosely connected.</li>
+</ul>
+</li>
+<li><strong>Core Idea of Object-Oriented Thinking</strong>:
+<ul>
+<li>Instead of focusing primarily on procedures, object-oriented thinking focuses on “objects” as the primary building blocks.</li>
+<li>An object is a self-contained unit that bundles together:
+<ul>
+<li>Data (called attributes or properties) that describe its state.</li>
+<li>Behavior (called methods or functions) that define what it can do or what can be done to it. These methods typically operate on the object’s own data.</li>
+</ul>
+</li>
+<li>Analogy:
+<ul>
+<li>Real-world “car” object: Attributes: color, make, model, current speed, fuel level. Behaviors: startEngine(), stopEngine(), accelerate(), brake().</li>
+<li>Real-world “dog” object: Attributes: breed, age, name. Behaviors: bark(), eat(), sleep().</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Classes</strong>:
+<ul>
+<li>Concept: A blueprint, template, or a user-defined data type for creating objects. It defines the common structure (what attributes its objects will have) and behavior (what methods its objects can perform).</li>
+<li>Analogy: A cookie cutter is a class; it defines the shape of cookies. The actual cookies made from it are objects. A building blueprint is a class; the buildings constructed from it are objects.</li>
+</ul>
+</li>
+<li><strong>Objects (Instances of a Class)</strong>:
+<ul>
+<li>Concept: A specific, concrete realization (or instance) of a class. When an object is created from a class, it gets its own set of attribute values (its state). It shares the method definitions with other objects of the same class.</li>
+<li>Example: If <code>Dog</code> is a class, then <code>myDogFido</code> (an object) might have <code>name=&quot;Fido&quot;</code>, <code>breed=&quot;Labrador&quot;</code>, and <code>myOtherDogBuddy</code> (another object) might have <code>name=&quot;Buddy&quot;</code>, <code>breed=&quot;Poodle&quot;</code>. Both can <code>bark()</code>.</li>
+</ul>
+</li>
+<li><strong>Attributes (Properties/Fields/Instance Variables)</strong>:
+<ul>
+<li>These are the data elements that belong to an object. They define the state or characteristics of an object.</li>
+<li>Example: For a <code>Student</code> class, attributes could be <code>studentID</code>, <code>name</code>, <code>major</code>, <code>gpa</code>. Each <code>Student</code> object would have its own values for these attributes.</li>
+</ul>
+</li>
+<li><strong>Methods (Behaviors/Functions/Instance Methods)</strong>:
+<ul>
+<li>These are the functions or procedures that are defined within a class and operate on the data (attributes) of objects of that class. They define what an object can do.</li>
+<li>Example: For a <code>Student</code> class, methods could be <code>enrollInCourse(course_name)</code>, <code>calculateGPA()</code>, <code>getStudentName()</code>.</li>
+</ul>
+</li>
+<li><strong>Constructors</strong>:
+<ul>
+<li>Concept: A special type of method within a class that is automatically called when a new object of that class is created (instantiated).</li>
+<li>Purpose: Its primary role is to initialize the attributes of the newly created object, ensuring it starts in a valid state.</li>
+<li>Example: When creating a <code>Student</code> object like <code>newStudent = CREATE_OBJECT Student(&quot;Alice&quot;, &quot;S1001&quot;)</code>, the <code>Student</code> constructor would take “Alice” and “S1001” and assign them to the new object’s <code>name</code> and <code>studentID</code> attributes.</li>
+</ul>
+</li>
+<li><strong>Encapsulation</strong>:
+<ul>
+<li>Concept: One of the fundamental principles of OOP. It means bundling the data (attributes) and the methods that operate on that data together within a single unit (the object/class).</li>
+<li>Information Hiding: A key part of encapsulation. It involves restricting direct access to some of an object’s internal data (attributes) from outside the object. Instead, access (to read or modify) is often provided through specific methods (getters and setters, or other public methods).</li>
+<li>Benefits:
+<ul>
+<li>Protects an object’s internal state from accidental or incorrect modification from outside.</li>
+<li>Makes code more modular: The internal implementation of an object can be changed without affecting other parts of the program, as long as the public interface (methods) remains the same.</li>
+<li>Hides complexity: Users of an object only need to know what it does (its methods), not necessarily how it does it.</li>
+</ul>
+</li>
+<li>Analogy: A car driver uses the steering wheel, accelerator, and brakes (public methods/interface) to control the car. They don’t need to directly manipulate the engine’s internal components (hidden data/implementation).</li>
+</ul>
+</li>
+<li><strong>Other OO Concepts (Brief Mention - No Deep Dive for CT focus)</strong>:
+<ul>
+<li>Inheritance: A mechanism where a new class (subclass or derived class) can acquire (inherit) the properties (attributes and methods) of an existing class (superclass or base class). This promotes code reuse and creates an “is-a” relationship (e.g., an <code>ElectricCar</code> is a type of <code>Car</code>).</li>
+<li>Polymorphism (“Many Forms”): The ability of objects of different classes to respond to the same method call in ways specific to their class. (e.g., if <code>Circle</code> and <code>Square</code> classes both have a <code>draw()</code> method, calling <code>draw()</code> on a <code>Circle</code> object behaves differently than on a <code>Square</code> object).</li>
+</ul>
+</li>
+<li>Focus for CT: Understanding how these concepts help in organizing complex problems by modeling real-world or conceptual entities as self-contained objects with their own data and behaviors, making the system easier to design, understand, and maintain.</li>
+</ul>
+</li>
+<li><strong>Concurrency (Conceptual Introduction)</strong>
+<ul>
+<li><strong>Sequential vs. Concurrent Execution</strong>:
+<ul>
+<li>Sequential Execution: Instructions or tasks are performed one after another, in a single sequence. Only one task is active at any given moment.</li>
+<li>Concurrent Execution: Multiple tasks appear to be progressing or executing at the same time.
+<ul>
+<li>On a single CPU/core system, this is achieved by <em>interleaving</em> the execution of tasks (the CPU rapidly switches between tasks). This is often called multitasking or logical concurrency.</li>
+<li>On a multi-CPU/core system, tasks can run in <em>true parallelism</em>, with different tasks executing simultaneously on different cores.</li>
+</ul>
+</li>
+<li>Analogy:
+<ul>
+<li>Sequential: A person reading one book from start to finish before starting another.</li>
+<li>Concurrent (interleaved): A chef preparing a meal by switching between chopping vegetables, stirring a pot, and checking the oven.</li>
+<li>Parallel: Multiple chefs each working on a different dish simultaneously in a large kitchen.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Why Concurrency?</strong>:
+<ul>
+<li>Responsiveness: In applications with user interfaces, concurrency allows the program to remain responsive to user input (e.g., mouse clicks) while performing a long-running task in the background (e.g., downloading a file, complex calculation).</li>
+<li>Performance/Speedup: By dividing a large task into sub-tasks that can run in parallel on multi-core processors, the overall time to complete the task can be reduced.</li>
+<li>Resource Utilization: Allows a CPU to do other work while one task is waiting for a slow operation (like reading from a disk or network).</li>
+<li>Modeling Real-World Systems: Many real-world systems are inherently concurrent (e.g., multiple users accessing a website, multiple ATMs connected to a bank).</li>
+</ul>
+</li>
+<li><strong>Processes vs. Threads (Simplified for CT)</strong>:
+<ul>
+<li>Process: An instance of a computer program that is being executed. Each process typically has its own independent memory space, meaning data is not directly shared between processes. (Think of separate applications running on your computer, like a web browser and a word processor).</li>
+<li>Thread: A lightweight unit of execution <em>within</em> a process. Multiple threads can exist within a single process and they share the same memory space (meaning they can access and modify the same data). This makes communication between threads easier but also introduces risks.</li>
+</ul>
+</li>
+<li><strong>Remote Procedure Calls (RPC)</strong>:
+<ul>
+<li>Concept: A mechanism that allows a procedure (function or method) in one program (or process) to be executed by another program (or process), which may be located on a different computer connected via a network.</li>
+<li>How it works (simplified): The calling program (client) makes a request that looks like a normal local procedure call. The RPC system handles the underlying network communication to send the request and parameters to the remote program (server), execute the procedure there, and return the results to the client.</li>
+<li>Analogy: Ordering food via a food delivery app. You (client) make a request (call a “place order” procedure). The app (RPC system) sends it to the restaurant (server). The restaurant processes it. The app brings you the result (food). You don’t directly interact with the restaurant’s kitchen.</li>
+</ul>
+</li>
+<li><strong>Challenges in Concurrency</strong>: When multiple tasks/threads access shared resources or data, problems can arise.
+<ul>
+<li><strong>Race Conditions</strong>:
+<ul>
+<li>Definition: A situation where the outcome of a computation depends on the unpredictable timing or interleaving of operations from multiple threads or processes accessing shared data. The “race” is about which thread gets to access/modify the data first.</li>
+<li>Example: Two threads (T1, T2) want to increment a shared counter <code>C</code> (initially 0).
+<ol>
+<li>T1 reads <code>C</code> (gets 0).</li>
+<li>T2 reads <code>C</code> (gets 0).</li>
+<li>T1 calculates <code>C+1</code> (is 1).</li>
+<li>T2 calculates <code>C+1</code> (is 1).</li>
+<li>T1 writes 1 to <code>C</code>. (<code>C</code> is now 1).</li>
+<li>T2 writes 1 to <code>C</code>. (<code>C</code> is still 1).
+The correct result should be 2, but due to interleaving, it’s 1.</li>
+</ol>
+</li>
+<li>This illustrates how shared data can become inconsistent.</li>
+</ul>
+</li>
+<li><strong>Synchronization Primitives (to manage shared access)</strong>:
+<ul>
+<li><strong>Locks (Mutexes - MUTual EXclusion)</strong>:
+<ul>
+<li>Concept: A synchronization mechanism that ensures only one thread can access a specific shared resource or execute a particular section of code (called a “critical section”) at any given time.</li>
+<li>Operation: A thread must “acquire” or “obtain” the lock before entering the critical section. If the lock is already held by another thread, the current thread must wait until the lock is “released.” Once done, the thread releases the lock, allowing another waiting thread to acquire it.</li>
+<li>Analogy: A single key for a bathroom. Only the person with the key can enter. Others must wait for the key to be returned.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Deadlocks</strong>:
+<ul>
+<li>Definition: A situation where two or more concurrent tasks are blocked indefinitely, each waiting for a resource that is held by another task in the same group, resulting in a standstill.</li>
+<li>Classic Example (Conceptual - Dining Philosophers): Imagine five philosophers sitting around a circular table. There’s one chopstick between each pair of philosophers (5 chopsticks in total). Each philosopher needs two chopsticks (one from their left, one from their right) to eat.
+If every philosopher simultaneously picks up the chopstick on their left, then each philosopher will be holding one chopstick and waiting for the chopstick on their right, which is held by their neighbor. No one can eat, and no one will release their chopstick – a deadlock.</li>
+<li>Conditions often leading to deadlock (Coffman conditions - brief mention, not for memorization but for understanding the problem):
+<ol>
+<li>Mutual Exclusion: Resources cannot be shared.</li>
+<li>Hold and Wait: A task holds at least one resource and is waiting for another.</li>
+<li>No Preemption: Resources cannot be forcibly taken away.</li>
+<li>Circular Wait: A circular chain of tasks exists, where each task waits for a resource held by the next task in the chain.</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Focus for CT: Appreciating that when tasks run “at the same time” and share things, new kinds of problems (like race conditions and deadlocks) can occur, and we need mechanisms (like locks) to coordinate them.</li>
+</ul>
+</li>
+<li><strong>Problem Solving Strategies</strong>
+<ul>
+<li><strong>Recap: What is an Algorithm?</strong>
+<ul>
+<li>A clear, unambiguous, step-by-step sequence of instructions to solve a specific problem or achieve a defined outcome.</li>
+<li>It should be correct, efficient (enough), and finite (terminate).</li>
+</ul>
+</li>
+<li><strong>General Problem-Solving Heuristics (Polya’s Steps as a framework)</strong>:
+<ul>
+<li>
+<ol>
+<li><strong>Understand the Problem</strong>:</li>
+</ol>
+<ul>
+<li>Read or listen to the problem statement carefully. What is being asked?</li>
+<li>Identify the inputs (givens), the outputs (what is required), and any constraints or conditions.</li>
+<li>Can you restate the problem in your own words? Can you draw a diagram or make a small example?</li>
+</ul>
+</li>
+<li>
+<ol start="2">
+<li><strong>Devise a Plan (Strategy)</strong>:</li>
+</ol>
+<ul>
+<li>Consider similar problems you’ve solved before. Can you adapt those solutions?</li>
+<li>Break the problem down into smaller, more manageable subproblems (Decomposition).</li>
+<li>Simplify the problem if it’s too complex. Solve the simpler version first.</li>
+<li>Work backwards from the desired output.</li>
+<li>Look for patterns (Pattern Recognition).</li>
+<li>Use logical reasoning. Consider edge cases and typical cases.</li>
+</ul>
+</li>
+<li>
+<ol start="3">
+<li><strong>Carry out the Plan (Implementation)</strong>:</li>
+</ol>
+<ul>
+<li>Translate your plan into a sequence of steps (e.g., pseudocode, flowchart, or actual code).</li>
+<li>Check each step as you go.</li>
+</ul>
+</li>
+<li>
+<ol start="4">
+<li><strong>Look Back (Review and Reflect)</strong>:</li>
+</ol>
+<ul>
+<li>Test your solution with various inputs (including edge cases) to verify its correctness.</li>
+<li>Does it produce the correct output for all valid inputs? Does it handle invalid inputs gracefully?</li>
+<li>Can the solution be improved (e.g., made simpler, more efficient)?</li>
+<li>Did you learn anything new from solving this problem?</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Decomposition (Breaking Problems Down)</strong>:
+<ul>
+<li>The strategy of dividing a large, complex problem into smaller, more manageable, and often independent subproblems.</li>
+<li>Each subproblem can then be solved individually.</li>
+<li>The solutions to the subproblems are then combined to form the solution to the original complex problem.</li>
+<li>Example: To write a book (complex problem), you might decompose it into: Outline chapters <span>→</span> Write content for Chapter 1 <span>→</span> Write content for Chapter 2 <span>→</span> … <span>→</span> Edit manuscript <span>→</span> Design cover.</li>
+<li>This is a core part of top-down design and leads to modularity in algorithms (e.g., using procedures/functions for each subproblem).</li>
+</ul>
+</li>
+<li><strong>Problem-Solving Approaches</strong>:
+<ul>
+<li><strong>Top-Down Design (Stepwise Refinement)</strong>:
+<ul>
+<li>Start with a high-level, abstract statement of the problem or the main task.</li>
+<li>Systematically break it down into smaller, more detailed sub-tasks.</li>
+<li>Continue this process of refinement for each sub-task until the steps are simple and concrete enough to be directly translated into algorithmic instructions (or code).</li>
+<li>Focuses on the overall structure and flow first.</li>
+</ul>
+</li>
+<li><strong>Bottom-Up Design</strong>:
+<ul>
+<li>Start by identifying and implementing the most basic or fundamental operations and components that will be needed.</li>
+<li>Once these low-level building blocks are created and tested, they are combined to form larger, more complex modules or procedures.</li>
+<li>This process continues, building up layer by layer, until the complete solution is assembled.</li>
+<li>Focuses on building and testing individual components first.</li>
+</ul>
+</li>
+<li>In practice, problem-solving often involves a mix of both top-down and bottom-up thinking.</li>
+</ul>
+</li>
+<li><strong>Abstraction</strong>:
+<ul>
+<li>The process of focusing on the essential features of a problem or system while ignoring unnecessary or distracting details.</li>
+<li>Procedural Abstraction: When you use a procedure (or function), you focus on <em>what</em> it does (its purpose, inputs, and outputs) rather than <em>how</em> it does it (its internal implementation details). This allows you to use complex operations as simple building blocks.</li>
+<li>Data Abstraction: Focusing on the properties and behaviors of a data type or data structure (like a List or Dictionary) rather than the specifics of how it’s stored in memory.</li>
+</ul>
+</li>
+<li><strong>Pattern Recognition</strong>:
+<ul>
+<li>The ability to identify similarities, regularities, or recurring patterns within a problem itself, or between the current problem and problems solved previously.</li>
+<li>Recognizing a pattern can help you apply a known solution strategy or adapt an existing algorithm.</li>
+<li>Example: Realizing that multiple parts of a problem involve “finding an item in a collection” might suggest reusing a search procedure.</li>
+</ul>
+</li>
+<li><strong>Decision Trees (for Problem Solving and Classification - Simple Introduction)</strong>:
+<ul>
+<li>Concept: A tree-like graphical model where each internal node represents a “decision” or a “test” on an attribute (e.g., “Is it raining?”), each branch leading from a node represents an outcome or answer to that test (e.g., “Yes” or “No”), and each leaf node represents a final outcome, decision, or class label.</li>
+<li>Use in Problem Solving: Helps to structure a sequence of decisions to reach a conclusion. Useful for systematically exploring possibilities.</li>
+<li>Example: A simple diagnostic tree for a malfunctioning lamp.
+<ul>
+<li>Root: “Is the lamp plugged in?”
+<ul>
+<li>No <span>→</span> Leaf: “Plug in the lamp.”</li>
+<li>Yes <span>→</span> Internal Node: “Is the bulb burned out?”
+<ul>
+<li>Yes <span>→</span> Leaf: “Replace the bulb.”</li>
+<li>No <span>→</span> Leaf: “Lamp might be broken or other issue.”</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Basic Classification: Decision trees can be used to assign an item to one of several predefined categories based on its features.
+<ul>
+<li>Example: Classifying an email as “Spam” or “Not Spam” based on features like “contains word ‘free’?”, “sender known?“.</li>
+<li>Brief mention: In machine learning, decision trees can be automatically “learned” from data to make predictions. Here, the focus is on them as a way to structure human problem-solving logic.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Developing and Testing Algorithms</strong>:
+<ul>
+<li>Importance of Testing: Crucial to ensure the algorithm is correct and reliable.</li>
+<li>Test Cases: Use a variety of inputs:
+<ul>
+<li>Normal/Typical Cases: Expected inputs.</li>
+<li>Edge Cases: Inputs at the boundaries of valid ranges (e.g., smallest/largest allowed numbers, empty lists).</li>
+<li>Invalid Inputs: Data that the algorithm shouldn’t accept (to check error handling, though error handling itself might be an advanced topic).</li>
+</ul>
+</li>
+<li>Debugging: The process of finding and fixing errors (bugs) in an algorithm or its implementation.
+<ul>
+<li>Techniques: Manual tracing (desk checking), simplifying the problem to isolate the error, adding display statements to see intermediate values.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="glossary">Glossary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#glossary" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Pseudocode</strong>: a simplified, language-agnostic way to describe algorithms.</li>
+<li><strong>Recursion</strong>: a technique where a function calls itself to solve subproblems.</li>
+<li><strong>Encapsulation</strong>: bundling data with methods that operate on that data.</li>
+<li><strong>Race Condition</strong>: a flaw that occurs when operations depend on timing of events in concurrent systems.</li>
+</ul>
+<h2 id="additional-topics">Additional Topics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#additional-topics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Heuristics</strong> – strategies for approaching complex problems when an exact solution is impractical</li>
+<li><strong>Greedy Algorithms</strong> – making the locally optimal choice at each step</li>
+<li><strong>Complexity Analysis</strong> – big O notation to understand algorithm efficiency</li>
+</ul>
+<h2 id="further-reading">Further Reading<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#further-reading" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><em>Introduction to Algorithms</em> by Cormen et al.</li>
+</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul class="toc-content overflow" id="list-1"><li class="depth-0"><a href="#bscs1001-computational-thinking" data-for="bscs1001-computational-thinking">BSCS1001 Computational Thinking</a></li><li class="depth-1"><a href="#overview" data-for="overview">Overview</a></li><li class="depth-1"><a href="#learning-objectives" data-for="learning-objectives">Learning Objectives</a></li><li class="depth-1"><a href="#course-structure" data-for="course-structure">Course Structure</a></li><li class="depth-1"><a href="#weekly-topics" data-for="weekly-topics">Weekly Topics</a></li><li class="depth-1"><a href="#glossary" data-for="glossary">Glossary</a></li><li class="depth-1"><a href="#additional-topics" data-for="additional-topics">Additional Topics</a></li><li class="depth-1"><a href="#further-reading" data-for="further-reading">Further Reading</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.1</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

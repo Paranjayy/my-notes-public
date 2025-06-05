@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="en"><head><title>BSMA1001 Mathematics for Data Science I - Growing Knowledge</title><meta charset="utf-8"/><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com"/><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted Grotesk:wght@400;700&amp;family=Source Sans Pro:ital,wght@0,400;0,600;1,400;1,600&amp;family=IBM Plex Mono:wght@400;600&amp;display=swap"/><link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="anonymous"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="og:site_name" content="My Notes Public"/><meta property="og:title" content="BSMA1001 Mathematics for Data Science I - Growing Knowledge"/><meta property="og:type" content="website"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:title" content="BSMA1001 Mathematics for Data Science I - Growing Knowledge"/><meta name="twitter:description" content="BSMA1001 Mathematics for Data Science I Course Credits: 4 Course Type: Foundational Instructors: Neelesh Upadhye, Madhavan Mukund Pre-requisites: None Overview This course introduces straight lines, polynomials, exponentials, logarithms and the basics of discrete mathematics."/><meta property="og:description" content="BSMA1001 Mathematics for Data Science I Course Credits: 4 Course Type: Foundational Instructors: Neelesh Upadhye, Madhavan Mukund Pre-requisites: None Overview This course introduces straight lines, polynomials, exponentials, logarithms and the basics of discrete mathematics."/><meta property="og:image:alt" content="BSMA1001 Mathematics for Data Science I Course Credits: 4 Course Type: Foundational Instructors: Neelesh Upadhye, Madhavan Mukund Pre-requisites: None Overview This course introduces straight lines, polynomials, exponentials, logarithms and the basics of discrete mathematics."/><meta property="twitter:domain" content="paranjay.github.io/my-notes-public"/><meta property="og:url" content="https://paranjay.github.io/my-notes-public/BSMA1001-Mathematics-for-Data-Science-I"/><meta property="twitter:url" content="https://paranjay.github.io/my-notes-public/BSMA1001-Mathematics-for-Data-Science-I"/><link rel="icon" href="./static/icon.png"/><meta name="description" content="BSMA1001 Mathematics for Data Science I Course Credits: 4 Course Type: Foundational Instructors: Neelesh Upadhye, Madhavan Mukund Pre-requisites: None Overview This course introduces straight lines, polynomials, exponentials, logarithms and the basics of discrete mathematics."/><meta name="generator" content="Quartz"/><link href="./index.css" rel="stylesheet" type="text/css" spa-preserve/><style>.expand-button {
+  position: absolute;
+  display: flex;
+  float: right;
+  padding: 0.4rem;
+  margin: 0.3rem;
+  right: 0;
+  color: var(--gray);
+  border-color: var(--dark);
+  background-color: var(--light);
+  border: 1px solid;
+  border-radius: 5px;
+  opacity: 0;
+  transition: 0.2s;
+}
+.expand-button > svg {
+  fill: var(--light);
+  filter: contrast(0.3);
+}
+.expand-button:hover {
+  cursor: pointer;
+  border-color: var(--secondary);
+}
+.expand-button:focus {
+  outline: 0;
+}
+
+pre:hover > .expand-button {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#mermaid-container {
+  position: fixed;
+  contain: layout;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: none;
+  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.5);
+}
+#mermaid-container.active {
+  display: inline-block;
+}
+#mermaid-container > #mermaid-space {
+  border: 1px solid var(--lightgray);
+  background-color: var(--light);
+  border-radius: 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 80vh;
+  width: 80vw;
+  overflow: hidden;
+}
+#mermaid-container > #mermaid-space > .mermaid-content {
+  padding: 2rem;
+  position: relative;
+  transform-origin: 0 0;
+  transition: transform 0.1s ease;
+  overflow: visible;
+  min-height: 200px;
+  min-width: 200px;
+}
+#mermaid-container > #mermaid-space > .mermaid-content pre {
+  margin: 0;
+  border: none;
+}
+#mermaid-container > #mermaid-space > .mermaid-content svg {
+  max-width: none;
+  height: auto;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  padding: 8px;
+  background: var(--light);
+  border: 1px solid var(--lightgray);
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 2;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 1px solid var(--lightgray);
+  background: var(--light);
+  color: var(--dark);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: var(--bodyFont);
+  transition: all 0.2s ease;
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:hover {
+  background: var(--lightgray);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:active {
+  transform: translateY(1px);
+}
+#mermaid-container > #mermaid-space > .mermaid-controls .mermaid-control-button:nth-child(2) {
+  width: auto;
+  padding: 0 12px;
+  font-size: 14px;
+}
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VSb290IjoiL1VzZXJzL3BhcmFuamF5L0RldmVsb3Blci9teS1kaWdpdGFsLWdhcmRlbi9xdWFydHovY29tcG9uZW50cy9zdHlsZXMiLCJzb3VyY2VzIjpbIm1lcm1haWQuaW5saW5lLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7O0FBR0Y7RUFDRTtFQUNBOztBQUdGO0VBQ0U7OztBQUtGO0VBQ0U7RUFDQTs7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7O0FBR0Y7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTs7QUFHRjtFQUNFO0VBQ0E7O0FBSUo7RUFDRTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBOztBQUVBO0VBQ0U7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTtFQUNBO0VBQ0E7RUFDQTs7QUFFQTtFQUNFOztBQUdGO0VBQ0U7O0FBSUY7RUFDRTtFQUNBO0VBQ0EiLCJzb3VyY2VzQ29udGVudCI6WyIuZXhwYW5kLWJ1dHRvbiB7XG4gIHBvc2l0aW9uOiBhYnNvbHV0ZTtcbiAgZGlzcGxheTogZmxleDtcbiAgZmxvYXQ6IHJpZ2h0O1xuICBwYWRkaW5nOiAwLjRyZW07XG4gIG1hcmdpbjogMC4zcmVtO1xuICByaWdodDogMDsgLy8gTk9URTogcmlnaHQgd2lsbCBiZSBzZXQgaW4gbWVybWFpZC5pbmxpbmUudHNcbiAgY29sb3I6IHZhcigtLWdyYXkpO1xuICBib3JkZXItY29sb3I6IHZhcigtLWRhcmspO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB2YXIoLS1saWdodCk7XG4gIGJvcmRlcjogMXB4IHNvbGlkO1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG9wYWNpdHk6IDA7XG4gIHRyYW5zaXRpb246IDAuMnM7XG5cbiAgJiA+IHN2ZyB7XG4gICAgZmlsbDogdmFyKC0tbGlnaHQpO1xuICAgIGZpbHRlcjogY29udHJhc3QoMC4zKTtcbiAgfVxuXG4gICY6aG92ZXIge1xuICAgIGN1cnNvcjogcG9pbnRlcjtcbiAgICBib3JkZXItY29sb3I6IHZhcigtLXNlY29uZGFyeSk7XG4gIH1cblxuICAmOmZvY3VzIHtcbiAgICBvdXRsaW5lOiAwO1xuICB9XG59XG5cbnByZSB7XG4gICY6aG92ZXIgPiAuZXhwYW5kLWJ1dHRvbiB7XG4gICAgb3BhY2l0eTogMTtcbiAgICB0cmFuc2l0aW9uOiAwLjJzO1xuICB9XG59XG5cbiNtZXJtYWlkLWNvbnRhaW5lciB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgY29udGFpbjogbGF5b3V0O1xuICB6LWluZGV4OiA5OTk7XG4gIGxlZnQ6IDA7XG4gIHRvcDogMDtcbiAgd2lkdGg6IDEwMHZ3O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBvdmVyZmxvdzogaGlkZGVuO1xuICBkaXNwbGF5OiBub25lO1xuICBiYWNrZHJvcC1maWx0ZXI6IGJsdXIoNHB4KTtcbiAgYmFja2dyb3VuZDogcmdiYSgwLCAwLCAwLCAwLjUpO1xuXG4gICYuYWN0aXZlIHtcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XG4gIH1cblxuICAmID4gI21lcm1haWQtc3BhY2Uge1xuICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogdmFyKC0tbGlnaHQpO1xuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgICBwb3NpdGlvbjogZml4ZWQ7XG4gICAgdG9wOiA1MCU7XG4gICAgbGVmdDogNTAlO1xuICAgIHRyYW5zZm9ybTogdHJhbnNsYXRlKC01MCUsIC01MCUpO1xuICAgIGhlaWdodDogODB2aDtcbiAgICB3aWR0aDogODB2dztcbiAgICBvdmVyZmxvdzogaGlkZGVuO1xuXG4gICAgJiA+IC5tZXJtYWlkLWNvbnRlbnQge1xuICAgICAgcGFkZGluZzogMnJlbTtcbiAgICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbiAgICAgIHRyYW5zZm9ybS1vcmlnaW46IDAgMDtcbiAgICAgIHRyYW5zaXRpb246IHRyYW5zZm9ybSAwLjFzIGVhc2U7XG4gICAgICBvdmVyZmxvdzogdmlzaWJsZTtcbiAgICAgIG1pbi1oZWlnaHQ6IDIwMHB4O1xuICAgICAgbWluLXdpZHRoOiAyMDBweDtcblxuICAgICAgcHJlIHtcbiAgICAgICAgbWFyZ2luOiAwO1xuICAgICAgICBib3JkZXI6IG5vbmU7XG4gICAgICB9XG5cbiAgICAgIHN2ZyB7XG4gICAgICAgIG1heC13aWR0aDogbm9uZTtcbiAgICAgICAgaGVpZ2h0OiBhdXRvO1xuICAgICAgfVxuICAgIH1cblxuICAgICYgPiAubWVybWFpZC1jb250cm9scyB7XG4gICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICBib3R0b206IDIwcHg7XG4gICAgICByaWdodDogMjBweDtcbiAgICAgIGRpc3BsYXk6IGZsZXg7XG4gICAgICBnYXA6IDhweDtcbiAgICAgIHBhZGRpbmc6IDhweDtcbiAgICAgIGJhY2tncm91bmQ6IHZhcigtLWxpZ2h0KTtcbiAgICAgIGJvcmRlcjogMXB4IHNvbGlkIHZhcigtLWxpZ2h0Z3JheSk7XG4gICAgICBib3JkZXItcmFkaXVzOiA2cHg7XG4gICAgICBib3gtc2hhZG93OiAwIDJweCA0cHggcmdiYSgwLCAwLCAwLCAwLjEpO1xuICAgICAgei1pbmRleDogMjtcblxuICAgICAgLm1lcm1haWQtY29udHJvbC1idXR0b24ge1xuICAgICAgICBkaXNwbGF5OiBmbGV4O1xuICAgICAgICBhbGlnbi1pdGVtczogY2VudGVyO1xuICAgICAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcbiAgICAgICAgd2lkdGg6IDMycHg7XG4gICAgICAgIGhlaWdodDogMzJweDtcbiAgICAgICAgcGFkZGluZzogMDtcbiAgICAgICAgYm9yZGVyOiAxcHggc29saWQgdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHQpO1xuICAgICAgICBjb2xvcjogdmFyKC0tZGFyayk7XG4gICAgICAgIGJvcmRlci1yYWRpdXM6IDRweDtcbiAgICAgICAgY3Vyc29yOiBwb2ludGVyO1xuICAgICAgICBmb250LXNpemU6IDE2cHg7XG4gICAgICAgIGZvbnQtZmFtaWx5OiB2YXIoLS1ib2R5Rm9udCk7XG4gICAgICAgIHRyYW5zaXRpb246IGFsbCAwLjJzIGVhc2U7XG5cbiAgICAgICAgJjpob3ZlciB7XG4gICAgICAgICAgYmFja2dyb3VuZDogdmFyKC0tbGlnaHRncmF5KTtcbiAgICAgICAgfVxuXG4gICAgICAgICY6YWN0aXZlIHtcbiAgICAgICAgICB0cmFuc2Zvcm06IHRyYW5zbGF0ZVkoMXB4KTtcbiAgICAgICAgfVxuXG4gICAgICAgIC8vIFN0eWxlIHRoZSByZXNldCBidXR0b24gZGlmZmVyZW50bHlcbiAgICAgICAgJjpudGgtY2hpbGQoMikge1xuICAgICAgICAgIHdpZHRoOiBhdXRvO1xuICAgICAgICAgIHBhZGRpbmc6IDAgMTJweDtcbiAgICAgICAgICBmb250LXNpemU6IDE0cHg7XG4gICAgICAgIH1cbiAgICAgIH1cbiAgICB9XG4gIH1cbn1cbiJdfQ== */</style><link href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" rel="stylesheet" type="text/css" spa-preserve/><script src="./prescript.js" type="application/javascript" spa-preserve></script><script type="application/javascript" spa-preserve>const fetchData = fetch("./static/contentIndex.json").then(data => data.json())</script><link rel="alternate" type="application/rss+xml" title="RSS Feed" href="https://paranjay.github.io/my-notes-public/index.xml"/><meta property="og:image:width" content="1200"/><meta property="og:image:height" content="630"/><meta property="og:image" content="https://paranjay.github.io/my-notes-public/BSMA1001-Mathematics-for-Data-Science-I-og-image.webp"/><meta property="og:image:url" content="https://paranjay.github.io/my-notes-public/BSMA1001-Mathematics-for-Data-Science-I-og-image.webp"/><meta name="twitter:image" content="https://paranjay.github.io/my-notes-public/BSMA1001-Mathematics-for-Data-Science-I-og-image.webp"/><meta property="og:image:type" content="image/.webp"/></head><body data-slug="BSMA1001-Mathematics-for-Data-Science-I"><div id="quartz-root" class="page"><div id="quartz-body"><div class="left sidebar"><h2 class="page-title"><a href=".">My Notes Public</a></h2><div class="spacer mobile-only"></div><div style="display: flex; flex-direction: row; flex-wrap: nowrap; gap: 1rem;"><div style="flex-grow: 1; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><div class="search"><button class="search-button"><p>Search</p><svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19.9 19.7"><title>Search</title><g class="search-path" fill="none"><path stroke-linecap="square" d="M18.5 18.3l-5.4-5.4"></path><circle cx="8" cy="8" r="7"></circle></g></svg></button><div class="search-container"><div class="search-space"><input autocomplete="off" class="search-bar" name="search" type="text" aria-label="Search for something" placeholder="Search for something"/><div class="search-layout" data-preview="true"></div></div></div></div></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="darkmode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="dayIcon" x="0px" y="0px" viewBox="0 0 35 35" style="enable-background:new 0 0 35 35" xml:space="preserve" aria-label="Dark mode"><title>Dark mode</title><path d="M6,17.5C6,16.672,5.328,16,4.5,16h-3C0.672,16,0,16.672,0,17.5    S0.672,19,1.5,19h3C5.328,19,6,18.328,6,17.5z M7.5,26c-0.414,0-0.789,0.168-1.061,0.439l-2,2C4.168,28.711,4,29.086,4,29.5    C4,30.328,4.671,31,5.5,31c0.414,0,0.789-0.168,1.06-0.44l2-2C8.832,28.289,9,27.914,9,27.5C9,26.672,8.329,26,7.5,26z M17.5,6    C18.329,6,19,5.328,19,4.5v-3C19,0.672,18.329,0,17.5,0S16,0.672,16,1.5v3C16,5.328,16.671,6,17.5,6z M27.5,9    c0.414,0,0.789-0.168,1.06-0.439l2-2C30.832,6.289,31,5.914,31,5.5C31,4.672,30.329,4,29.5,4c-0.414,0-0.789,0.168-1.061,0.44    l-2,2C26.168,6.711,26,7.086,26,7.5C26,8.328,26.671,9,27.5,9z M6.439,8.561C6.711,8.832,7.086,9,7.5,9C8.328,9,9,8.328,9,7.5    c0-0.414-0.168-0.789-0.439-1.061l-2-2C6.289,4.168,5.914,4,5.5,4C4.672,4,4,4.672,4,5.5c0,0.414,0.168,0.789,0.439,1.06    L6.439,8.561z M33.5,16h-3c-0.828,0-1.5,0.672-1.5,1.5s0.672,1.5,1.5,1.5h3c0.828,0,1.5-0.672,1.5-1.5S34.328,16,33.5,16z     M28.561,26.439C28.289,26.168,27.914,26,27.5,26c-0.828,0-1.5,0.672-1.5,1.5c0,0.414,0.168,0.789,0.439,1.06l2,2    C28.711,30.832,29.086,31,29.5,31c0.828,0,1.5-0.672,1.5-1.5c0-0.414-0.168-0.789-0.439-1.061L28.561,26.439z M17.5,29    c-0.829,0-1.5,0.672-1.5,1.5v3c0,0.828,0.671,1.5,1.5,1.5s1.5-0.672,1.5-1.5v-3C19,29.672,18.329,29,17.5,29z M17.5,7    C11.71,7,7,11.71,7,17.5S11.71,28,17.5,28S28,23.29,28,17.5S23.29,7,17.5,7z M17.5,25c-4.136,0-7.5-3.364-7.5-7.5    c0-4.136,3.364-7.5,7.5-7.5c4.136,0,7.5,3.364,7.5,7.5C25,21.636,21.636,25,17.5,25z"></path></svg><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="nightIcon" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100" xml:space="preserve" aria-label="Light mode"><title>Light mode</title><path d="M96.76,66.458c-0.853-0.852-2.15-1.064-3.23-0.534c-6.063,2.991-12.858,4.571-19.655,4.571  C62.022,70.495,50.88,65.88,42.5,57.5C29.043,44.043,25.658,23.536,34.076,6.47c0.532-1.08,0.318-2.379-0.534-3.23  c-0.851-0.852-2.15-1.064-3.23-0.534c-4.918,2.427-9.375,5.619-13.246,9.491c-9.447,9.447-14.65,22.008-14.65,35.369  c0,13.36,5.203,25.921,14.65,35.368s22.008,14.65,35.368,14.65c13.361,0,25.921-5.203,35.369-14.65  c3.872-3.871,7.064-8.328,9.491-13.246C97.826,68.608,97.611,67.309,96.76,66.458z"></path></svg></button></div><div style="flex-grow: 0; flex-shrink: 1; flex-basis: auto; order: 0; align-self: center; justify-self: center;"><button class="readermode"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" class="readerIcon" fill="currentColor" stroke="currentColor" stroke-width="0.2" stroke-linecap="round" stroke-linejoin="round" width="64px" height="64px" viewBox="0 0 24 24" aria-label="Reader mode"><title>Reader mode</title><g transform="translate(-1.8, -1.8) scale(1.15, 1.2)"><path d="M8.9891247,2.5 C10.1384702,2.5 11.2209868,2.96705384 12.0049645,3.76669482 C12.7883914,2.96705384 13.8709081,2.5 15.0202536,2.5 L18.7549359,2.5 C19.1691495,2.5 19.5049359,2.83578644 19.5049359,3.25 L19.5046891,4.004 L21.2546891,4.00457396 C21.6343849,4.00457396 21.9481801,4.28672784 21.9978425,4.6528034 L22.0046891,4.75457396 L22.0046891,20.25 C22.0046891,20.6296958 21.7225353,20.943491 21.3564597,20.9931534 L21.2546891,21 L2.75468914,21 C2.37499337,21 2.06119817,20.7178461 2.01153575,20.3517706 L2.00468914,20.25 L2.00468914,4.75457396 C2.00468914,4.37487819 2.28684302,4.061083 2.65291858,4.01142057 L2.75468914,4.00457396 L4.50368914,4.004 L4.50444233,3.25 C4.50444233,2.87030423 4.78659621,2.55650904 5.15267177,2.50684662 L5.25444233,2.5 L8.9891247,2.5 Z M4.50368914,5.504 L3.50468914,5.504 L3.50468914,19.5 L10.9478955,19.4998273 C10.4513189,18.9207296 9.73864328,18.5588115 8.96709342,18.5065584 L8.77307039,18.5 L5.25444233,18.5 C4.87474657,18.5 4.56095137,18.2178461 4.51128895,17.8517706 L4.50444233,17.75 L4.50368914,5.504 Z M19.5049359,17.75 C19.5049359,18.1642136 19.1691495,18.5 18.7549359,18.5 L15.2363079,18.5 C14.3910149,18.5 13.5994408,18.8724714 13.0614828,19.4998273 L20.5046891,19.5 L20.5046891,5.504 L19.5046891,5.504 L19.5049359,17.75 Z M18.0059359,3.999 L15.0202536,4 L14.8259077,4.00692283 C13.9889509,4.06666544 13.2254227,4.50975805 12.7549359,5.212 L12.7549359,17.777 L12.7782651,17.7601316 C13.4923805,17.2719483 14.3447024,17 15.2363079,17 L18.0059359,16.999 L18.0056891,4.798 L18.0033792,4.75457396 L18.0056891,4.71 L18.0059359,3.999 Z M8.9891247,4 L6.00368914,3.999 L6.00599909,4.75457396 L6.00599909,4.75457396 L6.00368914,4.783 L6.00368914,16.999 L8.77307039,17 C9.57551536,17 10.3461406,17.2202781 11.0128313,17.6202194 L11.2536891,17.776 L11.2536891,5.211 C10.8200889,4.56369974 10.1361548,4.13636104 9.37521067,4.02745763 L9.18347055,4.00692283 L8.9891247,4 Z"></path></g></svg></button></div></div><div class="explorer" data-behavior="link" data-collapsed="collapsed" data-savestate="true" data-data-fns="{&quot;order&quot;:[&quot;filter&quot;,&quot;map&quot;,&quot;sort&quot;],&quot;sortFn&quot;:&quot;(a,b)=>!a.isFolder&amp;&amp;!b.isFolder||a.isFolder&amp;&amp;b.isFolder?a.displayName.localeCompare(b.displayName,void 0,{numeric:!0,sensitivity:\&quot;base\&quot;}):!a.isFolder&amp;&amp;b.isFolder?1:-1&quot;,&quot;filterFn&quot;:&quot;node=>node.slugSegment!==\&quot;tags\&quot;&quot;,&quot;mapFn&quot;:&quot;node=>node&quot;}"><button type="button" class="explorer-toggle mobile-explorer hide-until-loaded" data-mobile="true" aria-controls="explorer-content"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-menu"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg></button><button type="button" class="title-button explorer-toggle desktop-explorer" data-mobile="false" aria-expanded="true"><h2>Explorer</h2><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><div class="explorer-content" aria-expanded="false"><ul class="explorer-ul overflow" id="list-0"><li class="overflow-end"></li></ul></div><template id="template-file"><li><a href="#"></a></li></template><template id="template-folder"><li><div class="folder-container"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="5 8 14 8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="folder-icon"><polyline points="6 9 12 15 18 9"></polyline></svg><div><button class="folder-button"><span class="folder-title"></span></button></div></div><div class="folder-outer"><ul class="content"></ul></div></li></template></div></div><div class="center"><div class="page-header"><div class="popover-hint"><nav class="breadcrumb-container" aria-label="breadcrumbs"><div class="breadcrumb-element"><a href="./">Home</a><p> ❯ </p></div><div class="breadcrumb-element"><a href>BSMA1001 Mathematics for Data Science I</a></div></nav><h1 class="article-title">BSMA1001 Mathematics for Data Science I</h1><p show-comma="true" class="content-meta"><time datetime="2025-06-05T17:29:01.985Z">Jun 05, 2025</time><span>42 min read</span></p><ul class="tags"><li><a href="./tags/course" class="internal tag-link">course</a></li><li><a href="./tags/math" class="internal tag-link">math</a></li></ul></div></div><article class="popover-hint"><h1 id="bsma1001-mathematics-for-data-science-i">BSMA1001 Mathematics for Data Science I<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#bsma1001-mathematics-for-data-science-i" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h1>
+<p><strong>Course Credits</strong>: 4</p>
+<p><strong>Course Type</strong>: Foundational</p>
+<p><strong>Instructors</strong>: Neelesh Upadhye, Madhavan Mukund</p>
+<p><strong>Pre-requisites</strong>: None</p>
+<h2 id="overview">Overview<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#overview" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>This course introduces straight lines, polynomials, exponentials, logarithms and the basics of discrete mathematics. Students learn to model real-life problems using abstract mathematical structures.</p>
+<h2 id="learning-objectives">Learning Objectives<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#learning-objectives" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li>Recall the basics of sets and number systems</li>
+<li>Plot and analyse straight lines</li>
+<li>Understand and differentiate between linear, quadratic, polynomial, exponential and logarithmic functions</li>
+<li>Apply algorithmic methods to find roots, maxima and minima of polynomials</li>
+<li>Represent sets and relations as discrete graphs</li>
+<li>Formulate and solve common graph-based problems</li>
+</ul>
+<h2 id="course-structure">Course Structure<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#course-structure" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<p>12 weeks of coursework with weekly online assignments, two invigilated quizzes and one invigilated end term exam.</p>
+<h2 id="weekly-topics">Weekly Topics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#weekly-topics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ol>
+<li><strong>Set Theory</strong>
+<ul>
+<li><strong>Number Systems</strong>:
+<ul>
+<li>Natural Numbers (ℕ): Counting numbers starting from 1 (e.g., 1, 2, 3, …). Some definitions include 0.</li>
+<li>Whole Numbers: Natural numbers including 0 (e.g., 0, 1, 2, 3, …).</li>
+<li>Integers (ℤ): Whole numbers and their negatives (e.g., …, -2, -1, 0, 1, 2, …).</li>
+<li>Rational Numbers (ℚ): Numbers that can be expressed as a fraction p/q, where p and q are integers and q ≠ 0 (e.g., 1/2, -3/4, 5, 0.25). Rational numbers have terminating or repeating decimal expansions.</li>
+<li>Irrational Numbers: Numbers that cannot be expressed as a simple fraction of two integers (e.g., √2, π, e). Their decimal expansions are non-terminating and non-repeating.</li>
+<li>Real Numbers (ℝ): All rational and irrational numbers. They can be represented on a number line.</li>
+</ul>
+</li>
+<li><strong>Sets</strong>:
+<ul>
+<li>Definition: A well-defined collection of distinct objects, called elements or members.</li>
+<li>Notation:
+<ul>
+<li>Roster Form: Listing all elements, e.g., A = {1, 2, 3}.</li>
+<li>Set-Builder Form: Describing elements by a property, e.g., B = {x | x is an even number and x > 0}.</li>
+</ul>
+</li>
+<li>Types of Sets:
+<ul>
+<li>Empty Set (∅ or {}): A set with no elements.</li>
+<li>Finite Set: A set with a countable number of elements.</li>
+<li>Infinite Set: A set with an uncountable number of elements.</li>
+<li>Subset (⊆): Set A is a subset of set B if all elements of A are also elements of B. E.g., if A = {1, 2} and B = {1, 2, 3}, then A ⊆ B.</li>
+<li>Proper Subset (⊂): Set A is a proper subset of set B if A ⊆ B and A ≠ B.</li>
+<li>Superset (⊇): If A is a subset of B, then B is a superset of A.</li>
+<li>Power Set (P(A)): The set of all subsets of set A, including the empty set and the set itself. If |A| = n, then |P(A)| = 2^n. Example: If A = {1, 2}, P(A) = {∅, {1}, {2}, {1, 2}}.</li>
+<li>Universal Set (U): The set containing all possible elements relevant to a particular discussion.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Set Operations</strong>:
+<ul>
+<li>Union (A ∪ B): The set of elements that are in A, or in B, or in both. E.g., {1, 2} ∪ {2, 3} = {1, 2, 3}.</li>
+<li>Intersection (A ∩ B): The set of elements that are in both A and B. E.g., {1, 2} ∩ {2, 3} = {2}.</li>
+<li>Difference (A - B): The set of elements that are in A but not in B. E.g., {1, 2} - {2, 3} = {1}.</li>
+<li>Complement (A’): The set of elements in the universal set U that are not in A. A’ = U - A.</li>
+<li>Cartesian Product (A × B): The set of all ordered pairs (a, b) such that a ∈ A and b ∈ B. E.g., {1, 2} × {a} = {(1, a), (2, a)}.</li>
+<li>Venn Diagrams: Visual representations of sets and their relationships using overlapping circles.
+<em>Example:</em>
+<pre><button class="expand-button" aria-label="Expand mermaid diagram" data-view-component="true"><svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 1.06L2.56 7h10.88l-2.22-2.22a.75.75 0 011.06-1.06l3.5 3.5a.75.75 0 010 1.06l-3.5 3.5a.75.75 0 11-1.06-1.06l2.22-2.22H2.56l2.22 2.22a.75.75 0 11-1.06 1.06l-3.5-3.5a.75.75 0 010-1.06l3.5-3.5z"></path></svg></button><code class="mermaid" data-clipboard="&quot;graph TD\n    A --- B&quot;">graph TD
+    A --- B
+</code><div id="mermaid-container" role="dialog"><div id="mermaid-space"><div class="mermaid-content"></div></div></div></pre>
+(Illustrative: A real Venn diagram would show circles for A and B, with overlaps representing intersections.)</li>
+</ul>
+</li>
+<li><strong>Relations</strong>:
+<ul>
+<li>Definition: A set of ordered pairs (a, b) where ‘a’ is from a set A (domain) and ‘b’ is from a set B (codomain). The set of all second elements in the ordered pairs is called the range.</li>
+<li>Domain: The set of all first elements in the ordered pairs of a relation.</li>
+<li>Codomain: The set from which the second elements of the ordered pairs are chosen.</li>
+<li>Range: The set of all actual second elements in the ordered pairs. The range is a subset of the codomain.</li>
+<li>Types of Relations (on a set A, i.e., from A to A):
+<ul>
+<li>Reflexive: A relation R on set A is reflexive if (a, a) ∈ R for every a ∈ A. Example: “is equal to” on ℤ. (5 = 5)</li>
+<li>Symmetric: A relation R on set A is symmetric if whenever (a, b) ∈ R, then (b, a) ∈ R. Example: “is a sibling of” (if A is a sibling of B, then B is a sibling of A).</li>
+<li>Transitive: A relation R on set A is transitive if whenever (a, b) ∈ R and (b, c) ∈ R, then (a, c) ∈ R. Example: “is less than” on ℕ (if a &lt; b and b &lt; c, then a &lt; c).</li>
+<li>Equivalence Relation: A relation that is reflexive, symmetric, and transitive. It partitions the set into disjoint equivalence classes. Example: “has the same remainder when divided by 3” on ℤ.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Functions</strong>:
+<ul>
+<li>Definition: A function f from a set A (domain) to a set B (codomain), denoted f: A → B, is a special type of relation where every element in A is associated with exactly one element in B.</li>
+<li>Domain: The set A.</li>
+<li>Codomain: The set B.</li>
+<li>Range: The set of all actual output values f(a) for a ∈ A. The range is a subset of the codomain.</li>
+<li>Types of Functions:
+<ul>
+<li>One-to-one (Injective): A function where distinct elements in the domain map to distinct elements in the codomain. If f(x1) = f(x2), then x1 = x2.</li>
+<li>Many-to-one: A function where at least two distinct elements in the domain map to the same element in the codomain.</li>
+<li>Onto (Surjective): A function where every element in the codomain B is an image of at least one element in the domain A. The range equals the codomain.</li>
+<li>One-to-one Correspondence (Bijective): A function that is both one-to-one (injective) and onto (surjective).</li>
+</ul>
+</li>
+<li>Vertical Line Test: A graph represents a function if and only if no vertical line intersects the graph at more than one point.</li>
+<li>Composition of Functions: Given f: A → B and g: B → C, the composition (g ∘ f)(x) = g(f(x)).</li>
+<li>Inverse Functions: If f: A → B is a bijective function, then its inverse function f⁻¹: B → A exists, such that if f(a) = b, then f⁻¹(b) = a.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Coordinate Geometry</strong>
+<ul>
+<li><strong>Rectangular Coordinate System (Cartesian Plane)</strong>:
+<ul>
+<li>A plane formed by two perpendicular number lines: the horizontal x-axis and the vertical y-axis.</li>
+<li>Origin (0,0): The point where the x-axis and y-axis intersect.</li>
+<li>Quadrants: The four regions into which the axes divide the plane (I, II, III, IV, numbered counter-clockwise starting from the top right).</li>
+<li>Coordinates of a Point (x, y): An ordered pair that specifies the location of a point, where x is the horizontal distance from the origin and y is the vertical distance.</li>
+</ul>
+</li>
+<li><strong>Plotting Points</strong>:
+<ul>
+<li>To plot a point (x, y), start at the origin, move x units horizontally (right if positive, left if negative), and then y units vertically (up if positive, down if negative).</li>
+<li>Distance Formula: The distance ‘d’ between two points (x1, y1) and (x2, y2) is given by d = √[(x2 - x1)² + (y2 - y1)²].</li>
+<li>Midpoint Formula: The midpoint M of a line segment connecting (x1, y1) and (x2, y2) is M = ((x1 + x2)/2, (y1 + y2)/2).</li>
+</ul>
+</li>
+<li><strong>Slope of a Line (m)</strong>:
+<ul>
+<li>Definition: A measure of the steepness and direction of a line. It is the ratio of the vertical change (rise) to the horizontal change (run) between any two distinct points on the line.</li>
+<li>Formula: Given two points (x1, y1) and (x2, y2), the slope m = (y2 - y1) / (x2 - x1).</li>
+<li>Interpretation of Slope:
+<ul>
+<li>Positive Slope (m > 0): Line rises from left to right.</li>
+<li>Negative Slope (m &lt; 0): Line falls from left to right.</li>
+<li>Zero Slope (m = 0): Horizontal line.</li>
+<li>Undefined Slope: Vertical line (denominator x2 - x1 = 0).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Parallel and Perpendicular Lines</strong>:
+<ul>
+<li>Parallel Lines: Two non-vertical lines are parallel if and only if their slopes are equal (m1 = m2).</li>
+<li>Perpendicular Lines: Two non-vertical lines are perpendicular if and only if the product of their slopes is -1 (m1 * m2 = -1). This also means one slope is the negative reciprocal of the other (m2 = -1/m1).</li>
+</ul>
+</li>
+<li><strong>Representations of a Line</strong>:
+<ul>
+<li>Slope-Intercept Form: y = mx + c, where m is the slope and c is the y-intercept (the y-coordinate where the line crosses the y-axis).</li>
+<li>Point-Slope Form: y - y1 = m(x - x1), where m is the slope and (x1, y1) is a point on the line.</li>
+<li>Two-Point Form: (y - y1) / (x - x1) = (y2 - y1) / (x2 - x1), derived from the slope formula using two points (x1, y1) and (x2, y2).</li>
+<li>Intercept Form: x/a + y/b = 1, where ‘a’ is the x-intercept and ‘b’ is the y-intercept.</li>
+<li>General Equation of a Line: Ax + By + C = 0, where A, B, and C are constants, and A and B are not both zero.</li>
+</ul>
+</li>
+<li><strong>Straight-line Fit (Introduction)</strong>:
+<ul>
+<li>In data science, we often have a collection of data points that appear to follow a linear trend.</li>
+<li>Straight-line fitting, or linear regression, is the process of finding a single straight line that best represents the relationship in the data.</li>
+<li>Visually, this line tries to pass as close as possible to all data points. This line can then be used to make predictions or understand the underlying relationship between variables.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Quadratic Functions</strong>
+<ul>
+<li><strong>Quadratic Functions</strong>:
+<ul>
+<li>Definition: A function of the form f(x) = ax² + bx + c, where a, b, and c are real numbers and a ≠ 0.</li>
+</ul>
+</li>
+<li><strong>Parabolas</strong>:
+<ul>
+<li>The graph of a quadratic function is a U-shaped curve called a parabola.</li>
+<li>Concavity:
+<ul>
+<li>If a > 0, the parabola opens upwards (concave up), and the vertex is the minimum point.</li>
+<li>If a &lt; 0, the parabola opens downwards (concave down), and the vertex is the maximum point.</li>
+</ul>
+</li>
+<li>Axis of Symmetry: A vertical line that divides the parabola into two mirror images. Its equation is x = -b / (2a).</li>
+</ul>
+</li>
+<li><strong>Vertex</strong>:
+<ul>
+<li>The highest point (maximum) or lowest point (minimum) of the parabola.</li>
+<li>Coordinates of the Vertex (h, k): h = -b / (2a), and k = f(h) = f(-b / (2a)).</li>
+</ul>
+</li>
+<li><strong>Vertex Form</strong>:
+<ul>
+<li>The vertex form of a quadratic function is f(x) = a(x - h)² + k, where (h, k) is the vertex of the parabola.</li>
+<li>Conversion from Standard Form (ax² + bx + c) to Vertex Form:
+<ol>
+<li>Identify a, b, c.</li>
+<li>Calculate h = -b / (2a).</li>
+<li>Calculate k = f(h) = a(h)² + b(h) + c.</li>
+<li>Substitute a, h, k into f(x) = a(x - h)² + k.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Roots/Zeros/X-intercepts</strong>:
+<ul>
+<li>These are the points where the parabola intersects the x-axis, i.e., where f(x) = 0.</li>
+<li>Methods to find roots:
+<ul>
+<li>Factorisation: If the quadratic expression ax² + bx + c can be factored into a(x - r1)(x - r2), then r1 and r2 are the roots. Example: x² - 5x + 6 = (x - 2)(x - 3) = 0, so roots are x = 2 and x = 3.</li>
+<li>Quadratic Formula: For ax² + bx + c = 0, the roots are given by x = [-b ± √(b² - 4ac)] / (2a).</li>
+</ul>
+</li>
+<li>Discriminant (Δ): Δ = b² - 4ac. The discriminant determines the nature of the roots:
+<ul>
+<li>If Δ > 0: Two distinct real roots (parabola intersects x-axis at two points).</li>
+<li>If Δ = 0: One real root (or two equal real roots; parabola touches x-axis at one point - the vertex).</li>
+<li>If Δ &lt; 0: No real roots (two complex conjugate roots; parabola does not intersect x-axis).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Completing the Square</strong>:
+<ul>
+<li>A method used to solve quadratic equations and to convert the standard form of a quadratic function to the vertex form.</li>
+<li>Steps for ax² + bx + c = 0:
+<ol>
+<li>If a ≠ 1, divide the entire equation by a: x² + (b/a)x + (c/a) = 0.</li>
+<li>Move the constant term to the right side: x² + (b/a)x = -(c/a).</li>
+<li>Take half of the coefficient of x, square it, and add it to both sides. Half of (b/a) is (b/2a), squaring it gives (b/2a)².
+x² + (b/a)x + (b/2a)² = -(c/a) + (b/2a)².</li>
+<li>The left side is now a perfect square: (x + b/2a)² = (b² - 4ac) / 4a².</li>
+<li>Solve for x by taking the square root of both sides.</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><strong>Maxima and Minima</strong>:
+<ul>
+<li>The vertex (h, k) of the parabola provides the maximum or minimum value of the quadratic function.</li>
+<li>If a > 0 (parabola opens upwards), the function has a minimum value of k at x = h.</li>
+<li>If a &lt; 0 (parabola opens downwards), the function has a maximum value of k at x = h.</li>
+<li>Applications: Used in optimization problems, e.g., finding the maximum height of a projectile or minimizing costs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Polynomials</strong>
+<ul>
+<li><strong>Polynomials</strong>:
+<ul>
+<li>Definition: An expression consisting of variables (also called indeterminates) and coefficients, that involves only the operations of addition, subtraction, multiplication, and non-negative integer exponents of variables. Example: P(x) = 3x⁴ - 2x² + x - 5.</li>
+<li>Degree of a Polynomial: The highest power of the variable in the polynomial. In the example, the degree is 4.</li>
+<li>Leading Term: The term with the highest power of the variable (3x⁴).</li>
+<li>Leading Coefficient: The coefficient of the leading term (3).</li>
+<li>Constant Term: The term without a variable (-5).</li>
+<li>Standard Form: Polynomials are usually written in descending order of powers of the variable.</li>
+<li>Types:
+<ul>
+<li>Monomial: A polynomial with one term (e.g., 5x²).</li>
+<li>Binomial: A polynomial with two terms (e.g., 3x + 1).</li>
+<li>Trinomial: A polynomial with three terms (e.g., x² + 2x - 1).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Polynomial Arithmetic</strong>:
+<ul>
+<li>Addition and Subtraction: Combine like terms (terms with the same power of the variable).
+Example: (2x² + 3x - 1) + (x² - x + 4) = (2+1)x² + (3-1)x + (-1+4) = 3x² + 2x + 3.</li>
+<li>Multiplication: Use the distributive property. For binomials, the FOIL (First, Outer, Inner, Last) method can be used.
+Example: (x + 2)(x - 3) = x(x) + x(-3) + 2(x) + 2(-3) = x² - 3x + 2x - 6 = x² - x - 6.</li>
+</ul>
+</li>
+<li><strong>Division of Polynomials</strong>:
+<ul>
+<li>Long Division: Similar to long division for numbers. Used to divide a polynomial by another polynomial of a lower or equal degree.
+Example: Divide x³ - 2x² + x - 5 by x - 2.
+<pre><code>      x²   + 1
+  ________________
+x-2 | x³ - 2x² +  x - 5
+    -(x³ - 2x²)
+    _________
+           0 +  x - 5
+             -(x - 2)
+             _______
+                   -3  (Remainder)
+</code></pre>
+So, (x³ - 2x² + x - 5) / (x - 2) = x² + 1 with a remainder of -3.</li>
+<li>Remainder Theorem: If a polynomial P(x) is divided by a linear binomial (x - c), the remainder is P(c).
+For the example above, P(x) = x³ - 2x² + x - 5, c = 2. P(2) = 2³ - 2(2)² + 2 - 5 = 8 - 8 + 2 - 5 = -3, which is the remainder.</li>
+<li>Factor Theorem: A linear binomial (x - c) is a factor of the polynomial P(x) if and only if P(c) = 0 (i.e., the remainder is 0).</li>
+<li>Synthetic Division: A shortcut method for dividing a polynomial by a linear binomial of the form (x - c).
+Example: Divide x³ - 2x² + x - 5 by x - 2 (c=2).
+<pre><code>2 | 1  -2   1  -5
+  |    2   0   2
+  ----------------
+    1   0   1  -3
+</code></pre>
+The coefficients of the quotient are 1, 0, 1 (so x² + 0x + 1 = x² + 1) and the remainder is -3.</li>
+</ul>
+</li>
+<li><strong>Graphs of Polynomials</strong>:
+<ul>
+<li>X-intercepts (Roots/Zeros): The points where the graph intersects or touches the x-axis. These are the real solutions to P(x) = 0.</li>
+<li>Multiplicity of Roots: The number of times a particular root appears as a factor of the polynomial.
+<ul>
+<li>Odd Multiplicity: The graph crosses the x-axis at the root. Example: P(x) = (x-1)¹.</li>
+<li>Even Multiplicity: The graph touches the x-axis at the root (bounces off). Example: P(x) = (x-1)².</li>
+</ul>
+</li>
+<li>End Behavior: The direction of the graph as x approaches positive infinity (x → ∞) and as x approaches negative infinity (x → -∞). It is determined by the leading term (axⁿ):
+<ul>
+<li>n is even, a > 0: Up on left, Up on right (e.g., x²)</li>
+<li>n is even, a &lt; 0: Down on left, Down on right (e.g., -x²)</li>
+<li>n is odd, a > 0: Down on left, Up on right (e.g., x³)</li>
+<li>n is odd, a &lt; 0: Up on left, Down on right (e.g., -x³)</li>
+</ul>
+</li>
+<li>Turning Points: Points where the graph changes from increasing to decreasing or vice-versa. A polynomial of degree n has at most (n - 1) turning points.</li>
+</ul>
+</li>
+<li><strong>Graphing &amp; Polynomial Creation</strong>:
+<ul>
+<li>To sketch a polynomial graph: Find x-intercepts (roots) and their multiplicities, determine end behavior, find y-intercept (P(0)), and use turning points to guide the shape.</li>
+<li>Creating a polynomial equation: If the roots (r1, r2, …, rn) are known, the polynomial can be written in factored form: P(x) = a(x - r1)(x - r2)…(x - rn). The value of ‘a’ can be found if another point on the graph is known.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Functions (Advanced Topics)</strong>
+<ul>
+<li><strong>Review of Function Basics</strong>:
+<ul>
+<li>Definition: A rule that assigns each input element from a set (domain) to exactly one output element in another set (codomain).</li>
+<li>Domain: Set of all possible inputs.</li>
+<li>Codomain: Set of all possible outputs.</li>
+<li>Range: Set of all actual outputs.</li>
+</ul>
+</li>
+<li><strong>Graphical Tests for Functions</strong>:
+<ul>
+<li>Vertical Line Test: A curve in the xy-plane represents the graph of a function if and only if no vertical line intersects the curve more than once. This ensures that each x-value maps to only one y-value.</li>
+<li>Horizontal Line Test: A function is one-to-one if and only if no horizontal line intersects its graph more than once. This ensures that each y-value is mapped from only one x-value.</li>
+</ul>
+</li>
+<li><strong>One-to-one and Many-to-one Functions (Deeper Dive)</strong>:
+<ul>
+<li>One-to-one (Injective): Every distinct input produces a distinct output. Example: f(x) = 2x. If f(x1) = f(x2), then 2x1 = 2x2, which implies x1 = x2. These functions pass the Horizontal Line Test. They are crucial for having well-defined inverse functions.</li>
+<li>Many-to-one: At least two different inputs produce the same output. Example: f(x) = x². Here, f(2) = 4 and f(-2) = 4. These functions do not pass the Horizontal Line Test and do not have simple inverse functions unless their domain is restricted.</li>
+</ul>
+</li>
+<li><strong>Inverse Functions</strong>:
+<ul>
+<li>Conditions for Existence: A function f must be bijective (both one-to-one and onto) to have an inverse function f⁻¹. If a function is not one-to-one, its inverse would not be a function (one input would map to multiple outputs). If it’s not onto, the domain of the inverse would not cover all of the original function’s codomain.</li>
+<li>Finding the Inverse:
+<ol>
+<li>Replace f(x) with y.</li>
+<li>Swap x and y in the equation.</li>
+<li>Solve the new equation for y. The resulting expression is f⁻¹(x).
+Example: Find the inverse of f(x) = 2x + 3.
+y = 2x + 3
+x = 2y + 3 (swap)
+x - 3 = 2y
+y = (x - 3) / 2
+So, f⁻¹(x) = (x - 3) / 2.</li>
+</ol>
+</li>
+<li>Graphical Property: The graph of f⁻¹(x) is the reflection of the graph of f(x) across the line y = x.</li>
+<li>Composition Property: (f⁻¹ ∘ f)(x) = x and (f ∘ f⁻¹)(x) = x.</li>
+</ul>
+</li>
+<li><strong>Exponential Functions</strong>:
+<ul>
+<li>Definition: A function of the form f(x) = aˣ, where ‘a’ is a positive constant called the base (a > 0, a ≠ 1), and ‘x’ is the exponent.</li>
+<li>Natural Exponential Function: f(x) = eˣ, where ‘e’ is Euler’s number (approximately 2.71828). This base is frequently used in calculus and many natural phenomena.</li>
+<li>Properties:
+<ul>
+<li>Domain: (-∞, ∞) (all real numbers).</li>
+<li>Range: (0, ∞) (all positive real numbers).</li>
+<li>Y-intercept: (0, 1) because a⁰ = 1 for any a ≠ 0.</li>
+<li>Horizontal Asymptote: The x-axis (y=0) is a horizontal asymptote. The graph approaches but never touches the x-axis.</li>
+</ul>
+</li>
+<li>Graphs:
+<ul>
+<li>If a > 1, the function is increasing (exponential growth). Example: f(x) = 2ˣ.</li>
+<li>If 0 &lt; a &lt; 1, the function is decreasing (exponential decay). Example: f(x) = (1/2)ˣ.</li>
+</ul>
+</li>
+<li>Applications:
+<ul>
+<li>Compound Interest: A = P(1 + r/n)^(nt).</li>
+<li>Population Growth: P(t) = P₀e^(kt).</li>
+<li>Radioactive Decay: N(t) = N₀e^(-λt).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Composition of Functions (Further Examples)</strong>:
+<ul>
+<li>Let f(x) = x² + 1 and g(x) = √(x - 1).</li>
+<li>(f ∘ g)(x) = f(g(x)) = f(√(x - 1)) = (√(x - 1))² + 1 = (x - 1) + 1 = x.
+Domain of g(x) is x ≥ 1. Range of g(x) is y ≥ 0. Domain of f(x) is all real numbers.
+Domain of (f ∘ g)(x) is x ≥ 1.</li>
+<li>(g ∘ f)(x) = g(f(x)) = g(x² + 1) = √((x² + 1) - 1) = √(x²) = |x|.
+Domain of f(x) is all real numbers. Range of f(x) is y ≥ 1. Domain of g(x) requires input ≥ 1.
+Since x² + 1 is always ≥ 1, the domain of (g ∘ f)(x) is all real numbers.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Logarithmic Functions</strong>
+<ul>
+<li><strong>Definition of Logarithms</strong>:
+<ul>
+<li>A logarithm is the power to which a base must be raised to produce a given number.</li>
+<li>If y = aˣ (exponential form), then x = logₐ(y) (logarithmic form).</li>
+<li>‘a’ is the base (a > 0, a ≠ 1), ‘y’ is the argument (y > 0).</li>
+<li>Example: Since 2³ = 8, then log₂(8) = 3.</li>
+</ul>
+</li>
+<li><strong>Common Logarithm</strong>: Base 10, written as log(x) or log₁₀(x). Used in various scientific scales.</li>
+<li><strong>Natural Logarithm</strong>: Base ‘e’ (Euler’s number), written as ln(x) or logₑ(x). Arises naturally in calculus and models continuous growth/decay.</li>
+<li><strong>Relationship between Logarithmic and Exponential Forms</strong>:
+<ul>
+<li>logₐ(y) = x  <span>⇐</span>>  aˣ = y</li>
+<li>Example: Convert log₃(9) = 2 to exponential form: 3² = 9.</li>
+<li>Example: Convert 5⁴ = 625 to logarithmic form: log₅(625) = 4.</li>
+</ul>
+</li>
+<li><strong>Graphs of Logarithmic Functions</strong>: f(x) = logₐ(x)
+<ul>
+<li>Domain: (0, ∞) (only positive real numbers). You cannot take the logarithm of a negative number or zero.</li>
+<li>Range: (-∞, ∞) (all real numbers).</li>
+<li>X-intercept: (1, 0) because logₐ(1) = 0 (since a⁰ = 1).</li>
+<li>Vertical Asymptote: The y-axis (x=0) is a vertical asymptote.</li>
+<li>Shape:
+<ul>
+<li>If a > 1, the graph is increasing. Example: f(x) = log₂(x).</li>
+<li>If 0 &lt; a &lt; 1, the graph is decreasing. Example: f(x) = log₁/₂(x).</li>
+</ul>
+</li>
+<li>The graph of logₐ(x) is a reflection of the graph of aˣ across the line y = x.</li>
+</ul>
+</li>
+<li><strong>Laws of Logarithms</strong>:
+<ul>
+<li>Product Rule: logₐ(xy) = logₐ(x) + logₐ(y)  (The log of a product is the sum of the logs)</li>
+<li>Quotient Rule: logₐ(x/y) = logₐ(x) - logₐ(y) (The log of a quotient is the difference of the logs)</li>
+<li>Power Rule: logₐ(xᵖ) = p * logₐ(x) (The log of a number raised to a power is the power times the log of the number)</li>
+<li>Change of Base Formula: logₐ(x) = log<sub>b</sub>(x) / log<sub>b</sub>(a). This allows conversion between logarithms of different bases. Commonly used to convert to ln(x) or log(x) for calculator use: logₐ(x) = ln(x) / ln(a).</li>
+<li>Other properties: logₐ(a) = 1, logₐ(1) = 0, logₐ(aˣ) = x, a^(logₐ(x)) = x.</li>
+</ul>
+</li>
+<li><strong>Solving Exponential Equations</strong>:
+<ul>
+<li>If possible, make the bases the same: If aᵁ = aⱽ, then U = V.</li>
+<li>Otherwise, take the logarithm (common or natural) of both sides and use the power rule to bring down the exponent.
+Example: Solve 3ˣ = 10.
+ln(3ˣ) = ln(10)
+x * ln(3) = ln(10)
+x = ln(10) / ln(3) ≈ 2.096.</li>
+</ul>
+</li>
+<li><strong>Solving Logarithmic Equations</strong>:
+<ul>
+<li>Use laws of logarithms to combine terms into a single logarithm if possible.</li>
+<li>Convert the logarithmic equation to its exponential form.</li>
+<li>Solve for the variable.</li>
+<li><strong>Crucial</strong>: Always check for extraneous solutions by substituting the solution back into the original equation. Logarithms are only defined for positive arguments.
+Example: Solve log₂(x) + log₂(x - 2) = 3.
+log₂(x(x - 2)) = 3
+x(x - 2) = 2³
+x² - 2x = 8
+x² - 2x - 8 = 0
+(x - 4)(x + 2) = 0
+x = 4 or x = -2.
+Check x = 4: log₂(4) + log₂(4 - 2) = 2 + log₂(2) = 2 + 1 = 3. (Valid)
+Check x = -2: log₂(-2) is undefined. (Extraneous solution)
+So, the only solution is x = 4.</li>
+</ul>
+</li>
+<li><strong>Applications</strong>:
+<ul>
+<li>pH Scale: pH = -log[H⁺] (concentration of hydrogen ions).</li>
+<li>Richter Scale: Magnitude M = log(I/S) (measures earthquake intensity).</li>
+<li>Decibel Levels (Sound Intensity): dB = 10 * log(P₁/P₀).</li>
+<li>Information Theory: Entropy calculations.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Sequences and Limits</strong>
+<ul>
+<li><strong>Sequences</strong>:
+<ul>
+<li>Definition: An ordered list of numbers, called terms. A sequence can be thought of as a function whose domain is the set of natural numbers.</li>
+<li>Notation: Often denoted by {a<sub>n</sub>} or a<sub>n</sub>, where a<sub>n</sub> is the nth term.</li>
+<li>Example: {1, 3, 5, 7, …}, where a<sub>n</sub> = 2n - 1.</li>
+</ul>
+</li>
+<li><strong>Arithmetic Sequences</strong>:
+<ul>
+<li>Definition: A sequence where the difference between consecutive terms is constant. This constant difference is called the common difference (d).</li>
+<li>Formula for nth term: a<sub>n</sub> = a₁ + (n-1)d, where a₁ is the first term.</li>
+<li>Sum of first n terms: S<sub>n</sub> = n/2 * [2a₁ + (n-1)d] or S<sub>n</sub> = n/2 * (a₁ + a<sub>n</sub>).</li>
+<li>Example: Sequence 2, 5, 8, 11, … (a₁ = 2, d = 3). a₄ = 2 + (4-1)3 = 11.</li>
+</ul>
+</li>
+<li><strong>Geometric Sequences</strong>:
+<ul>
+<li>Definition: A sequence where the ratio between consecutive terms is constant. This constant ratio is called the common ratio (r).</li>
+<li>Formula for nth term: a<sub>n</sub> = a₁ * r<sup>(n-1)</sup>, where a₁ is the first term.</li>
+<li>Sum of first n terms: S<sub>n</sub> = a₁(1 - r<sup>n</sup>) / (1 - r), for r ≠ 1.</li>
+<li>Sum of an infinite geometric series: If |r| &lt; 1, the series converges and its sum is S = a₁ / (1 - r). If |r| ≥ 1, the series diverges.</li>
+<li>Example: Sequence 3, 6, 12, 24, … (a₁ = 3, r = 2). a₄ = 3 * 2<sup>(4-1)</sup> = 24.</li>
+</ul>
+</li>
+<li><strong>Introduction to Limits (Intuitive)</strong>:
+<ul>
+<li>The concept of a limit describes the value that a function or sequence “approaches” as the input or index approaches some value.</li>
+<li>It’s about the behavior of the function <em>near</em> a point, not necessarily <em>at</em> the point itself.</li>
+</ul>
+</li>
+<li><strong>Limits of Sequences</strong>:
+<ul>
+<li>lim (n→∞) a<sub>n</sub> = L means that the terms of the sequence a<sub>n</sub> get arbitrarily close to L as n becomes very large.</li>
+<li>Convergent Sequence: A sequence that has a finite limit. Example: a<sub>n</sub> = 1/n, lim (n→∞) 1/n = 0.</li>
+<li>Divergent Sequence: A sequence that does not have a finite limit (it may go to ∞, -∞, or oscillate). Example: a<sub>n</sub> = n, lim (n→∞) n = ∞.</li>
+</ul>
+</li>
+<li><strong>Limits of Functions</strong>:
+<ul>
+<li>lim (x→c) f(x) = L means that the values of f(x) get arbitrarily close to L as x gets arbitrarily close to c (but not equal to c).</li>
+<li>One-Sided Limits:
+<ul>
+<li>Right-hand limit: lim (x→c⁺) f(x) (x approaches c from values greater than c).</li>
+<li>Left-hand limit: lim (x→c⁻) f(x) (x approaches c from values less than c).</li>
+<li>The limit lim (x→c) f(x) exists if and only if lim (x→c⁺) f(x) = lim (x→c⁻) f(x) = L.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Limit Laws/Properties</strong>: If lim (x→c) f(x) = L and lim (x→c) g(x) = M:
+<ul>
+<li>Sum Rule: lim [f(x) + g(x)] = L + M.</li>
+<li>Difference Rule: lim [f(x) - g(x)] = L - M.</li>
+<li>Product Rule: lim [f(x) * g(x)] = L * M.</li>
+<li>Quotient Rule: lim [f(x) / g(x)] = L / M (if M ≠ 0).</li>
+<li>Constant Multiple Rule: lim [k * f(x)] = k * L.</li>
+<li>Power Rule: lim [f(x)]<sup>n</sup> = L<sup>n</sup>.</li>
+</ul>
+</li>
+<li><strong>Evaluating Limits</strong>:
+<ul>
+<li>Direct Substitution: If f(x) is a polynomial or rational function and c is in its domain, then lim (x→c) f(x) = f(c).</li>
+<li>Factorization and Cancellation: For indeterminate forms like 0/0. Example: lim (x→1) (x²-1)/(x-1) = lim (x→1) (x-1)(x+1)/(x-1) = lim (x→1) (x+1) = 2.</li>
+<li>Rationalization: Multiplying by the conjugate, often for limits involving square roots.</li>
+<li>L’Hôpital’s Rule (brief mention): If a limit is of the form 0/0 or ∞/∞, it can sometimes be evaluated by taking the derivatives of the numerator and denominator. (More detail in Week 8).</li>
+</ul>
+</li>
+<li><strong>Tangent Lines (Conceptual Link to Limits)</strong>:
+<ul>
+<li>A secant line passes through two points on a curve. Its slope is (f(x) - f(c)) / (x - c).</li>
+<li>A tangent line touches the curve at a single point c. Its slope is found by taking the limit of the slopes of secant lines as x approaches c: m_tangent = lim (x→c) [f(x) - f(c)] / (x - c). This is the definition of the derivative.</li>
+</ul>
+</li>
+<li><strong>Continuity</strong>:
+<ul>
+<li>Definition of Continuity at a Point: A function f is continuous at a point x=c if all three conditions are met:
+<ol>
+<li>f(c) is defined (c is in the domain of f).</li>
+<li>lim (x→c) f(x) exists (left-hand limit = right-hand limit).</li>
+<li>lim (x→c) f(x) = f(c) (the limit equals the function value).</li>
+</ol>
+</li>
+<li>Continuity on an Interval: A function is continuous on an interval if it is continuous at every point in that interval. Most common functions (polynomials, rational functions where defined, exponential, logarithmic, trigonometric) are continuous on their domains.</li>
+</ul>
+</li>
+<li><strong>Discontinuities</strong>: Points where a function is not continuous.
+<ul>
+<li>Types:
+<ul>
+<li>Removable Discontinuity (Hole): Occurs when lim (x→c) f(x) exists but is not equal to f(c), or f(c) is undefined. Graphically, there’s a hole in the graph. Example: f(x) = (x²-1)/(x-1) at x=1.</li>
+<li>Jump Discontinuity: Occurs when the left-hand limit and right-hand limit both exist but are not equal. Graphically, there’s a jump in the graph. Example: A step function like f(x) = 1 for x ≥ 0, and f(x) = -1 for x &lt; 0, at x=0.</li>
+<li>Infinite Discontinuity (Asymptotic): Occurs when one or both of the one-sided limits go to ∞ or -∞. Graphically, there’s a vertical asymptote. Example: f(x) = 1/x at x=0.</li>
+</ul>
+</li>
+<li>Intermediate Value Theorem: If f is continuous on a closed interval [a, b], and N is any number between f(a) and f(b) (where f(a) ≠ f(b)), then there exists at least one number c in (a, b) such that f(c) = N. Intuitively, a continuous function doesn’t skip values.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Derivatives &amp; Critical Points</strong>
+<ul>
+<li><strong>Definition of the Derivative</strong>:
+<ul>
+<li>As the slope of the tangent line to the graph of f(x) at point x:
+f’(x) = lim (h→0) [f(x+h) - f(x)] / h
+This limit represents the slope of the line that just touches the curve at x.</li>
+<li>As the instantaneous rate of change of the function f(x) with respect to x.
+Example: If f(t) is position at time t, f’(t) is instantaneous velocity.</li>
+<li>Notations:
+<ul>
+<li>Lagrange’s notation: f’(x) (read “f prime of x”)</li>
+<li>Leibniz’s notation: dy/dx (read “d y d x” or “derivative of y with respect to x”)</li>
+<li>y’ (read “y prime”)</li>
+<li>d/dx [f(x)] (operator notation)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Differentiability</strong>:
+<ul>
+<li>A function is differentiable at a point x=c if f’(c) exists.</li>
+<li>Conditions for Non-differentiability:
+<ul>
+<li>Corners: e.g., f(x) = |x| at x=0. The left and right limits of the difference quotient are different.</li>
+<li>Cusps: e.g., f(x) = x^(2/3) at x=0. Slopes of secant lines approach ∞ from one side and -∞ from the other.</li>
+<li>Vertical Tangents: e.g., f(x) = x^(1/3) at x=0. The tangent line is vertical, so its slope is undefined.</li>
+<li>Discontinuities: If a function is not continuous at a point, it cannot be differentiable at that point.</li>
+</ul>
+</li>
+<li>Relationship between Differentiability and Continuity: If a function is differentiable at a point, it MUST be continuous at that point. However, a function can be continuous at a point but not differentiable there (e.g., f(x) = |x| at x=0).</li>
+</ul>
+</li>
+<li><strong>Basic Differentiation Rules</strong>:
+<ul>
+<li>Constant Rule: d/dx (c) = 0 (The derivative of a constant is zero).</li>
+<li>Power Rule: d/dx (xⁿ) = nxⁿ⁻¹ (For any real number n). Example: d/dx (x³) = 3x².</li>
+<li>Constant Multiple Rule: d/dx [c * f(x)] = c * f’(x). Example: d/dx (5x³) = 5 * (3x²) = 15x².</li>
+<li>Sum/Difference Rule: d/dx [f(x) ± g(x)] = f’(x) ± g’(x). Example: d/dx (x² + 3x) = 2x + 3.</li>
+<li>Derivative of eˣ: d/dx (eˣ) = eˣ.</li>
+<li>Derivative of ln(x): d/dx (ln(x)) = 1/x (for x > 0).</li>
+</ul>
+</li>
+<li><strong>Product Rule</strong>: For differentiating the product of two functions:
+<ul>
+<li>d/dx [f(x)g(x)] = f’(x)g(x) + f(x)g’(x)</li>
+<li>Example: d/dx (x² * eˣ) = (2x)(eˣ) + (x²)(eˣ) = xeˣ(2 + x).</li>
+</ul>
+</li>
+<li><strong>Quotient Rule</strong>: For differentiating the quotient of two functions:
+<ul>
+<li>d/dx [f(x)/g(x)] = [f’(x)g(x) - f(x)g’(x)] / [g(x)]² (where g(x) ≠ 0)</li>
+<li>Example: d/dx (x² / (x+1)) = [2x(x+1) - x²(1)] / (x+1)² = (2x² + 2x - x²) / (x+1)² = (x² + 2x) / (x+1)².</li>
+</ul>
+</li>
+<li><strong>Chain Rule (Introduction)</strong>: For differentiating composite functions f(g(x)):
+<ul>
+<li>d/dx [f(g(x))] = f’(g(x)) * g’(x) (Derivative of the outer function evaluated at the inner function, times the derivative of the inner function).</li>
+<li>Example: d/dx [(x² + 1)³]. Let u = x² + 1 (inner), f(u) = u³ (outer).
+f’(u) = 3u², u’(x) = 2x.
+So, d/dx [(x² + 1)³] = 3(x² + 1)² * (2x) = 6x(x² + 1)².</li>
+</ul>
+</li>
+<li><strong>L’Hôpital’s Rule</strong>:
+<ul>
+<li>Used to evaluate limits of indeterminate forms like 0/0 or ∞/∞.</li>
+<li>If lim (x→c) f(x)/g(x) is of the form 0/0 or ∞/∞, AND if lim (x→c) f’(x)/g’(x) exists (or is ±∞),
+then lim (x→c) f(x)/g(x) = lim (x→c) f’(x)/g’(x).</li>
+<li>Example: lim (x→0) sin(x)/x (form 0/0).
+lim (x→0) cos(x)/1 = cos(0)/1 = 1/1 = 1.</li>
+</ul>
+</li>
+<li><strong>Critical Points</strong>:
+<ul>
+<li>A point ‘c’ in the domain of f is a critical point if either f’(c) = 0 or f’(c) is undefined.</li>
+<li>These are candidates for where local maxima or minima can occur.</li>
+</ul>
+</li>
+<li><strong>Finding Extrema (Local/Relative Maxima and Minima)</strong>:
+<ul>
+<li>Local Maximum: A point where the function’s value is greater than or equal to the values at nearby points.</li>
+<li>Local Minimum: A point where the function’s value is less than or equal to the values at nearby points.</li>
+<li>First Derivative Test:
+<ol>
+<li>Find critical points of f.</li>
+<li>Determine the sign of f’(x) in intervals to the left and right of each critical point.</li>
+</ol>
+<ul>
+<li>If f’(x) changes from positive to negative at c, then f has a local maximum at c.</li>
+<li>If f’(x) changes from negative to positive at c, then f has a local minimum at c.</li>
+<li>If f’(x) does not change sign at c, then f has neither a local maximum nor minimum at c (e.g., a saddle point or horizontal inflection).</li>
+</ul>
+</li>
+<li>Intervals of Increase and Decrease:
+<ul>
+<li>If f’(x) > 0 on an interval, f is increasing on that interval.</li>
+<li>If f’(x) &lt; 0 on an interval, f is decreasing on that interval.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Linear Approximation</strong>:
+<ul>
+<li>The tangent line to the graph of f(x) at x=a can be used to approximate values of f(x) for x near a.</li>
+<li>The equation of the tangent line is L(x) = f(a) + f’(a)(x-a).</li>
+<li>So, for x near a, f(x) ≈ f(a) + f’(a)(x-a).</li>
+<li>Example: Approximate √4.1. Let f(x) = √x, a = 4.
+f(a) = √4 = 2.
+f’(x) = 1/(2√x), so f’(a) = f’(4) = 1/(2√4) = 1/4.
+√4.1 ≈ f(4) + f’(4)(4.1 - 4) = 2 + (1/4)(0.1) = 2 + 0.025 = 2.025.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Integrals</strong>
+<ul>
+<li><strong>Antiderivatives</strong>:
+<ul>
+<li>Concept: If the derivative of F(x) is f(x) (i.e., F’(x) = f(x)), then F(x) is an antiderivative of f(x).</li>
+<li>Reversing Differentiation: Integration is often thought of as the reverse process of differentiation.</li>
+<li>Family of Antiderivatives: If F(x) is an antiderivative of f(x), then any function of the form F(x) + C, where C is an arbitrary constant (the constant of integration), is also an antiderivative. This is because the derivative of a constant is zero.</li>
+<li>Example: If f(x) = 2x, then F(x) = x² is an antiderivative, because d/dx(x²) = 2x. So are x² + 5, x² - 3, etc. We write the general antiderivative as x² + C.</li>
+</ul>
+</li>
+<li><strong>Indefinite Integrals</strong>:
+<ul>
+<li>Notation: ∫f(x)dx represents the family of all antiderivatives of f(x). It is called the indefinite integral of f(x) with respect to x.</li>
+<li>∫f(x)dx = F(x) + C, where F’(x) = f(x).</li>
+<li>Basic Integration Rules (reverse of differentiation rules):
+<ul>
+<li>Power Rule: ∫xⁿdx = (xⁿ⁺¹)/(n+1) + C (for n ≠ -1). Example: ∫x³dx = x⁴/4 + C.</li>
+<li>Constant Rule: ∫kdx = kx + C.</li>
+<li>Constant Multiple Rule: ∫k*f(x)dx = k * ∫f(x)dx.</li>
+<li>Sum/Difference Rule: ∫[f(x) ± g(x)]dx = ∫f(x)dx ± ∫g(x)dx.</li>
+<li>Integral of eˣ: ∫eˣdx = eˣ + C.</li>
+<li>Integral of 1/x: ∫(1/x)dx = ln|x| + C (absolute value is important as x can be negative, but ln is defined for positive values).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Area Under a Curve</strong>:
+<ul>
+<li>The problem: Finding the exact area of a region in the xy-plane bounded by the graph of a non-negative continuous function y = f(x), the x-axis, and the vertical lines x = a and x = b.</li>
+</ul>
+</li>
+<li><strong>Riemann Sums</strong>:
+<ul>
+<li>Approximating Area: The area under the curve is approximated by dividing the interval [a, b] into n subintervals of equal width Δx = (b-a)/n, and then summing the areas of rectangles constructed on these subintervals.</li>
+<li>Types of Sums:
+<ul>
+<li>Left Riemann Sum: Uses the left endpoint of each subinterval to determine the height of the rectangle: Σ f(x<sub>i-1</sub>)Δx.</li>
+<li>Right Riemann Sum: Uses the right endpoint: Σ f(x<sub>i</sub>)Δx.</li>
+<li>Midpoint Riemann Sum: Uses the midpoint: Σ f((x<sub>i-1</sub>+x<sub>i</sub>)/2)Δx.</li>
+</ul>
+</li>
+<li>Definition of the Definite Integral: The definite integral of f(x) from a to b is the limit of these Riemann sums as the number of subintervals n approaches infinity (and Δx approaches 0):
+∫<sub>a</sub><sup>b</sup> f(x)dx = lim (n→∞) Σ<sub>i=1</sub><sup>n</sup> f(x<sub>i</sub><em>)Δx, where x<sub>i</sub></em> is any sample point in the i-th subinterval.
+If the limit exists, f(x) is said to be integrable on [a, b].</li>
+</ul>
+</li>
+<li><strong>Definite Integrals</strong>:
+<ul>
+<li>Notation: ∫<sub>a</sub><sup>b</sup> f(x)dx, where ‘a’ is the lower limit of integration and ‘b’ is the upper limit.</li>
+<li>Interpretation: Represents the net signed area between the curve f(x) and the x-axis from x=a to x=b. Areas above the x-axis are positive; areas below are negative.</li>
+<li>Properties:
+<ul>
+<li>∫<sub>a</sub><sup>a</sup> f(x)dx = 0.</li>
+<li>∫<sub>a</sub><sup>b</sup> f(x)dx = -∫<sub>b</sub><sup>a</sup> f(x)dx.</li>
+<li>∫<sub>a</sub><sup>b</sup> k*f(x)dx = k * ∫<sub>a</sub><sup>b</sup> f(x)dx.</li>
+<li>∫<sub>a</sub><sup>b</sup> [f(x) ± g(x)]dx = ∫<sub>a</sub><sup>b</sup> f(x)dx ± ∫<sub>a</sub><sup>b</sup> g(x)dx.</li>
+<li>∫<sub>a</sub><sup>c</sup> f(x)dx + ∫<sub>c</sub><sup>b</sup> f(x)dx = ∫<sub>a</sub><sup>b</sup> f(x)dx.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>The Fundamental Theorem of Calculus (FTC)</strong>:
+<ul>
+<li>Part 1 (FTC1): If f is continuous on [a, b] and F(x) is defined as F(x) = ∫<sub>a</sub><sup>x</sup> f(t)dt, then F’(x) = f(x) for every x in [a, b].
+This part shows that differentiation and integration are inverse processes: the derivative of an integral (defined as an area function) is the original function.</li>
+<li>Part 2 (FTC2 - Evaluation Theorem): If f is continuous on [a, b] and F is any antiderivative of f (i.e., F’(x) = f(x)), then:
+∫<sub>a</sub><sup>b</sup> f(x)dx = F(b) - F(a).
+This provides a powerful method for evaluating definite integrals without directly using the limit of Riemann sums.
+Example: Evaluate ∫<sub>1</sub><sup>3</sup> x²dx.
+An antiderivative of x² is F(x) = x³/3.
+So, ∫<sub>1</sub><sup>3</sup> x²dx = F(3) - F(1) = (3³/3) - (1³/3) = 27/3 - 1/3 = 9 - 1/3 = 26/3.</li>
+</ul>
+</li>
+<li><strong>Applications of Integration</strong>:
+<ul>
+<li>Area Calculation: Primary application discussed. Area between two curves: ∫<sub>a</sub><sup>b</sup> [f(x) - g(x)]dx.</li>
+<li>Net Change: If f’(x) is the rate of change of a quantity f(x), then ∫<sub>a</sub><sup>b</sup> f’(x)dx = f(b) - f(a) gives the net change in f(x) from x=a to x=b.</li>
+<li>Average Value of a Function: The average value of f(x) on [a,b] is (1/(b-a)) * ∫<sub>a</sub><sup>b</sup> f(x)dx.</li>
+</ul>
+</li>
+<li><strong>Basic Techniques of Integration</strong>:
+<ul>
+<li>Substitution Rule (u-substitution): Used to integrate composite functions. It’s the reverse of the chain rule for differentiation.
+If u = g(x), then du = g’(x)dx. So, ∫f(g(x))g’(x)dx = ∫f(u)du.
+Example: ∫2x * (x² + 1)⁵ dx.
+Let u = x² + 1. Then du = 2x dx.
+The integral becomes ∫u⁵du = u⁶/6 + C = (x² + 1)⁶/6 + C.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Graph Theory Basics</strong>
+<ul>
+<li><strong>Introduction to Graphs</strong>:
+<ul>
+<li>Definition: A graph G = (V, E) consists of a set V of vertices (or nodes) and a set E of edges (or links/arcs), where each edge connects two vertices.</li>
+<li>Examples: Social networks (people are vertices, friendships are edges), road networks (intersections are vertices, roads are edges), the World Wide Web (web pages are vertices, hyperlinks are edges).</li>
+</ul>
+</li>
+<li><strong>Types of Graphs</strong>:
+<ul>
+<li>Undirected Graph: Edges have no orientation; (u, v) is the same as (v, u).</li>
+<li>Directed Graph (Digraph): Edges have a direction; (u, v) goes from u to v.</li>
+<li>Weighted Graph: Each edge has an associated numerical value (weight or cost). Unweighted graphs assume all edges have weight 1 or are simply unconcerned with weight.</li>
+<li>Simple Graph: An unweighted, undirected graph with no loops (edges from a vertex to itself) and no multiple edges between the same two vertices.</li>
+<li>Multigraph: Allows multiple edges between the same pair of vertices.</li>
+<li>Pseudograph: Allows loops and multiple edges.</li>
+<li>Complete Graph (K<sub>n</sub>): A simple undirected graph where every pair of distinct vertices is connected by a unique edge. K<sub>n</sub> has n(n-1)/2 edges.</li>
+<li>Cycle (C<sub>n</sub>): A graph with n vertices where vertices are connected in a circular fashion (v<sub>1</sub>-v<sub>2</sub>-…-v<sub>n</sub>-v<sub>1</sub>).</li>
+<li>Path (P<sub>n</sub>): A graph with n vertices connected in a line.</li>
+<li>Bipartite Graph: A graph whose vertices can be divided into two disjoint sets, U and V, such that every edge connects a vertex in U to one in V.</li>
+</ul>
+</li>
+<li><strong>Graph Terminology</strong>:
+<ul>
+<li>Adjacent Vertices (Neighbors): Two vertices are adjacent if there is an edge connecting them.</li>
+<li>Degree of a Vertex (for undirected graphs): The number of edges incident to it. Sum of degrees = 2|E|.</li>
+<li>In-degree (for digraphs): Number of edges pointing to a vertex.</li>
+<li>Out-degree (for digraphs): Number of edges pointing from a vertex. Sum of in-degrees = Sum of out-degrees = |E|.</li>
+<li>Path: A sequence of vertices where each adjacent pair is connected by an edge.</li>
+<li>Cycle: A path that starts and ends at the same vertex and does not repeat other vertices.</li>
+<li>Connected Graph (undirected): There is a path between every pair of distinct vertices.</li>
+<li>Connected Components: The maximally connected subgraphs of an undirected graph.</li>
+<li>Strongly Connected Components (digraphs): A digraph is strongly connected if there is a directed path from u to v and from v to u for every pair of vertices u, v. SCCs are the maximal strongly connected subgraphs.</li>
+</ul>
+</li>
+<li><strong>Representing Graphs</strong>:
+<ul>
+<li>Adjacency Matrix: A |V| x |V| matrix A where A[i][j] = 1 if there is an edge from vertex i to vertex j, and 0 otherwise. For weighted graphs, A[i][j] can store the weight.
+<ul>
+<li>Pros: Fast to check if an edge (i,j) exists (O(1)).</li>
+<li>Cons: Space complexity O(|V|²), which is inefficient for sparse graphs (graphs with few edges). Adding/removing vertices is hard.</li>
+</ul>
+</li>
+<li>Adjacency List: An array of lists. For each vertex u, Adj[u] stores a list of vertices adjacent to u. For weighted graphs, the list can store pairs (neighbor, weight).
+<ul>
+<li>Pros: Space efficient for sparse graphs O(|V| + |E|). Easy to iterate over neighbors of a vertex.</li>
+<li>Cons: Checking for an edge (u,v) can take O(degree(u)) time.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Graph Traversals</strong>: Algorithms for systematically visiting all vertices in a graph.
+<ul>
+<li>Breadth-First Search (BFS):
+<ul>
+<li>Algorithm: Starts at a source vertex, explores all its neighbors at the present depth prior to moving on to the vertices at the next depth level. Uses a queue.</li>
+<li>Properties: Finds the shortest path (in terms of number of edges) from the source to all other vertices in an unweighted graph.</li>
+<li>Example: Useful for finding connected components, shortest paths in unweighted graphs.</li>
+</ul>
+</li>
+<li>Depth-First Search (DFS):
+<ul>
+<li>Algorithm: Explores as far as possible along each branch before backtracking. Uses a stack (often implicitly via recursion).</li>
+<li>Properties: Useful for cycle detection, topological sorting, finding connected components, path finding.</li>
+<li>Example: Can produce a DFS tree/forest.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Directed Acyclic Graphs (DAGs)</strong>:
+<ul>
+<li>Definition: A directed graph that contains no directed cycles.</li>
+<li>Examples: Task scheduling (tasks and their dependencies), prerequisite charts for courses, version history in Git.</li>
+</ul>
+</li>
+<li><strong>Topological Sorting</strong>:
+<ul>
+<li>Definition: A linear ordering of vertices in a DAG such that for every directed edge (u,v) from vertex u to vertex v, u comes before v in the ordering. A DAG can have multiple topological sorts.</li>
+<li>Algorithms:
+<ul>
+<li>Kahn’s Algorithm: Based on in-degrees. Repeatedly find vertices with in-degree 0, add them to the sort, and remove their outgoing edges. Uses a queue.</li>
+<li>DFS-based Algorithm: Perform DFS. The topological sort is the reverse of the finishing times of the vertices.</li>
+</ul>
+</li>
+<li>Example: If A depends on B, and B depends on C, a topological sort could be C, B, A.</li>
+</ul>
+</li>
+<li><strong>Applications</strong>: Network analysis (social, biological, computer networks), recommendation systems (user-item interactions), logistics and operations research, bioinformatics (gene interactions), circuit design.</li>
+</ul>
+</li>
+<li><strong>Graph Algorithms</strong>
+<ul>
+<li><strong>Shortest Path Problems</strong>: Finding a path between two vertices such that the sum of the weights of its constituent edges is minimized.
+<ul>
+<li><strong>Single-Source Shortest Paths (SSSP)</strong>: Find the shortest paths from a single source vertex ‘s’ to all other vertices in the graph.
+<ul>
+<li>Dijkstra’s Algorithm:
+<ul>
+<li>Applies to graphs with non-negative edge weights.</li>
+<li>Algorithm: Maintains a set of visited vertices and distances to all vertices (initially 0 for source, ∞ for others). Iteratively selects the unvisited vertex with the smallest known distance, marks it visited, and updates distances to its neighbors. Often implemented using a priority queue.</li>
+<li>Example: GPS navigation, network routing protocols.</li>
+<li>Limitations: Fails if there are negative edge weights because its greedy choice might not be optimal in such cases.</li>
+</ul>
+</li>
+<li>Bellman-Ford Algorithm:
+<ul>
+<li>Applies to graphs that may include negative edge weights.</li>
+<li>Algorithm: Relaxes all edges |V|-1 times. In each relaxation step, it updates distances if a shorter path is found. After |V|-1 iterations, if distances can still be improved, a negative-weight cycle reachable from the source is detected.</li>
+<li>Example: Detecting arbitrage opportunities in currency exchange.</li>
+<li>Handles negative weights correctly and can detect negative cycles (if after |V|-1 iterations, an edge can still be relaxed, a negative cycle exists).</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>All-Pairs Shortest Paths (APSP)</strong>: Finding the shortest paths between all pairs of vertices in the graph.
+<ul>
+<li>Floyd-Warshall Algorithm:
+<ul>
+<li>Dynamic programming approach.</li>
+<li>Algorithm: Iteratively considers all possible intermediate vertices for each pair of start and end vertices. For each pair (i,j) and intermediate vertex k, it checks if path i-k-j is shorter than the current path i-j.</li>
+<li>Complexity: O(|V|³).</li>
+<li>Example: Precomputing distances in a network, transit route planning.</li>
+<li>Handles negative edge weights (but reports existence if negative cycles make shortest paths undefined).</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Minimum Spanning Trees (MST)</strong>:
+<ul>
+<li>Definition: Given a connected, undirected, weighted graph, an MST is a subgraph that connects all vertices together, without any cycles and with the minimum possible total edge weight.</li>
+<li>Applications: Network design (e.g., laying cables to connect cities with minimum cost), clustering, image segmentation.</li>
+<li>Prim’s Algorithm:
+<ul>
+<li>Greedy algorithm that builds the MST one vertex at a time.</li>
+<li>Algorithm: Starts with an arbitrary vertex. In each step, adds the cheapest edge connecting a vertex in the growing MST to a vertex outside the MST. Often uses a priority queue to select the minimum weight edge.</li>
+<li>Example: Good for dense graphs.</li>
+</ul>
+</li>
+<li>Kruskal’s Algorithm:
+<ul>
+<li>Greedy algorithm that builds the MST one edge at a time.</li>
+<li>Algorithm: Sorts all edges by weight in ascending order. Iteratively adds the next cheapest edge if it does not form a cycle with previously added edges. Uses a Disjoint Set Union (DSU) data structure to efficiently detect cycles.</li>
+<li>Example: Good for sparse graphs.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>Applications</strong>: Network routing (OSPF, RIP use SSSP), flight or traffic information systems, gene network analysis, image processing, efficient resource allocation.</li>
+</ul>
+</li>
+<li><strong>Revision</strong>
+<ul>
+<li><strong>Summary of Key Concepts</strong>:
+<ul>
+<li>Set Theory &amp; Basic Logic: Number systems, set operations, relations, functions.</li>
+<li>Functions: Properties of linear, quadratic, polynomial, exponential, and logarithmic functions; their graphs and applications. Inverse functions, composition.</li>
+<li>Coordinate Geometry: Points, lines, slopes, distances, equations of lines.</li>
+<li>Sequences &amp; Series: Arithmetic and geometric sequences and their sums.</li>
+<li>Limits &amp; Continuity: Concept of limits for sequences and functions, limit laws, continuity and its types, Intermediate Value Theorem.</li>
+<li>Derivatives: Definition as slope/rate of change, rules of differentiation (power, product, quotient, chain), L’Hôpital’s rule, applications like finding maxima/minima, intervals of increase/decrease, linear approximation.</li>
+<li>Integrals: Antiderivatives, indefinite and definite integrals, Riemann sums, Fundamental Theorem of Calculus, basic integration techniques (substitution), application in finding areas.</li>
+<li>Graph Theory Basics: Types of graphs, representation (adjacency matrix/list), traversals (BFS, DFS), Directed Acyclic Graphs (DAGs), topological sorting.</li>
+<li>Graph Algorithms: Shortest path algorithms (Dijkstra, Bellman-Ford, Floyd-Warshall), Minimum Spanning Tree algorithms (Prim, Kruskal).</li>
+</ul>
+</li>
+<li><strong>Problem-Solving Strategies</strong>:
+<ul>
+<li>Revisit Definitions and Theorems: Ensure a solid understanding of the formal definitions and the statements of major theorems.</li>
+<li>Practice Diverse Problems: Work through examples from lectures, textbooks, and assignments. Start with basic problems to solidify understanding before tackling more complex ones.</li>
+<li>Identify Keywords and Patterns: Learn to recognize which concepts or methods are applicable based on the problem’s wording and structure.</li>
+<li>Step-by-Step Tracing: For algorithms (especially graph algorithms), manually trace their execution on small, representative examples to understand their mechanics.</li>
+<li>Visualization: Sketch graphs of functions, draw diagrams for geometry problems, and visualize graph structures.</li>
+</ul>
+</li>
+<li><strong>Interconnections between Topics</strong>:
+<ul>
+<li>Recognize how calculus concepts are linked: limits are the foundation for derivatives and definite integrals.</li>
+<li>Understand functions as a core concept that reappears in algebra, calculus, and even in graph theory (e.g., a sequence is a function).</li>
+<li>Appreciate how different areas of mathematics are used to model and solve problems.</li>
+</ul>
+</li>
+<li><strong>Focus Areas for Data Science</strong>:
+<ul>
+<li>Calculus (Derivatives &amp; Integrals): Essential for optimization algorithms in machine learning (e.g., gradient descent), understanding probability distributions.</li>
+<li>Linear Algebra (covered in “Additional Topics” but related): Fundamental for data representation (vectors, matrices), dimensionality reduction, and many machine learning models.</li>
+<li>Graph Theory: Useful for analyzing networks (social, information, biological), recommendation systems, and understanding complex relationships in data.</li>
+<li>Functions (Exponential, Logarithmic): Key for modeling growth, decay, and transformations in data.</li>
+</ul>
+</li>
+<li><strong>Suggested Practice</strong>:
+<ul>
+<li>Review past assignments and quiz/exam questions.</li>
+<li>Work through solved examples in the reference texts, then attempt similar unsolved problems.</li>
+<li>Use online resources like Khan Academy, Paul’s Online Math Notes, or university open courseware for additional explanations and practice problems.</li>
+<li>Collaborate with peers in study groups to discuss challenging concepts and solve problems together. Explaining a concept to someone else is a great way to solidify your own understanding.</li>
+<li>For conceptual topics, try to summarize them in your own words.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="glossary">Glossary<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#glossary" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Polynomial</strong>: an expression made up of variables and coefficients using only addition, subtraction, multiplication and non-negative integer exponents.</li>
+<li><strong>Composite Function</strong>: a function created when one function is applied after another.</li>
+<li><strong>Derivative</strong>: the rate at which a function changes with respect to its input value; geometrically the slope of the tangent.</li>
+<li><strong>BFS/DFS</strong>: Breadth-first and depth-first search algorithms for exploring graphs.</li>
+</ul>
+<h2 id="reference-texts">Reference Texts<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#reference-texts" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><em>Introductory Algebra: a real-world approach</em> (4th Edition) by Ignacio Bello</li>
+<li><em>Sets &amp; Functions (VOL 1)</em>, <em>Calculus (VOL 2)</em> and <em>Graph Theory (VOL 3)</em></li>
+</ul>
+<h2 id="additional-topics">Additional Topics<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#additional-topics" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><strong>Complex Numbers</strong> – arithmetic with imaginary units, polar representation and Euler’s formula</li>
+<li><strong>Matrices</strong> – matrix operations, determinants, inverses and applications in systems of equations</li>
+<li><strong>Probability Review</strong> – counting principles and how they connect to polynomial expansions</li>
+</ul>
+<h2 id="further-reading">Further Reading<a role="anchor" aria-hidden="true" tabindex="-1" data-no-popover="true" href="#further-reading" class="internal"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg></a></h2>
+<ul>
+<li><em>Linear Algebra and Its Applications</em> by Gilbert Strang</li>
+</ul></article><hr/><div class="page-footer"></div></div><div class="right sidebar"><div class="graph"><h3>Graph View</h3><div class="graph-outer"><div class="graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:1,&quot;scale&quot;:1.1,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.3,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:false,&quot;enableRadial&quot;:false}"></div><button class="global-graph-icon" aria-label="Global Graph"><svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 55 55" fill="currentColor" xml:space="preserve"><path d="M49,0c-3.309,0-6,2.691-6,6c0,1.035,0.263,2.009,0.726,2.86l-9.829,9.829C32.542,17.634,30.846,17,29,17
+                s-3.542,0.634-4.898,1.688l-7.669-7.669C16.785,10.424,17,9.74,17,9c0-2.206-1.794-4-4-4S9,6.794,9,9s1.794,4,4,4
+                c0.74,0,1.424-0.215,2.019-0.567l7.669,7.669C21.634,21.458,21,23.154,21,25s0.634,3.542,1.688,4.897L10.024,42.562
+                C8.958,41.595,7.549,41,6,41c-3.309,0-6,2.691-6,6s2.691,6,6,6s6-2.691,6-6c0-1.035-0.263-2.009-0.726-2.86l12.829-12.829
+                c1.106,0.86,2.44,1.436,3.898,1.619v10.16c-2.833,0.478-5,2.942-5,5.91c0,3.309,2.691,6,6,6s6-2.691,6-6c0-2.967-2.167-5.431-5-5.91
+                v-10.16c1.458-0.183,2.792-0.759,3.898-1.619l7.669,7.669C41.215,39.576,41,40.26,41,41c0,2.206,1.794,4,4,4s4-1.794,4-4
+                s-1.794-4-4-4c-0.74,0-1.424,0.215-2.019,0.567l-7.669-7.669C36.366,28.542,37,26.846,37,25s-0.634-3.542-1.688-4.897l9.665-9.665
+                C46.042,11.405,47.451,12,49,12c3.309,0,6-2.691,6-6S52.309,0,49,0z M11,9c0-1.103,0.897-2,2-2s2,0.897,2,2s-0.897,2-2,2
+                S11,10.103,11,9z M6,51c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S8.206,51,6,51z M33,49c0,2.206-1.794,4-4,4s-4-1.794-4-4
+                s1.794-4,4-4S33,46.794,33,49z M29,31c-3.309,0-6-2.691-6-6s2.691-6,6-6s6,2.691,6,6S32.309,31,29,31z M47,41c0,1.103-0.897,2-2,2
+                s-2-0.897-2-2s0.897-2,2-2S47,39.897,47,41z M49,10c-2.206,0-4-1.794-4-4s1.794-4,4-4s4,1.794,4,4S51.206,10,49,10z"></path></svg></button></div><div class="global-graph-outer"><div class="global-graph-container" data-cfg="{&quot;drag&quot;:true,&quot;zoom&quot;:true,&quot;depth&quot;:-1,&quot;scale&quot;:0.9,&quot;repelForce&quot;:0.5,&quot;centerForce&quot;:0.2,&quot;linkDistance&quot;:30,&quot;fontSize&quot;:0.6,&quot;opacityScale&quot;:1,&quot;showTags&quot;:true,&quot;removeTags&quot;:[],&quot;focusOnHover&quot;:true,&quot;enableRadial&quot;:true}"></div></div></div><div class="toc desktop-only"><button type="button" class="toc-header" aria-controls="toc-content" aria-expanded="true"><h3>Table of Contents</h3><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="fold"><polyline points="6 9 12 15 18 9"></polyline></svg></button><ul class="toc-content overflow" id="list-1"><li class="depth-0"><a href="#bsma1001-mathematics-for-data-science-i" data-for="bsma1001-mathematics-for-data-science-i">BSMA1001 Mathematics for Data Science I</a></li><li class="depth-1"><a href="#overview" data-for="overview">Overview</a></li><li class="depth-1"><a href="#learning-objectives" data-for="learning-objectives">Learning Objectives</a></li><li class="depth-1"><a href="#course-structure" data-for="course-structure">Course Structure</a></li><li class="depth-1"><a href="#weekly-topics" data-for="weekly-topics">Weekly Topics</a></li><li class="depth-1"><a href="#glossary" data-for="glossary">Glossary</a></li><li class="depth-1"><a href="#reference-texts" data-for="reference-texts">Reference Texts</a></li><li class="depth-1"><a href="#additional-topics" data-for="additional-topics">Additional Topics</a></li><li class="depth-1"><a href="#further-reading" data-for="further-reading">Further Reading</a></li><li class="overflow-end"></li></ul></div></div><footer class><p>Created with <a href="https://quartz.jzhao.xyz/">Quartz v4.5.1</a> © 2025</p><ul><li><a href="https://github.com/jackyzha0/quartz">GitHub</a></li><li><a href="https://discord.gg/cRFFHYye7t">Discord Community</a></li></ul></footer></div></div></body><script type="application/javascript">function n(){let t=this.parentElement;t.classList.toggle("is-collapsed");let e=t.getElementsByClassName("callout-content")[0];if(!e)return;let l=t.classList.contains("is-collapsed");e.style.gridTemplateRows=l?"0fr":"1fr"}function c(){let t=document.getElementsByClassName("callout is-collapsible");for(let e of t){let l=e.getElementsByClassName("callout-title")[0],s=e.getElementsByClassName("callout-content")[0];if(!l||!s)continue;l.addEventListener("click",n),window.addCleanup(()=>l.removeEventListener("click",n));let o=e.classList.contains("is-collapsed");s.style.gridTemplateRows=o?"0fr":"1fr"}}document.addEventListener("nav",c);
+</script><script type="module">function f(i,e){if(!i)return;function r(o){o.target===this&&(o.preventDefault(),o.stopPropagation(),e())}function t(o){o.key.startsWith("Esc")&&(o.preventDefault(),e())}i?.addEventListener("click",r),window.addCleanup(()=>i?.removeEventListener("click",r)),document.addEventListener("keydown",t),window.addCleanup(()=>document.removeEventListener("keydown",t))}function y(i){for(;i.firstChild;)i.removeChild(i.firstChild)}var h=class{constructor(e,r){this.container=e;this.content=r;this.setupEventListeners(),this.setupNavigationControls(),this.resetTransform()}isDragging=!1;startPan={x:0,y:0};currentPan={x:0,y:0};scale=1;MIN_SCALE=.5;MAX_SCALE=3;cleanups=[];setupEventListeners(){let e=this.onMouseDown.bind(this),r=this.onMouseMove.bind(this),t=this.onMouseUp.bind(this),o=this.resetTransform.bind(this);this.container.addEventListener("mousedown",e),document.addEventListener("mousemove",r),document.addEventListener("mouseup",t),window.addEventListener("resize",o),this.cleanups.push(()=>this.container.removeEventListener("mousedown",e),()=>document.removeEventListener("mousemove",r),()=>document.removeEventListener("mouseup",t),()=>window.removeEventListener("resize",o))}cleanup(){for(let e of this.cleanups)e()}setupNavigationControls(){let e=document.createElement("div");e.className="mermaid-controls";let r=this.createButton("+",()=>this.zoom(.1)),t=this.createButton("-",()=>this.zoom(-.1)),o=this.createButton("Reset",()=>this.resetTransform());e.appendChild(t),e.appendChild(o),e.appendChild(r),this.container.appendChild(e)}createButton(e,r){let t=document.createElement("button");return t.textContent=e,t.className="mermaid-control-button",t.addEventListener("click",r),window.addCleanup(()=>t.removeEventListener("click",r)),t}onMouseDown(e){e.button===0&&(this.isDragging=!0,this.startPan={x:e.clientX-this.currentPan.x,y:e.clientY-this.currentPan.y},this.container.style.cursor="grabbing")}onMouseMove(e){this.isDragging&&(e.preventDefault(),this.currentPan={x:e.clientX-this.startPan.x,y:e.clientY-this.startPan.y},this.updateTransform())}onMouseUp(){this.isDragging=!1,this.container.style.cursor="grab"}zoom(e){let r=Math.min(Math.max(this.scale+e,this.MIN_SCALE),this.MAX_SCALE),t=this.content.getBoundingClientRect(),o=t.width/2,n=t.height/2,c=r-this.scale;this.currentPan.x-=o*c,this.currentPan.y-=n*c,this.scale=r,this.updateTransform()}updateTransform(){this.content.style.transform=`translate(${this.currentPan.x}px, ${this.currentPan.y}px) scale(${this.scale})`}resetTransform(){this.scale=1;let e=this.content.querySelector("svg");this.currentPan={x:e.getBoundingClientRect().width/2,y:e.getBoundingClientRect().height/2},this.updateTransform()}},C=["--secondary","--tertiary","--gray","--light","--lightgray","--highlight","--dark","--darkgray","--codeFont"],E;document.addEventListener("nav",async()=>{let e=document.querySelector(".center").querySelectorAll("code.mermaid");if(e.length===0)return;E||=await import("https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.4.0/mermaid.esm.min.mjs");let r=E.default,t=new WeakMap;for(let n of e)t.set(n,n.innerText);async function o(){for(let s of e){s.removeAttribute("data-processed");let a=t.get(s);a&&(s.innerHTML=a)}let n=C.reduce((s,a)=>(s[a]=window.getComputedStyle(document.documentElement).getPropertyValue(a),s),{}),c=document.documentElement.getAttribute("saved-theme")==="dark";r.initialize({startOnLoad:!1,securityLevel:"loose",theme:c?"dark":"base",themeVariables:{fontFamily:n["--codeFont"],primaryColor:n["--light"],primaryTextColor:n["--darkgray"],primaryBorderColor:n["--tertiary"],lineColor:n["--darkgray"],secondaryColor:n["--secondary"],tertiaryColor:n["--tertiary"],clusterBkg:n["--light"],edgeLabelBackground:n["--highlight"]}}),await r.run({nodes:e})}await o(),document.addEventListener("themechange",o),window.addCleanup(()=>document.removeEventListener("themechange",o));for(let n=0;n<e.length;n++){let v=function(){let g=l.querySelector("#mermaid-space"),m=l.querySelector(".mermaid-content");if(!m)return;y(m);let w=c.querySelector("svg").cloneNode(!0);m.appendChild(w),l.classList.add("active"),g.style.cursor="grab",u=new h(g,m)},M=function(){l.classList.remove("active"),u?.cleanup(),u=null},c=e[n],s=c.parentElement,a=s.querySelector(".clipboard-button"),d=s.querySelector(".expand-button"),p=window.getComputedStyle(a),L=a.offsetWidth+parseFloat(p.marginLeft||"0")+parseFloat(p.marginRight||"0");d.style.right=`calc(${L}px + 0.3rem)`,s.prepend(d);let l=s.querySelector("#mermaid-container");if(!l)return;let u=null;d.addEventListener("click",v),f(l,M),window.addCleanup(()=>{u?.cleanup(),d.removeEventListener("click",v)})}});
+</script><script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/copy-tex.min.js" type="application/javascript"></script><script src="./postscript.js" type="module"></script></html>

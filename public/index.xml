@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>My Notes Public</title>
+      <link>https://paranjay.github.io/my-notes-public</link>
+      <description>Last 10 notes on My Notes Public</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>BSMA1002 Statistics for Data Science I</title>
+    <link>https://paranjay.github.io/my-notes-public/BSMA1002-Statistics-for-Data-Science-I</link>
+    <guid>https://paranjay.github.io/my-notes-public/BSMA1002-Statistics-for-Data-Science-I</guid>
+    <description>BSMA1002 Statistics for Data Science I Course Credits: 4 Course Type: Foundational Instructor: Usha Mohan Pre-requisites: None Overview Students explore large datasets and learn how to extract insights from data.</description>
+    <pubDate>Thu, 05 Jun 2025 17:29:01 GMT</pubDate>
+  </item><item>
+    <title>Rhizomatic Learning</title>
+    <link>https://paranjay.github.io/my-notes-public/Rhizomatic-Learning</link>
+    <guid>https://paranjay.github.io/my-notes-public/Rhizomatic-Learning</guid>
+    <description>Rhizomatic Learning Rhizomatic Learning is an educational approach inspired by the botanical metaphor of the rhizome.</description>
+    <pubDate>Thu, 05 Jun 2025 17:29:01 GMT</pubDate>
+  </item><item>
+    <title>BSCS1001 Computational Thinking</title>
+    <link>https://paranjay.github.io/my-notes-public/BSCS1001-Computational-Thinking</link>
+    <guid>https://paranjay.github.io/my-notes-public/BSCS1001-Computational-Thinking</guid>
+    <description>BSCS1001 Computational Thinking Course Credits: 4 Course Type: Foundational Instructors: Madhavan Mukund, Dr.</description>
+    <pubDate>Thu, 05 Jun 2025 17:29:01 GMT</pubDate>
+  </item><item>
+    <title>BSHS1001 English I</title>
+    <link>https://paranjay.github.io/my-notes-public/BSHS1001-English-I</link>
+    <guid>https://paranjay.github.io/my-notes-public/BSHS1001-English-I</guid>
+    <description>BSHS1001 English I Course Credits: 4 Course Type: Foundational Instructors: Rajesh Kumar, Karthika Sathyanathan Pre-requisites: None Overview Designed to build fluency and confidence in spoken and written English, this course leverages insights from language learning theories and teaching methodolog...</description>
+    <pubDate>Thu, 05 Jun 2025 17:29:01 GMT</pubDate>
+  </item><item>
+    <title>BSMA1001 Mathematics for Data Science I</title>
+    <link>https://paranjay.github.io/my-notes-public/BSMA1001-Mathematics-for-Data-Science-I</link>
+    <guid>https://paranjay.github.io/my-notes-public/BSMA1001-Mathematics-for-Data-Science-I</guid>
+    <description>BSMA1001 Mathematics for Data Science I Course Credits: 4 Course Type: Foundational Instructors: Neelesh Upadhye, Madhavan Mukund Pre-requisites: None Overview This course introduces straight lines, polynomials, exponentials, logarithms and the basics of discrete mathematics.</description>
+    <pubDate>Thu, 05 Jun 2025 17:29:01 GMT</pubDate>
+  </item><item>
+    <title>Code-Examples-Test</title>
+    <link>https://paranjay.github.io/my-notes-public/Code-Examples-Test</link>
+    <guid>https://paranjay.github.io/my-notes-public/Code-Examples-Test</guid>
+    <description>Code Examples Test Python Example def hello_world(): print(&#039;Hello from Quartz!&#039;) return 42 # This is a comment class DigitalGarden: def __init__(self): self.notes = [] def add_note(self, content): self.notes.append(content) JavaScript Example // Modern JavaScript with syntax highlighting c...</description>
+    <pubDate>Sat, 31 May 2025 07:25:44 GMT</pubDate>
+  </item><item>
+    <title>File-Types-Test</title>
+    <link>https://paranjay.github.io/my-notes-public/File-Types-Test</link>
+    <guid>https://paranjay.github.io/my-notes-public/File-Types-Test</guid>
+    <description>File Types Test Page This page tests how Quartz handles different file types beyond markdown.</description>
+    <pubDate>Sat, 31 May 2025 07:25:44 GMT</pubDate>
+  </item><item>
+    <title>Further Tasks</title>
+    <link>https://paranjay.github.io/my-notes-public/Further-Tasks</link>
+    <guid>https://paranjay.github.io/my-notes-public/Further-Tasks</guid>
+    <description> for some reason twitter didnt embed prolly iframe would work aand iframe is cool would try pdf later would try to create learning codin content and more later with quartz and ingeneral does it support non markdown files and code and more thingies to know later! debugging bugs/glitches and edge case...</description>
+    <pubDate>Sat, 31 May 2025 07:20:56 GMT</pubDate>
+  </item><item>
+    <title>Media Embedding Test</title>
+    <link>https://paranjay.github.io/my-notes-public/Media-Embedding-Test</link>
+    <guid>https://paranjay.github.io/my-notes-public/Media-Embedding-Test</guid>
+    <description>🎬 Media Embedding Test This page tests various media embedding capabilities in Quartz! 📸 Local Image Test Here’s the image you added to attachments: 🌐 External Image Test Here’s the image from the URL you provided: 🎥 YouTube Video Embedding Yes! Quartz can embed YouTube videos.</description>
+    <pubDate>Sat, 31 May 2025 07:20:56 GMT</pubDate>
+  </item><item>
+    <title>Quartz DB</title>
+    <link>https://paranjay.github.io/my-notes-public/Quartz-DB</link>
+    <guid>https://paranjay.github.io/my-notes-public/Quartz-DB</guid>
+    <description> Transclude of Quartz-DB.base.</description>
+    <pubDate>Sat, 31 May 2025 07:20:56 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

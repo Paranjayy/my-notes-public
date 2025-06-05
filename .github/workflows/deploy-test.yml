@@ -1,10 +1,9 @@
-name: Deploy Quartz site to GitHub Pages (Production)
+name: Deploy Test Branch to GitHub Pages
 
 on:
-  # Disabled while testing on jules-test branch
-  # push:
-  #   branches:
-  #     - main
+  push:
+    branches:
+      - jules-test
   workflow_dispatch:
 
 permissions:
@@ -13,7 +12,7 @@ permissions:
   id-token: write
 
 concurrency:
-  group: "pages"
+  group: "pages-test"
   cancel-in-progress: false
 
 jobs:
